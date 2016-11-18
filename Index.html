@@ -1,13 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Transavia Verhalen - Overzichtspagina</title>
-  <style>
-</head>
-<body>
-  <header></header>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transavia Verhalen - Overzichtspagina</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <img src="./img/logo.png" alt="Logo of Transavia" width="20%"> <!-- delete width when using starting with css -->
+      <input type="text" placeholder="zoeken">
+      <a href="#" class="fa fa-user" aria="true">Account icon</a> <!-- maybe as button if overlay -->
+    </header>
+
+    <form action="">
+      <fieldset>
+        <ul>
+          <li>Inloggen</li>
+          <li>Maak een account</li>
+        </ul>
+
+        <label for="">Gebruikersnaam: </label>
+        <input type="text" name="gebruikersnaam">
+        <label for="">Wachtwoord: </label>
+        <input type="text" name="wachtwoord">
+
+        <input type="submit" name="login" value="login">
+      </fieldset>
+    </form>
+
+    <!-- SORT/FILTER -->
+    <section>
+      <h1>Verhalen (<span>Number</span>)</h1>
+
+      <!-- SORTEREN -->
+      <p>Sorteren</p>
+      <ul>
+        <li>oud -> nieuw</li>
+        <li>Artikel: kort -> lang</li>
+        <li>Gelezen: meest -> minst</li>
+        <li>Likes: meest -> minst</li>
+        <li>Reacties: meest -> minst</li>
+      </ul>
+
+      <!-- FILTER -->
+      <p>Filteren</p>
+      <ul>
+        <li>Thema
+          <ul>
+            <li>
+              <label>Personen (<span>x</span>) <input type="checkbox" value="personen"></label>
+            </li>
+            <li>
+              <label>Familie(<span>x</span>) <input type="checkbox" value="familie"></label>
+            </li>
+            <li>
+              <label>Religie(<span>x</span>) <input type="checkbox" value="religie"></label>
+            </li>
+            <li>
+              <label>Muziek(<span>x</span>) <input type="checkbox" value="muziek"></label>
+            </li>
+            <li>
+              <label>Emotie (<span>x</span>) <input type="checkbox" value="emotie"></label>
+            </li>
+            <li>
+              <label>Politiek (<span>x</span>) <input type="checkbox" value="politiek"></label>
+            </li>
+            <li>
+              <label>Geschiedenis (<span>x</span>) <input type="checkbox" value="geschiedenis"></label>
+            </li>
+            <li>
+              <label>Literatuur(<span>x</span>) <input type="checkbox" value="literatuur"></label>
+            </li>
+            <li>
+              <label>Overig (<span>x</span>) <input type="checkbox" value="overig"></label>
+            </li>
+          </ul>
+        </li>
+
+        <li>Geschreven taal
+          <ul>
+            <li>
+              <label>Nederlands (<span>x</span>) <input type="checkbox" value="nederlands"></label>
+            </li>
+            <li>
+              <label>Engels (<span>x</span>) <input type="checkbox" value="engels"></label>
+            </li>
+            <li>
+              <label>Frans (<span>x</span>) <input type="checkbox" value="frans"></label>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- AANBEVOLEN -->
+    <section>
+      <h2>Misschien vindt je deze drie ook wel leuk:</h2>
+      <article>
+        <h3>Haiku</h3>
+        <p>Op zoek naar een boek
+          Een vrouw vraagt de weg en ik
+          Koop babyschoentjes</p>
+        <span class="fa fa-heart">136</span>
+        <span class="fa fa-comment-o">42</span>
+      </article>
+
+      <article>
+        <h3>Titel</h3>
+        <p>teaser tekst</p>
+        <span class="fa fa-heart">aantal</span>
+        <span class="fa fa-comment-o">aantal</span>
+      </article>
+
+      <article>
+        <h3>Titel</h3>
+        <p>teaser tekst</p>
+        <span class="fa fa-heart">aantal</span>
+        <span class="fa fa-comment-o">aantal</span>
+      </article>
+    </section>
+
+    <!-- ALLE VERHALEN -->
+    <section>
+      <h2>De verhalen:</h2>
+      <article>
+        <h3>Titel</h3>
+        <p>teaser tekst</p>
+        <span class="fa fa-heart">aantal</span>
+        <span class="fa fa-comment-o">aantal</span>
+      </article>
+    </section>
+
+  </body>
+
 </html>
