@@ -7,12 +7,13 @@
     <title>detailpagina</title>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   </head>
+
   <body>
     <!-- HEADER -->
     <header>
       <img src="./img/logo.png" alt="Logo of Transavia" width="20%"> <!-- delete width when using starting with css -->
       <input type="text" placeholder="zoeken">
-      <button class="fa fa-user" aria="true">Account icon</button> <!-- maybe as button if overlay -->
+      <button class="fa fa-user" aria="true">Account icon</button>
     </header>
 
     <!-- LOGIN/MAAK ACCOUNT -->
@@ -23,12 +24,25 @@
           <li>Maak een account</li>
         </ul>
 
-        <label for="">Gebruikersnaam: </label>
-        <input type="text" name="gebruikersnaam">
+        <!-- LOGIN -->
+        <label for="">E-mail: </label>
+        <input type="text" name="gebruikersnaam" required>
         <label for="">Wachtwoord: </label>
-        <input type="text" name="wachtwoord">
+        <input type="text" name="wachtwoord" required>
 
         <input type="submit" name="login" value="login">
+
+        <!-- MAAK ACCOUNT -->
+        <label for="">E-mail: </label>
+        <input type="text" name="gebruikersnaam" required>
+        <label for="">Wachtwoord: </label>
+        <input type="text" name="wachtwoord" required>
+        <label for="">E-Gebruikersnaam: </label>
+        <input type="text" name="gebruikersnaam" required>
+
+        <input type="submit" name="maak_account" value="maak aan">
+
+        <a href="#">Wachtwoord vergeten?</a>
       </fieldset>
     </form>
 
@@ -44,9 +58,14 @@
       Koop babyschoentjes</p>
     </main>
 
+    <!-- LIKE & COMMENT -->
+    <button class="fa fa-heart"><span>aantal</span></button>
+    <button class="fa fa-comment-o"><span>aantal</span></button>
+
+    <!-- COMMENTS -->
     <section>
       <h3>Reacties <span>(7)</span></h3>
-      <div>comment</div>
+      <div>Naam: comment</div>
     </section>
 
   </body>
