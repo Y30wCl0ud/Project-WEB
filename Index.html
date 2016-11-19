@@ -18,29 +18,45 @@
 
     <!-- LOGIN/MAAK ACCOUNT -->
     <form action="">
-      <fieldset>
-        <ul>
-          <li>Inloggen</li>
-          <li>Maak een account</li>
-        </ul>
 
-        <!-- LOGIN -->
-        <label for="">E-mail: </label>
-        <input type="text" name="gebruikersnaam" required>
-        <label for="">Wachtwoord: </label>
+      <ul>
+        <li>Inloggen</li>
+        <li>Maak een account</li>
+      </ul>
+
+      <!-- LOGIN -->
+      <fieldset>
+        <legend for="">E-mail: </legend>
+        <input type="email" name="email" placeholder="b.v. verhaal@live.nl" required>
+        <legend for="">Wachtwoord: </legend>
         <input type="text" name="wachtwoord" required>
 
         <input type="submit" name="login" value="login">
+        <a href="#">Wachtwoord vergeten?</a>
+      </fieldset>
 
-        <!-- MAAK ACCOUNT -->
-        <label for="">E-mail: </label>
+      <!-- MAAK ACCOUNT -->
+      <fieldset>
+        <legend>Voornaam: </legend>
+        <input type="text" name="vnaam" required>
+        <legend>Tussenvoegsel: </legend>
+        <input type="text" name="tvoegsel" placeholder="Optioneel">
+        <legend>Achternaam: </legend>
+        <input type="text" name="anaam" required>
+        <legend>Adres</legend>
+        <input type="text" name="straat" placeholder="Straatnaam" required>
+        <input type="text" name="postcode" placeholder="Postcode" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
+        <input type="text" name="huisnummer" placeholder="Huisnummer" required>
+        <legend>Telefoonnummer: </legend>
+        <input type="number" name="telnummer" required>
+        <legend for="">E-mail: </legend>
+        <input type="email" name="email" required>
+        <legend for="">Gebruikersnaam: </legend>
         <input type="text" name="gebruikersnaam" required>
-        <label for="">Wachtwoord: </label>
+        <legend for="">Wachtwoord: </legend>
         <input type="text" name="wachtwoord" required>
-        <label for="">E-Gebruikersnaam: </label>
-        <input type="text" name="gebruikersnaam" required>
 
-        <input type="submit" name="maak_account" value="maak aan">
+        <input type="submit" name="maak_account" value="maak_aan">
       </fieldset>
     </form>
 
