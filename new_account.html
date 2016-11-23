@@ -4,43 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Transavia Verhalen - Maak een account aan</title>
   </head>
   <body>
     <!-- Maak account formulier -->
     <form>
       <fieldset>
         <legend>Maak een account aan: </legend>
+
         <label>Voornaam: </label>
-
         <input type="text" name="vnaam" required>
+
         <label>Tussenvoegsel: </label>
-
         <input type="text" name="tvoegsel" placeholder="Optioneel">
+
         <label>Achternaam: </label>
-
         <input type="text" name="anaam" required>
+
         <label>Straatnaam</label>
-
         <input type="text" name="straat" placeholder="Straatnaam" required>
+
         <label>Postcode</label>
-
         <input type="text" name="postcode" placeholder="Postcode" pattern="[1-9][0-9]{3}\s?[a-zA-Z]{2}" required>
+
         <label>Huisnummer</label>
+        <input type="number" name="huisnummer" placeholder="Huisnummer" required>
 
-        <input type="text" name="huisnummer" placeholder="Huisnummer" required>
         <label>Telefoonnummer: </label>
+        <input type="tel" name="telnummer" required>
 
-        <input type="number" name="telnummer" required>
         <label for="">E-mail: </label>
-
         <input type="email" name="email" required>
+
         <label for="">Gebruikersnaam: </label>
-
         <input type="text" name="gebruikersnaam" required>
-        <label for="">Wachtwoord: </label>
 
-        <input type="text" name="wachtwoord" required>
+        <label for="">Wachtwoord: </label>
+        <input type="password" name="wachtwoord" required>
 
         <input type="submit" name="maak_account" value="maak_aan">
       </fieldset>
