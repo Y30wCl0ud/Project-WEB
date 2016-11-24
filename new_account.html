@@ -5,8 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transavia Verhalen - Maak een account aan</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/main.css">
   </head>
   <body>
+    <!-- header -->
+    <header>
+      <img src="./img/logo.png" alt="Logo of Transavia" width="20%"> <!-- delete width when using starting with css -->
+      <span>100</span> <!-- amount of active(showing) articles (before & after filtering) -->
+      <input type="text" placeholder="zoeken">
+      <i class="fa fa-search"></i>
+      <button class="fa fa-user" aria="true">Account icon</button>
+    </header>
+
+    <!-- login -->
+    <form action="">
+
+      <ul>
+        <li>Inloggen</li>
+        <li>Maak een account</li>
+      </ul>
+
+      <!-- login form -->
+      <fieldset>
+        <legend for="">Inloggen: </legend>
+        <label>E-mail: </label>
+        <input type="email" name="email" placeholder="b.v. verhaal@live.nl" required>
+        <label>Wachtwoord: </label>
+        <input type="password" name="wachtwoord" required>
+
+        <input type="submit" name="login" value="login">
+        <a href="#">Wachtwoord vergeten?</a>
+
+        <button type="button" name="new_account"><a href="">Maak account</a></button>
+      </fieldset>
+
+    </form>
+
+
     <!-- maak account formulier -->
     <form>
       <fieldset>
@@ -45,6 +81,9 @@
         <input type="submit" name="maak_account" value="maak_aan">
       </fieldset>
     </form>
+
+    <!-- delete script when done -->
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
   </body>
 </html>
