@@ -57,6 +57,9 @@ table {
   src: url("../fonts/nexa_bold.otf"); }
 /*= End of Section comment block =*/
 /*=============================================<<<<<*/
+* {
+  box-sizing: border-box; }
+
 html {
   font-family: nexa;
   margin-left: 5vw;
@@ -66,13 +69,51 @@ h1 {
   font-family: nexa_bold;
   font-size: 8vw; }
 
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #000; }
+  header ul li {
+    display: inline-block; }
+    header ul li span {
+      font-family: nexa_bold;
+      font-size: 2em;
+      color: #00d66c; }
+
+.logo {
+  width: 6em;
+  height: 3.5em; }
+
+section {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
 /*=============================================>>>>>
 = overzichtpagina =
 ===============================================>>>>>*/
+.aanbevolen {
+  margin: 0 -5vw;
+  padding: 5vw;
+  background-color: #f3e5d8; }
+
 .aanbevolen article, .verhalen article {
-  display: inline-block;
-  width: 30%;
-  border: 0.01em solid #000; }
+  background-color: #fff;
+  min-height: 10em;
+  max-height: 20em;
+  padding: 1em;
+  border: 0.01em solid #000;
+  border-radius: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+h1, h2, h3 {
+  font-family: nexa_bold;
+  color: #00d66c; }
+
+h2 {
+  font-size: 2em;
+  color: #29219d; }
 
 /*= End of overzichtpagina =*/
 /*=============================================<<<<<*/

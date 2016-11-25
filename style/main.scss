@@ -52,6 +52,10 @@ table {
 
 /*----------- variables & mixins -----------*/
 
+$h_green: #00d66c;
+$h_blue: #29219d;
+$bg_secondary: #f3e5d8;
+
 @mixin vertical_margin($v_margin) {
 	margin : {
 		top: $v_margin;
@@ -75,6 +79,10 @@ table {
 /*= End of Section comment block =*/
 /*=============================================<<<<<*/
 
+* {
+	box-sizing: border-box;
+}
+
 html {
 	font-family: nexa;
 	margin : {
@@ -88,20 +96,60 @@ h1 {
 	font-size: 8vw;
 }
 
-/*=============================================>>>>>
-= overzichtpagina =
-===============================================>>>>>*/
-
-.aanbevolen, .verhalen {
-	article {
+header ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #000;
+	li {
 		display: inline-block;
-		width: 30%;
-		// min-height: 10em;
-		// max-height: 15em;
-		border: 0.01em solid #000;
+		span {
+			font-family: nexa_bold;
+			font-size: 2em;
+			color: $h_green;
+		}
 	}
 }
 
+.logo {
+	width: 6em;
+	height: 3.5em;
+}
+
+section {
+	@include vertical_margin(1em);
+}
+
+/*=============================================>>>>>
+= overzichtpagina =
+===============================================>>>>>*/
+.aanbevolen {
+	margin: 0 -5vw;
+	padding: 5vw;
+	background-color: $bg_secondary;
+}
+
+.aanbevolen, .verhalen {
+	article {
+		background-color: #fff;
+		min-height: 10em;
+	  max-height: 20em;
+		padding: 1em;
+		border: 0.01em solid #000;
+		border-radius: 1em;
+		@include vertical_margin(1em);
+	}
+}
+
+h1, h2, h3 {
+	font-family: nexa_bold;
+	color: $h_green;
+}
+
+h2 {
+	font-size: 2em;
+	color: $h_blue;
+}
 
 /*= End of overzichtpagina =*/
 /*=============================================<<<<<*/
@@ -119,9 +167,11 @@ h1 {
 .story {
 	max-width: 30em;
 	line-height: 1.3em;
+
 	p {
 		@include vertical_margin(1em);
 	}
+
 	.column_2 {
 		column-count: 2;
 	}
@@ -130,6 +180,7 @@ h1 {
 footer.article_meta {
 	@include vertical_margin(1.5em);
 	display: flex;
+
 	h4 ~ *:before {
 		content: "\00a0 - ";
 	}
