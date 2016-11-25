@@ -50,15 +50,30 @@ table {
 /*= End of CSS reset =*/
 /*=============================================<<<<<*/
 
+/*----------- variables & mixins -----------*/
+
+@mixin vertical_margin($v_margin) {
+	margin : {
+		top: $v_margin;
+		bottom: $v_margin;
+	}
+}
+
+/*----------- fonts -----------*/
+
+
 @font-face {
 	font-family: nexa;
-	src: url("../fonts/nexa_regular.otf");
+	src: url("../fonts/nexa_light.otf");
 }
 
 @font-face {
 	font-family: nexa_bold;
-	src: url("../fonts/nexa_xbold.otf");
+	src: url("../fonts/nexa_bold.otf");
 }
+
+/*= End of Section comment block =*/
+/*=============================================<<<<<*/
 
 html {
 	font-family: nexa;
@@ -70,23 +85,68 @@ html {
 
 h1 {
 	font-family: nexa_bold;
-	font-size: 2em;
+	font-size: 8vw;
 }
 
+/*=============================================>>>>>
+= overzichtpagina =
+===============================================>>>>>*/
 
-.story {
-
-}
-
-.article_meta {
-	margin : {
-		top: 1em;
-		bottom: 1em;
+.aanbevolen, .verhalen {
+	article {
+		display: inline-block;
+		width: 30%;
+		// min-height: 10em;
+		// max-height: 15em;
+		border: 0.01em solid #000;
 	}
 }
 
 
+/*= End of overzichtpagina =*/
+/*=============================================<<<<<*/
+
+
+
+/*=============================================>>>>>
+= detail pagina =
+===============================================>>>>>*/
+
+.story_container {
+	@include vertical_margin(1em);
+}
+
+.story {
+	max-width: 30em;
+	line-height: 1.3em;
+	p {
+		@include vertical_margin(1em);
+	}
+	.column_2 {
+		column-count: 2;
+	}
+}
+
+footer.article_meta {
+	@include vertical_margin(1.5em);
+	display: flex;
+	h4 ~ *:before {
+		content: "\00a0 - ";
+	}
+}
+
+/*= End of detail pagina =*/
+/*=============================================<<<<<*/
+
+
+
+
+
 // just to devide visually for now to avoid confusion
 form, fieldset {
-	border: 1px solid #000;
+	border: 0.01rem solid #000;
+}
+
+form {
+		display: none;
 }
