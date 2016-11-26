@@ -18,12 +18,12 @@
             <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
             <span>100</span> <!-- amount of active(showing) articles (before & after filtering) -->
           </li>
-          <li>
+          <li class="search">
             <input type="text" placeholder="zoeken">
-            <i class="fa fa-search"></i>
+            <button class="search_btn fa fa-search" aria="true"></button>
           </li>
           <li>
-            <button class="fa fa-user" aria="true">Account</button>
+            <button class="account_btn fa fa-user" aria="true"></button>
           </li>
         </ul>
       </nav>
@@ -53,7 +53,58 @@
 
     </form>
 
-    <!-- sort/filtet -->
+    <section class="amount_intro">
+      <section>
+        <span>100</span>
+        <p>
+          verhalen voor op reis
+        </p>
+      </section>
+    </section>
+
+    <!-- aanbevolen -->
+    <section class="aanbevolen">
+      <h2>Aanbevolen voor jou:</h2>
+      <article>
+        <h3>Haiku</h3>
+        <footer>
+          <time datetime="">y-m-d</time>
+          <p><span>14w</span> woorden</p>
+        </footer>
+
+        <p class="teaser">Op zoek naar een boek
+          Een vrouw vraagt de weg en ik
+          Koop babyschoentjes</p>
+        <span class="fa fa-heart">136</span>
+        <span class="fa fa-comment-o">42</span>
+      </article>
+
+      <article>
+        <h3>De verwarde man</h3>
+        <footer>
+          <time datetime="">y-m-d</time>
+          <p><span>14w</span> woorden</p>
+        </footer>
+
+        <p class="teaser">De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig babyschoentjes te kopen. Een luttele drie uur daarvoor</p>
+        <span class="fa fa-heart">aantal</span>
+        <span class="fa fa-comment-o">aantal</span>
+      </article>
+
+      <article>
+        <h3>Hardboiled</h3>
+        <footer>
+          <time datetime="">y-m-d</time>
+          <p><span>14w</span> woorden</p>
+        </footer>
+
+        <p class="teaser">Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank. Een hardnekkige kater bonkt tegen mijn slapen. Flashback naar</p>
+        <span class="fa fa-heart">aantal</span>
+        <span class="fa fa-comment-o">aantal</span>
+      </article>
+    </section>
+
+    <!-- sort/filter -->
     <section>
       <h1>Verhalen (<span>Number</span>)</h1>
 
@@ -118,63 +169,17 @@
       </ul>
     </section>
 
-    <!-- aanbevolen -->
-    <section class="aanbevolen">
-      <h2>Misschien vindt je deze drie ook wel leuk:</h2>
-      <article>
-        <h3>Haiku</h3>
-        <footer>
-          <h4>Molovich</h4>
-          <time datetime="">y-m-d</time>
-          <p><span>14w</span> woorden</p>
-        </footer>
-
-        <p>Op zoek naar een boek
-          Een vrouw vraagt de weg en ik
-          Koop babyschoentjes</p>
-        <span class="fa fa-heart">136</span>
-        <span class="fa fa-comment-o">42</span>
-      </article>
-
-      <article>
-        <h3>De verwarde man</h3>
-        <footer>
-          <h4>Molovich</h4>
-          <time datetime="">y-m-d</time>
-          <p><span>14w</span> woorden</p>
-        </footer>
-
-        <p>De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig babyschoentjes te kopen. Een luttele drie uur daarvoor</p>
-        <span class="fa fa-heart">aantal</span>
-        <span class="fa fa-comment-o">aantal</span>
-      </article>
-
-      <article>
-        <h3>Hardboiled</h3>
-        <footer>
-          <h4>Molovich</h4>
-          <time datetime="">y-m-d</time>
-          <p><span>14w</span> woorden</p>
-        </footer>
-
-        <p>Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank. Een hardnekkige kater bonkt tegen mijn slapen. Flashback naar</p>
-        <span class="fa fa-heart">aantal</span>
-        <span class="fa fa-comment-o">aantal</span>
-      </article>
-    </section>
-
     <!-- alle verhalen -->
     <section class="verhalen">
       <h2>De verhalen:</h2>
       <article>
         <h3>Paranoia</h3>
         <footer>
-          <h4>Molovich</h4>
           <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
         </footer>
 
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT</p>
+        <p class="teaser">Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT</p>
         <span class="fa fa-heart">aantal</span>
         <span class="fa fa-comment-o">aantal</span>
       </article>

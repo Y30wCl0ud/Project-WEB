@@ -54,6 +54,7 @@ table {
 
 $h_green: #00d66c;
 $h_blue: #29219d;
+$h_red: #ff3268;
 $bg_secondary: #f3e5d8;
 
 @mixin vertical_margin($v_margin) {
@@ -98,11 +99,17 @@ h1 {
 
 header ul {
 	display: flex;
+	justify-content: space-between;;
 	align-items: center;
-	justify-content: space-between;
+	max-height: 10vh;
+
+	margin: 0 -5vw;
+	padding: 0.5em 0.5em;
 	border-bottom: 1px solid #000;
+
 	li {
-		display: inline-block;
+		display: flex;
+		align-items: center;
 		span {
 			font-family: nexa_bold;
 			font-size: 2em;
@@ -112,8 +119,37 @@ header ul {
 }
 
 .logo {
-	width: 6em;
-	height: 3.5em;
+	width: 20%;
+	height: 20%;
+	max-width: 7em;
+	max-height: 7.5em;
+	margin-right: 1em;
+}
+
+.search {
+	margin: 0 1em;
+
+	input {
+		display: none;
+	}
+
+	.search_btn {
+		padding: 0.45em 1em;
+		border: none;
+		border-radius: 1em;
+		box-shadow: 0 0.1em #120145;
+		background-color: $h_blue;
+		color: #fff;
+	}
+}
+
+.account_btn {
+	padding: 0.45em 1em;
+	border: none;
+	border-radius: 1em;
+	box-shadow: 0 0.1em #1E9162;
+	background-color: $h_green;
+	color: #fff;
 }
 
 section {
@@ -123,6 +159,17 @@ section {
 /*=============================================>>>>>
 = overzichtpagina =
 ===============================================>>>>>*/
+
+.amount_intro {
+	min-height: 30vh;
+	max-height: 50vh;
+	margin: 0 -5vw;
+	background-image: url("../img/reading_beach3.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	@include vertical_margin(0);
+}
+
 .aanbevolen {
 	margin: 0 -5vw;
 	padding: 5vw;
@@ -141,14 +188,20 @@ section {
 	}
 }
 
+
+
 h1, h2, h3 {
 	font-family: nexa_bold;
 	color: $h_green;
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 2.375em;
 	color: $h_blue;
+}
+
+h3 {
+	font-size: 1.25em;
 }
 
 /*= End of overzichtpagina =*/
@@ -184,6 +237,10 @@ footer.article_meta {
 	h4 ~ *:before {
 		content: "\00a0 - ";
 	}
+}
+
+.teaser {
+	@include vertical_margin(0.5em);
 }
 
 /*= End of detail pagina =*/
