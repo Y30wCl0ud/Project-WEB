@@ -55,7 +55,7 @@ table {
 $h_green: #00d66c;
 $h_blue: #29219d;
 $h_red: #ff3268;
-$bg_secondary: #f3e5d8;
+$bg_divide: #f3e5d8;
 
 @mixin vertical_margin($v_margin) {
 	margin : {
@@ -90,11 +90,6 @@ html {
 	  left: 5vw;
 		right: 5vw;
 	}
-}
-
-h1 {
-	font-family: nexa_bold;
-	font-size: 8vw;
 }
 
 header ul {
@@ -149,13 +144,37 @@ header ul {
 }
 
 section {
-	@include vertical_margin(1em);
+	@include vertical_margin(1rem);
 }
 
 .article_amount {
 	font-family: nexa_bold;
 	font-size: 2em;
 	color: $h_green;
+}
+
+h1, h2, h3 {
+	display: block;
+	font-family: nexa_bold;
+	width: 100%
+}
+
+h1 {
+	font-size: 8vw;
+}
+
+h2 {
+	font-size: 2.375em;
+	color: $h_blue;
+}
+
+h3 {
+	font-size: 1.25em;
+	color: $h_green;
+}
+
+p {
+	line-height: 1.3em;
 }
 
 /*=============================================>>>>>
@@ -191,54 +210,68 @@ section {
 	}
 }
 
-.aanbevolen {
+.aanbevolen, .verhalen {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 	margin: 0 -5vw;
 	padding: 5vw;
-	background-color: $bg_secondary;
+	background-color: $bg_divide;
+}
+
+.aanbevolen {
+
 }
 
 .aanbevolen, .verhalen {
 	article {
-		background-color: #fff;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+		flex: 1 2 12em;
 		min-height: 10rem;
 	  max-height: 20rem;
+		max-width: 48%;
+
+		margin: 1rem 0.5rem;
 		padding: 1rem;
 		border: 0.01em solid #000;
 		border-radius: 1rem;
+		background-color: #fff;
+
+		.likes, .comments {
+			align-self: flex-end;
+		}
+
+		.comments {
+			margin-left: 1em;
+		}
+
 		@include vertical_margin(1rem);
 	}
 }
 
-
-
-h1, h2, h3 {
-	font-family: nexa_bold;
-	color: $h_green;
+.sort_filt {
+	h3 {
+		text-align: center;
+	}
 }
 
-h2 {
-	font-size: 2.375em;
-	color: $h_blue;
-}
 
-h3 {
-	font-size: 1.25em;
-}
 
 /*=============================================>>>>>
 = detail pagina =
 ===============================================>>>>>*/
 
 .story_container {
-	@include vertical_margin(1em);
+	@include vertical_margin(1rem);
 }
 
 .story {
 	max-width: 30em;
-	line-height: 1.3em;
 
 	p {
-		@include vertical_margin(1em);
+		@include vertical_margin(1rem);
 	}
 
 	.column_2 {
@@ -247,7 +280,7 @@ h3 {
 }
 
 footer.article_meta {
-	@include vertical_margin(1.5em);
+	@include vertical_margin(1.5rem);
 	display: flex;
 
 	h4 ~ *:before {
@@ -256,12 +289,17 @@ footer.article_meta {
 }
 
 .teaser {
-	@include vertical_margin(0.5em);
+	font-size: 0.75em;
+	@include vertical_margin(0.5rem);
 }
 
 /*= End of detail pagina =*/
 /*=============================================<<<<<*/
 
+
+@media screen and(min-width: 30em) {
+
+}
 
 
 
