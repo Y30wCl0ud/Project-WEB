@@ -15,16 +15,19 @@
       <nav>
         <ul>
           <li>
-            <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
-            <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
-            <p class="extra_title">verhalen</p>
+            <a href="index.html">
+              <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
+            </a>
+              <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
+              <p class="extra_title">verhalen</p>
+            </a>
           </li>
           <li class="search">
             <input type="text" placeholder="zoeken">
             <button class="search_btn fa fa-search" aria="true"></button>
           </li>
           <li>
-            <button class="account_btn" aria="true"><span class="fa fa-user"></span>account</button>
+            <a class="account_btn" aria="true" href="new_account.html"><span class="fa fa-user"></span>account</a> <!-- an a for now will see wether i can use button/input -->
           </li>
         </ul>
       </nav>
@@ -135,10 +138,10 @@
       <!-- filter -->
       <h4>Filteren</h4>
       <ul>
-        <li>Thema
+        <li class="filter_kopje">Thema
           <ul>
             <li>
-              <label>Personen (<span>x</span>) <input type="checkbox" value="personen"></label>
+              <label name="personen">Personen (<span>x</span>) <input type="checkbox" value="personen"></label>
             </li>
             <li>
               <label>Familie(<span>x</span>) <input type="checkbox" value="familie"></label>
@@ -167,7 +170,7 @@
           </ul>
         </li>
 
-        <li>Geschreven taal
+        <li class="filter_kopje">Geschreven taal
           <ul>
             <li>
               <label>Nederlands (<span>x</span>) <input type="checkbox" value="nederlands"></label>
@@ -182,7 +185,7 @@
         </li>
       </ul>
 
-      <h3>Verhalen (<span>Number</span>)</h3>
+      <span class="article_amount">Resultaat</span> <!-- js nodig hiervoor -->
     </section>
 
     <!-- alle verhalen -->

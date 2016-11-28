@@ -45,6 +45,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  text-decoration: none; }
+
 /*= End of CSS reset =*/
 /*=============================================<<<<<*/
 /*----------- variables & mixins -----------*/
@@ -73,7 +76,8 @@ header ul {
   position: relative;
   margin: 0 -5vw;
   padding: 0.5rem 0.5rem;
-  box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15);
+  background-color: #fff; }
   header ul li {
     display: flex;
     align-items: center; }
@@ -107,7 +111,7 @@ header ul {
 
 .search_btn, .account_btn {
   font-size: 1em;
-  padding: 0.3rem 0.8rem;
+  padding: 0.4rem 0.8rem;
   border: none;
   border-radius: 1rem;
   color: #fff; }
@@ -207,14 +211,29 @@ p {
 .sort_filt {
   display: flex;
   flex-direction: column;
+  max-width: 30em;
+  margin: 2rem auto;
   border: 1px solid green;
   border-radius: 1rem;
   padding: 1rem; }
   .sort_filt h3, .sort_filt h4 {
-    padding-bottom: 1rem; }
+    margin-bottom: .5rem; }
+  .sort_filt select {
+    margin-bottom: 1rem; }
+  .sort_filt .article_amount {
+    margin-top: 1rem;
+    font-size: 1.5em;
+    text-align: center; }
+  .sort_filt .filter_kopje li {
+    margin: 0.2rem 1rem; }
 
 h4 + ul {
   border: 1px solid green; }
+
+label {
+  display: block; }
+  label [type="checkbox"] {
+    margin-left: auto; }
 
 /*= End of sort/filt =*/
 /*=============================================<<<<<*/
@@ -246,7 +265,58 @@ footer.article_meta {
 
 /*= End of detail pagina =*/
 /*=============================================<<<<<*/
-@media screen and (min-width: 40rem) {
+/*=============================================>>>>>
+= new account =
+===============================================>>>>>*/
+.new_account {
+  background-color: #f3e5d8; }
+
+.new_account_form {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border-radius: 0.8rem;
+  background-color: #fff; }
+  .new_account_form fieldset {
+    border: none;
+    padding: 1rem; }
+    .new_account_form fieldset legend {
+      padding: 1rem 0;
+      font-family: nexa_bold;
+      font-size: 1.5em;
+      text-align: center;
+      color: #00d66c; }
+  .new_account_form label {
+    margin-bottom: 0.2rem;
+    font-family: nexa_bold; }
+  .new_account_form input {
+    width: 100%;
+    margin-bottom: 0.8rem;
+    border: 0.1rem solid #909090;
+    border-radius: 0.3rem;
+    padding: .4rem;
+    font-family: nexa;
+    font-size: 1em; }
+  .new_account_form input:focus {
+    border-color: #29219d;
+    outline: none; }
+  .new_account_form [type="submit"] {
+    display: block;
+    min-width: 8rem;
+    max-width: 10em;
+    margin: 0 auto;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.15rem #ca2b55;
+    background-color: #ff3268;
+    font-family: nexa_bold;
+    color: #fff; }
+
+/*= End of new account =*/
+/*=============================================<<<<<*/
+@media screen and (min-width: 28rem) {
   h2 {
     font-size: 2.375em;
     color: #29219d; }
@@ -261,13 +331,13 @@ footer.article_meta {
       font-size: 3em; }
 
   .logo {
-    max-width: 3rem;
-    max-height: 3.5rem; }
+    max-width: 2.5rem;
+    max-height: 3rem; }
 
   .search input {
     display: inline-block;
     width: 8rem;
-    padding: 0.45rem 0.5rem;
+    padding: 0.4rem 0.5rem;
     border: 0.1rem solid #000;
     border-radius: 1rem 0 0 1rem; }
 
@@ -301,5 +371,5 @@ footer.article_meta {
 form, fieldset {
   border: 0.01rem solid #000; }
 
-form {
+form[action] {
   display: none; }

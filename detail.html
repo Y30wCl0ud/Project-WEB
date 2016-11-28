@@ -12,11 +12,24 @@
   <body>
     <!-- header -->
     <header>
-      <img class="logo" src="./img/logo.png" alt="Logo of Transavia"> 
-      <span>100</span> <!-- amount of active(showing) articles (before & after filtering) -->
-      <input type="text" placeholder="zoeken">
-      <i class="fa fa-search"></i>
-      <button class="fa fa-user" aria="true">Account icon</button>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">
+              <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
+            </a>
+            <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
+            <p class="extra_title">verhalen</p>
+          </li>
+          <li class="search">
+            <input type="text" placeholder="zoeken">
+            <button class="search_btn fa fa-search" aria="true"></button>
+          </li>
+          <li>
+            <a class="account_btn" aria="true" href="new_account.html"><span class="fa fa-user"></span>account</a> <!-- an a for now will see wether i can use button/input -->
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- login -->
