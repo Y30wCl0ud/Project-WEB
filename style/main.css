@@ -299,10 +299,10 @@ footer.article_meta {
   .new_account_form fieldset {
     border: none; }
     .new_account_form fieldset legend {
+      margin: auto;
       padding: 1rem 0;
       font-family: nexa_bold;
       font-size: 1.5em;
-      text-align: center;
       color: #00d66c; }
   .new_account_form label {
     margin-bottom: 0.2rem;
@@ -379,10 +379,27 @@ footer.article_meta {
     max-width: 48%; }
 
   .teaser {
-    font-size: 1em; } }
-/*=============================================>>>>>
-= new account  mq=
-===============================================>>>>>*/
+    font-size: 1em; }
+
+  /*=============================================>>>>>
+  = new account  mq=
+  ===============================================>>>>>*/
+  .new_account_form {
+    padding: 0; }
+    .new_account_form fieldset {
+      display: flex;
+      flex-flow: row-reverse nowrap; }
+      .new_account_form fieldset:first-child {
+        padding: 1rem 2rem; }
+    .new_account_form label {
+      margin: 0;
+      width: auto; }
+    .new_account_form input {
+      width: auto; }
+
+  .coo {
+    display: flex;
+    flex-flow: column wrap; } }
 @media screen and (min-width: 70em) {
   .extra_title {
     display: inline-block; }

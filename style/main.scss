@@ -417,15 +417,13 @@ footer.article_meta {
 		}
 	}
 
-
-
 	fieldset {
 		border: none;
 		legend {
+			margin: auto;
 			padding: 1rem 0;
 			font-family: nexa_bold;
 			font-size: 1.5em;
-			text-align: center;
 			color: $h_green;
 		}
 	}
@@ -541,14 +539,45 @@ footer.article_meta {
 	.teaser {
 		font-size: 1em;
 	}
-}
 
 	/*=============================================>>>>>
 	= new account  mq=
 	===============================================>>>>>*/
 
+	.new_account_form {
 
+		padding: 0;
 
+		fieldset {
+			display: flex;
+			flex-flow: row-reverse nowrap;
+
+			&:first-child {
+				padding: 1rem 2rem;
+			}
+		}
+
+		label {
+			margin: 0;
+			width: auto;
+		}
+
+		input {
+			width: auto;
+
+		}
+
+		input:focus {
+
+		}
+
+	}
+
+	.coo {
+		display: flex;
+		flex-flow: column wrap;
+	}
+}
 
 
 @media screen and(min-width: 70em) {
