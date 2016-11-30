@@ -526,14 +526,18 @@ footer.article_meta {
 }
 
 @media screen and(min-width: 70em) {
-	.amount_intro {
-		// min-height: 70vh;
-		// background-image: url(../img/reading_beach3.jpg);
-	}
+
 	.extra_title {
 		display: inline-block;
 		&:before {
 			content: "\00a0";
+		}
+	}
+
+	.verhalen {
+		article {
+			min-width: 23%;
+			// max-width: 23%
 		}
 	}
 

@@ -367,6 +367,9 @@ footer.article_meta {
     .extra_title:before {
       content: "\00a0"; }
 
+  .verhalen article {
+    min-width: 23%; }
+
   .teaser {
     font-size: 1.25em; } }
 form, fieldset {
