@@ -191,6 +191,9 @@ p {
   border: 0.01em solid #000;
   border-radius: 1rem;
   background-color: #fff; }
+  .aanbevolen article > p, .verhalen article > p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
   .aanbevolen article > span, .verhalen article > span {
     align-self: flex-end; }
   .aanbevolen article:after, .verhalen article:after {
@@ -201,9 +204,6 @@ p {
   margin-left: 1em; }
 .aanbevolen footer, .verhalen footer {
   font-size: 0.75em; }
-
-.sort_filt h3 {
-  text-align: center; }
 
 /*=============================================>>>>>
 = sort/filt =
@@ -216,6 +216,8 @@ p {
   border: 1px solid green;
   border-radius: 1rem;
   padding: 1rem; }
+  .sort_filt h3 {
+    text-align: center; }
   .sort_filt h3, .sort_filt h4 {
     margin-bottom: .5rem; }
   .sort_filt select {
@@ -245,7 +247,7 @@ label {
   margin-bottom: 1rem; }
 
 .story {
-  max-width: 30em; }
+  max-width: 20em; }
   .story p {
     margin-top: 1rem;
     margin-bottom: 1rem; }
@@ -259,10 +261,6 @@ footer.article_meta {
   footer.article_meta h4 ~ *:before {
     content: "\00a0 - "; }
 
-.teaser {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem; }
-
 /*= End of detail pagina =*/
 /*=============================================<<<<<*/
 /*=============================================>>>>>
@@ -274,14 +272,17 @@ footer.article_meta {
 .new_account_form {
   display: flex;
   flex-direction: column;
-  max-width: 30rem;
-  margin: 0 auto;
-  margin-top: 2rem;
+  max-width: 25rem;
+  margin: 2rem auto;
+  border: none;
   border-radius: 0.8rem;
+  padding: 2rem 3rem;
   background-color: #fff; }
+  .new_account_form div {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: -1em; }
   .new_account_form fieldset {
-    border: none;
-    padding: 1rem; }
+    border: none; }
     .new_account_form fieldset legend {
       padding: 1rem 0;
       font-family: nexa_bold;
@@ -306,7 +307,7 @@ footer.article_meta {
     display: block;
     min-width: 8rem;
     max-width: 10em;
-    margin: 0 auto;
+    margin: 2rem auto 1rem auto;
     border: none;
     border-radius: 1rem;
     box-shadow: 0 0.15rem #ca2b55;
@@ -316,7 +317,7 @@ footer.article_meta {
 
 /*= End of new account =*/
 /*=============================================<<<<<*/
-@media screen and (min-width: 28rem) {
+@media screen and (min-width: 30rem) {
   h2 {
     font-size: 2.375em;
     color: #29219d; }

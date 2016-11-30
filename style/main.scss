@@ -261,6 +261,10 @@ p {
 		border-radius: 1rem;
 		background-color: #fff;
 
+			& > p {
+				@include vertical_margin(0.5rem);
+			}
+
 			& > span {
 				align-self: flex-end;
 			}
@@ -285,12 +289,6 @@ p {
 	}
 
 
-.sort_filt {
-	h3 {
-		text-align: center;
-	}
-}
-
 /*=============================================>>>>>
 = sort/filt =
 ===============================================>>>>>*/
@@ -304,6 +302,10 @@ p {
 	border: 1px solid green;
 	border-radius: 1rem;
 	padding: 1rem;
+
+	h3 {
+		text-align: center;
+	}
 
 	h3, h4 {
 		margin-bottom: .5rem;
@@ -356,7 +358,7 @@ label {
 }
 
 .story {
-	max-width: 30em;
+	max-width: 20em;
 
 	p {
 		@include vertical_margin(1rem);
@@ -375,9 +377,7 @@ footer.article_meta {
 	}
 }
 
-.teaser {
-	@include vertical_margin(0.5rem);
-}
+
 
 /*= End of detail pagina =*/
 /*=============================================<<<<<*/
@@ -394,16 +394,21 @@ footer.article_meta {
 .new_account_form {
 	display: flex;
 	flex-direction: column;
-	max-width: 30rem;
+	max-width: 25rem;
 
-	margin: 0 auto;
-	margin-top: 2rem;
+	margin: 2rem auto;
+	border: none;
 	border-radius: 0.8rem;
+	padding: 2rem 3rem;
 	background-color: #fff;
+
+	div {
+		background-color: hsla(100, 100, 100, 0.5);
+		margin: -1em;
+	}
 
 	fieldset {
 		border: none;
-		padding: 1rem;
 		legend {
 			padding: 1rem 0;
 			font-family: nexa_bold;
@@ -440,7 +445,7 @@ footer.article_meta {
 		min-width: 8rem;
 		max-width: 10em;
 
-		margin: 0 auto;
+		margin: 2rem auto 1rem auto;
 		border: none;
 		border-radius: 1rem;
 		box-shadow: 0 0.15rem #ca2b55;
@@ -455,7 +460,7 @@ footer.article_meta {
 /*= End of new account =*/
 /*=============================================<<<<<*/
 
-@media screen and(min-width: 28rem) {
+@media screen and(min-width: 30rem) {
 	h2 {
 		font-size: 2.375em;
 		color: $h_blue;
