@@ -58,8 +58,9 @@ a {
 @font-face {
   font-family: nexa_bold;
   src: url("../fonts/nexa_bold.otf"); }
-/*= End of Section comment block =*/
-/*=============================================<<<<<*/
+/*=============================================>>>>>
+= general =
+===============================================>>>>>*/
 * {
   box-sizing: border-box; }
 
@@ -105,9 +106,6 @@ header ul {
   margin-left: auto; }
   .search input {
     display: none; }
-  .search .search_btn {
-    box-shadow: 0 0.15rem #120145;
-    background-color: #29219d; }
 
 .search_btn, .account_btn {
   font-size: 1em;
@@ -118,7 +116,17 @@ header ul {
 
 .account_btn {
   box-shadow: 0 0.15rem #1E9162;
-  background-color: #00d66c; }
+  background-color: #00d66c;
+  transition: background-color 1s ease; }
+  .account_btn:hover {
+    background-color: #50df96; }
+
+.search_btn {
+  box-shadow: 0 0.15rem #120145;
+  background-color: #29219d;
+  transition: background-color 1s ease; }
+  .search_btn:hover {
+    background-color: #5e40b8; }
 
 section {
   margin-top: 1rem;
@@ -147,6 +155,9 @@ h4 {
 
 p {
   line-height: 1.3em; }
+
+.fa:after {
+  content: "\00a0"; }
 
 /*=============================================>>>>>
 = overzichtpagina =
@@ -178,32 +189,33 @@ p {
   margin: 0 -5vw;
   padding: 5vw;
   background-color: #f3e5d8; }
-
-.aanbevolen article, .verhalen article {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  flex: 1 2 12em;
-  min-height: 10rem;
-  max-height: 22rem;
-  margin: 1rem 0.5rem;
-  padding: 1rem;
-  border: 0.01em solid #000;
-  border-radius: 1rem;
-  background-color: #fff; }
-  .aanbevolen article > p, .verhalen article > p {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem; }
-  .aanbevolen article > span, .verhalen article > span {
-    align-self: flex-end; }
-  .aanbevolen article:after, .verhalen article:after {
-    content: "\00a0"; }
-.aanbevolen .likes, .verhalen .likes {
-  color: #ff3268; }
-.aanbevolen .comments, .verhalen .comments {
-  margin-left: 1em; }
-.aanbevolen footer, .verhalen footer {
-  font-size: 0.75em; }
+  .aanbevolen h2, .verhalen h2 {
+    margin-left: 0.5rem; }
+  .aanbevolen article, .verhalen article {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    flex: 1 2 12em;
+    min-height: 10rem;
+    max-height: 22rem;
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #fff; }
+    .aanbevolen article > p, .verhalen article > p {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem; }
+    .aanbevolen article > span, .verhalen article > span {
+      align-self: flex-end; }
+  .aanbevolen .likes, .verhalen .likes {
+    color: #ff3268; }
+  .aanbevolen .comments, .verhalen .comments {
+    margin-left: 1em; }
+  .aanbevolen footer, .verhalen footer {
+    font-size: 0.75em; }
+    .aanbevolen footer p, .verhalen footer p {
+      font-family: nexa_bold;
+      color: #29219d; }
 
 /*=============================================>>>>>
 = sort/filt =
@@ -216,8 +228,6 @@ p {
   border: 1px solid green;
   border-radius: 1rem;
   padding: 1rem; }
-  .sort_filt h3 {
-    text-align: center; }
   .sort_filt h3, .sort_filt h4 {
     margin-bottom: .5rem; }
   .sort_filt select {
@@ -226,19 +236,19 @@ p {
     margin-top: 1rem;
     font-size: 1.5em;
     text-align: center; }
-  .sort_filt .filter_kopje li {
-    margin: 0.2rem 1rem; }
-
-h4 + ul {
-  border: 1px solid green; }
+  .sort_filt .filter_kopje {
+    font-family: nexa_bold; }
+    .sort_filt .filter_kopje li {
+      font-family: nexa;
+      margin: 0.2rem 1rem; }
+  .sort_filt .filter_kopje:first-of-type {
+    margin-bottom: 1rem; }
 
 label {
   display: block; }
   label [type="checkbox"] {
     margin-left: auto; }
 
-/*= End of sort/filt =*/
-/*=============================================<<<<<*/
 /*=============================================>>>>>
 = detail pagina =
 ===============================================>>>>>*/
@@ -261,8 +271,6 @@ footer.article_meta {
   footer.article_meta h4 ~ *:before {
     content: "\00a0 - "; }
 
-/*= End of detail pagina =*/
-/*=============================================<<<<<*/
 /*=============================================>>>>>
 = new account =
 ===============================================>>>>>*/
@@ -276,11 +284,18 @@ footer.article_meta {
   margin: 2rem auto;
   border: none;
   border-radius: 0.8rem;
-  padding: 2rem 3rem;
-  background-color: #fff; }
-  .new_account_form div {
-    background-color: rgba(255, 255, 255, 0.5);
-    margin: -1em; }
+  padding: 2rem 2rem;
+  background-color: rgba(255, 255, 255, 0.5); }
+  .new_account_form div:first-child {
+    margin: -2rem -2rem 1rem -2rem;
+    border-radius: 0.8rem 0.8rem 0 0;
+    padding: 1rem 2rem;
+    background-color: #fff; }
+  .new_account_form div:nth-last-child(1) {
+    margin: 0rem -2rem -2rem -2rem;
+    border-radius: 0  0 0.8rem 0.8rem;
+    padding: 0.5rem;
+    background-color: #fff; }
   .new_account_form fieldset {
     border: none; }
     .new_account_form fieldset legend {
@@ -315,8 +330,9 @@ footer.article_meta {
     font-family: nexa_bold;
     color: #fff; }
 
-/*= End of new account =*/
-/*=============================================<<<<<*/
+/*=============================================>>>>>
+= mediaqueries =
+===============================================>>>>>*/
 @media screen and (min-width: 30rem) {
   h2 {
     font-size: 2.375em;
@@ -356,11 +372,17 @@ footer.article_meta {
     .amount_intro .article_amount {
       font-size: 2.375em; }
 
+  /*=============================================>>>>>
+  = overzichtpagina mq =
+  ===============================================>>>>>*/
   .aanbevolen article, .verhalen article {
     max-width: 48%; }
 
   .teaser {
     font-size: 1em; } }
+/*=============================================>>>>>
+= new account  mq=
+===============================================>>>>>*/
 @media screen and (min-width: 70em) {
   .extra_title {
     display: inline-block; }
@@ -368,10 +390,8 @@ footer.article_meta {
       content: "\00a0"; }
 
   .verhalen article {
-    min-width: 23%; }
-
-  .teaser {
-    font-size: 1.25em; } }
+    min-width: 23%;
+    max-width: 33%; } }
 form, fieldset {
   border: 0.01rem solid #000; }
 

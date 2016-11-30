@@ -81,8 +81,9 @@ $bg_divide: #f3e5d8;
 	src: url("../fonts/nexa_bold.otf");
 }
 
-/*= End of Section comment block =*/
-/*=============================================<<<<<*/
+/*=============================================>>>>>
+= general =
+===============================================>>>>>*/
 
 * {
 	box-sizing: border-box;
@@ -147,11 +148,6 @@ header ul {
 	input {
 		display: none;
 	}
-
-	.search_btn {
-		box-shadow: 0 0.15rem #120145;
-		background-color: $h_blue;
-	}
 }
 
 .search_btn, .account_btn {
@@ -165,6 +161,21 @@ header ul {
 .account_btn {
 	box-shadow: 0 0.15rem #1E9162;
 	background-color: $h_green;
+	transition: background-color 1s ease;
+
+	&:hover {
+		background-color: #50df96;
+	}
+}
+
+.search_btn {
+	box-shadow: 0 0.15rem #120145;
+	background-color: $h_blue;
+	transition: background-color 1s ease;
+
+	&:hover {
+		background-color: #5e40b8;
+	}
 }
 
 section {
@@ -201,6 +212,9 @@ p {
 	line-height: 1.3em;
 }
 
+.fa:after {
+	content: "\00a0";
+}
 
 /*=============================================>>>>>
 = overzichtpagina =
@@ -242,11 +256,11 @@ p {
 	margin: 0 -5vw;
 	padding: 5vw;
 	background-color: $bg_divide;
-}
 
+	h2 {
+		margin-left: 0.5rem;
+	}
 
-
-.aanbevolen, .verhalen {
 	article {
 		display: flex;
 		flex-flow: row wrap;
@@ -257,22 +271,17 @@ p {
 
 		margin: 1rem 0.5rem;
 		padding: 1rem;
-		border: 0.01em solid #000;
 		border-radius: 1rem;
 		background-color: #fff;
 
 			& > p {
 				@include vertical_margin(0.5rem);
+				// overflow: hidden; does not work atm need an alt
 			}
 
 			& > span {
 				align-self: flex-end;
 			}
-
-			&:after {
-				content: "\00a0";
-			}
-
 		}
 
 		.likes {
@@ -285,9 +294,12 @@ p {
 
 		footer {
 			font-size: 0.75em;
+			p {
+				font-family: nexa_bold;
+				color: $h_blue;
+			}
 		}
 	}
-
 
 /*=============================================>>>>>
 = sort/filt =
@@ -302,10 +314,6 @@ p {
 	border: 1px solid green;
 	border-radius: 1rem;
 	padding: 1rem;
-
-	h3 {
-		text-align: center;
-	}
 
 	h3, h4 {
 		margin-bottom: .5rem;
@@ -322,31 +330,27 @@ p {
 	}
 
 	.filter_kopje {
-		// font-size:
+		font-family: nexa_bold;
 		li {
+			font-family: nexa;
 			margin: 0.2rem 1rem;
 		}
 	}
 
-}
+	.filter_kopje:first-of-type {
+		margin-bottom: 1rem;
+	}
 
-h4 + ul {
-	border: 1px solid green;
 }
 
 label {
 	display: block;
-
 
 	[type="checkbox"] {
 		margin-left: auto;
 	}
 }
 
-
-
-/*= End of sort/filt =*/
-/*=============================================<<<<<*/
 
 
 /*=============================================>>>>>
@@ -378,11 +382,6 @@ footer.article_meta {
 }
 
 
-
-/*= End of detail pagina =*/
-/*=============================================<<<<<*/
-
-
 /*=============================================>>>>>
 = new account =
 ===============================================>>>>>*/
@@ -399,13 +398,26 @@ footer.article_meta {
 	margin: 2rem auto;
 	border: none;
 	border-radius: 0.8rem;
-	padding: 2rem 3rem;
-	background-color: #fff;
+	padding: 2rem 2rem;
+	background-color: hsla(100, 100, 100, 0.5);
 
 	div {
-		background-color: hsla(100, 100, 100, 0.5);
-		margin: -1em;
+
+		&:first-child {
+			margin: -2rem -2rem 1rem -2rem;
+			border-radius: 0.8rem 0.8rem 0 0;
+			padding: 1rem 2rem;
+			background-color: #fff;
+		}
+		&:nth-last-child(1) {
+			margin: 0rem -2rem -2rem -2rem;
+			border-radius: 0  0 0.8rem 0.8rem;
+			padding: 0.5rem;
+			background-color: #fff;
+		}
 	}
+
+
 
 	fieldset {
 		border: none;
@@ -457,8 +469,10 @@ footer.article_meta {
 
 }
 
-/*= End of new account =*/
-/*=============================================<<<<<*/
+/*=============================================>>>>>
+= mediaqueries =
+===============================================>>>>>*/
+
 
 @media screen and(min-width: 30rem) {
 	h2 {
@@ -473,6 +487,7 @@ footer.article_meta {
 
 	header ul {
 		max-height: 10vh;
+
 		.article_amount {
 			font-size: 3em;
 		}
@@ -501,7 +516,6 @@ footer.article_meta {
 		min-height: 70vh;
 		font-size: 2em;
 
-
 		section {
 			padding: 2rem;
 			border-radius: 1rem;
@@ -510,20 +524,32 @@ footer.article_meta {
 		.article_amount {
 			font-size: 2.375em;
 		}
-
 	}
+
+	/*=============================================>>>>>
+	= overzichtpagina mq =
+	===============================================>>>>>*/
 
 	.aanbevolen, .verhalen {
 		article {
 			max-width: 48%;
 		}
+		h2 {
+			// margin-left: 15%;
+		}
 	}
 	.teaser {
 		font-size: 1em;
 	}
-
-
 }
+
+	/*=============================================>>>>>
+	= new account  mq=
+	===============================================>>>>>*/
+
+
+
+
 
 @media screen and(min-width: 70em) {
 
@@ -537,17 +563,10 @@ footer.article_meta {
 	.verhalen {
 		article {
 			min-width: 23%;
-			// max-width: 23%
+			max-width: 33%
 		}
 	}
-
-	.teaser {
-		font-size: 1.25em;
-
-	}
-
 }
-
 
 
 // just to devide visually for now to avoid confusion

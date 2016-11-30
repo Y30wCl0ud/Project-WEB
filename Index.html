@@ -18,16 +18,15 @@
             <a href="index.html">
               <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
             </a>
-              <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
-              <p class="extra_title">verhalen</p>
-            </a>
+            <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
+            <p class="extra_title">verhalen</p>
           </li>
           <li class="search">
             <input type="text" placeholder="zoeken">
-            <button class="search_btn fa fa-search" aria="true"></button>
+            <button class="search_btn fa fa-search" role="button"></button>
           </li>
           <li>
-            <a class="account_btn" aria="true" href="new_account.html"><span class="fa fa-user"></span>account</a> <!-- an a for now will see wether i can use button/input -->
+            <a class="account_btn" href="new_account.html"><span class="fa fa-user"></span>account</a> <!-- an a for now will see wether i can use button/input -->
           </li>
         </ul>
       </nav>
@@ -43,16 +42,16 @@
 
       <!-- login form -->
       <fieldset>
-        <legend for="">Inloggen: </legend>
+        <legend>Inloggen: </legend>
         <label>E-mail: </label>
-        <input type="email" name="email" placeholder="b.v. verhaal@live.nl" required>
+        <input type="email" placeholder="b.v. verhaal@live.nl" required>
         <label>Wachtwoord: </label>
-        <input type="password" name="wachtwoord" required>
+        <input type="password" required>
 
-        <input type="submit" name="login" value="login">
+        <input type="submit" value="login">
         <a href="#">Wachtwoord vergeten?</a>
 
-        <button type="button" name="new_account"><a href="">Maak account</a></button>
+        <button type="button"><a href="">Maak account</a></button> <!-- with a a tag as i still need to start with js -->
       </fieldset>
 
     </form>
@@ -75,8 +74,8 @@
       <article>
         <h3>Haiku</h3>
         <footer>
-          <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
         </footer>
 
         <p>Op zoek naar een boek
@@ -91,8 +90,8 @@
       <article>
         <h3>De verwarde man</h3>
         <footer>
-          <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
         </footer>
 
         <p>De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig</p>
@@ -103,8 +102,8 @@
       <article>
         <h3>Hardboiled</h3>
         <footer>
-          <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
         </footer>
 
         <p>Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank.</p>
@@ -141,7 +140,7 @@
         <li class="filter_kopje">Thema
           <ul>
             <li>
-              <label name="personen">Personen (<span>x</span>) <input type="checkbox" value="personen"></label>
+              <label>Personen (<span>x</span>) <input type="checkbox" value="personen"></label>
             </li>
             <li>
               <label>Familie(<span>x</span>) <input type="checkbox" value="familie"></label>
@@ -195,8 +194,32 @@
       <article>
         <h3>Paranoia</h3>
         <footer>
-          <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
+        </footer>
+
+        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
+        <span class="likes fa fa-heart"></span><span> 136</span>
+        <span class="comments fa fa-comment-o"></span><span> 42</span>
+      </article>
+
+      <article>
+        <h3>Enigszins aan de omslachtige kant</h3>
+        <footer>
+          <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
+        </footer>
+
+        <p>Een autobus, eigendom van het Amsterdamse Gemeentevervoersbedrijf (hierna te noemen: GVB), zet mij en mijn gewaardeerde zoon, die zojuist in zijn </p>
+        <span class="likes fa fa-heart"></span><span> 136</span>
+        <span class="comments fa fa-comment-o"></span><span> 42</span>
+      </article>
+
+      <article>
+        <h3>Paranoia</h3>
+        <footer>
+          <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
         </footer>
 
         <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
@@ -207,8 +230,8 @@
       <article>
         <h3>Paranoia</h3>
         <footer>
-          <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
         </footer>
 
         <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
@@ -217,37 +240,13 @@
       </article>
 
       <article>
-        <h3>Paranoia</h3>
+        <h3>Alwetende verteller</h3>
         <footer>
-          <time datetime="">y-m-d</time>
           <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
         </footer>
 
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
-
-      <article>
-        <h3>Paranoia</h3>
-        <footer>
-          <time datetime="">y-m-d</time>
-          <p><span>14w</span> woorden</p>
-        </footer>
-
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
-
-      <article>
-        <h3>Paranoia</h3>
-        <footer>
-          <time datetime="">y-m-d</time>
-          <p><span>14w</span> woorden</p>
-        </footer>
-
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
+        <p>Kijk, daar gaat Max J. Molovich. Hij is net uit de bus gestapt en loopt nu achter een gifgroene kinderwagen waarin zijn zoon ligt te slapen. Zie ‘m daar</p>
         <span class="likes fa fa-heart"></span><span> 136</span>
         <span class="comments fa fa-comment-o"></span><span> 42</span>
       </article>
