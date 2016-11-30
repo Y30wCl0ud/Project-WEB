@@ -315,6 +315,25 @@ p {
 	border-radius: 1rem;
 	padding: 1rem;
 
+	div {
+		&:first-child {
+			margin: -1rem -1rem 1rem -1rem;
+			padding-bottom: 0.5rem;
+			text-align: center;
+			background-color: $h_red;
+		}
+		&:nth-last-child(1) {
+			margin: 0rem -1rem -1rem -1rem;
+			padding: 1rem;
+			text-align: center;
+			background-color: $h_red;
+		}
+	}
+
+	h3 {
+		color: #fff;
+	}
+
 	h3, h4 {
 		margin-bottom: .5rem;
 	}
@@ -327,6 +346,8 @@ p {
 		margin-top: 1rem;
 		font-size: 1.5em;
 		text-align: center;
+		color: #fff;
+
 	}
 
 	.filter_kopje {
@@ -351,7 +372,17 @@ label {
 	}
 }
 
-
+// forms (new account & sort/filt)
+div {
+	&:first-child {
+		border-radius: 0.8rem 0.8rem 0 0;
+		padding: 1rem 2rem;
+	}
+	&:nth-last-child(1) {
+		border-radius: 0  0 0.8rem 0.8rem;
+		padding: 0.5rem;
+	}
+}
 
 /*=============================================>>>>>
 = detail pagina =
@@ -401,21 +432,7 @@ footer.article_meta {
 	padding: 2rem 2rem;
 	background-color: hsla(100, 100, 100, 0.5);
 
-	div {
 
-		&:first-child {
-			margin: -2rem -2rem 1rem -2rem;
-			border-radius: 0.8rem 0.8rem 0 0;
-			padding: 1rem 2rem;
-			background-color: #fff;
-		}
-		&:nth-last-child(1) {
-			margin: 0rem -2rem -2rem -2rem;
-			border-radius: 0  0 0.8rem 0.8rem;
-			padding: 0.5rem;
-			background-color: #fff;
-		}
-	}
 
 	fieldset {
 		border: none;
@@ -425,6 +442,17 @@ footer.article_meta {
 			font-family: nexa_bold;
 			font-size: 1.5em;
 			color: $h_green;
+		}
+
+		div {
+			&:first-child {
+				margin: -2rem -2rem 1rem -2rem;
+				background-color: #fff;
+			}
+			&:nth-last-child(1) {
+				margin: 0rem -2rem -2rem -2rem;
+				background-color: #fff;
+			}
 		}
 	}
 
@@ -450,12 +478,12 @@ footer.article_meta {
 		// transaction here
 	}
 
-	[type="submit"] {
+	[name="maak_account"] {
 		display: block;
 		min-width: 8rem;
 		max-width: 10em;
 
-		margin: 2rem auto 1rem auto;
+		margin: 1rem auto;
 		border: none;
 		border-radius: 1rem;
 		box-shadow: 0 0.15rem #ca2b55;
@@ -463,6 +491,11 @@ footer.article_meta {
 
 		font-family: nexa_bold;
 		color: #fff;
+		transition: background-color 1s ease;
+
+		&:hover {
+			background-color: #ff658e;
+		}
 	}
 
 }
@@ -548,39 +581,15 @@ footer.article_meta {
 
 		padding: 0;
 
-		fieldset {
-			display: flex;
-			flex-flow: row-reverse nowrap;
-
-			&:first-child {
+		fieldset:first-child {
 				padding: 1rem 2rem;
 			}
 		}
 
-		label {
-			margin: 0;
-			width: auto;
-		}
-
-		input {
-			width: auto;
-
-		}
-
-		input:focus {
-
-		}
-
-	}
-
-	.coo {
-		display: flex;
-		flex-flow: column wrap;
-	}
-}
+} //end mq min-width 30rem
 
 
-@media screen and(min-width: 70em) {
+@media screen and(min-width: 70rem) {
 
 	.extra_title {
 		display: inline-block;
