@@ -130,9 +130,6 @@ nav button {
   display: none;
   content: "\00a0"; }
 
-.login_form {
-  display: none; }
-
 section {
   margin-top: 1rem;
   margin-bottom: 1rem; }
@@ -422,5 +419,5 @@ footer.article_meta {
 form, fieldset {
   border: 0.01rem solid #000; }
 
-.login_form {
+.visibility {
   display: none; }
