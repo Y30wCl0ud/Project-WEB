@@ -15,7 +15,7 @@
         <ul>
           <li>
             <a href="index.html">
-              <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
+              <img src="./img/logo.png" alt="Logo of Transavia">
             </a>
             <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
             <p class="extra_title">verhalen</p>
@@ -32,25 +32,19 @@
     </header>
 
     <!-- login -->
-    <form action="">
-
-      <ul>
-        <li>Inloggen</li>
-        <li>Maak een account</li>
-      </ul>
-
+    <form class="login_form">
       <!-- login form -->
       <fieldset>
-        <legend for="">Inloggen: </legend>
+        <legend>Inloggen: </legend>
         <label>E-mail: </label>
-        <input type="email" name="email" placeholder="b.v. verhaal@live.nl" required>
+        <input type="email" placeholder="b.v. verhaal@live.nl" required>
         <label>Wachtwoord: </label>
-        <input type="password" name="wachtwoord" required>
+        <input type="password" required>
 
-        <input type="submit" name="login" value="login">
+        <input type="submit" value="login">
         <a href="#">Wachtwoord vergeten?</a>
 
-        <button type="button" name="new_account"><a href="">Maak account</a></button>
+        <button type="button"><a href="">Maak account</a></button> <!-- with a a tag as i still need to start with js -->
       </fieldset>
 
     </form>

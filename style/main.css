@@ -85,10 +85,39 @@ header ul {
     header ul li .article_amount {
       font-size: 1.5em; }
 
-.logo {
+nav img {
   max-width: 1.5rem;
   max-height: 2rem;
   margin-right: 1rem; }
+nav input {
+  display: none; }
+nav li:nth-child(2) {
+  margin: 0 1rem;
+  margin-left: auto; }
+  nav li:nth-child(2) button {
+    box-shadow: 0 0.15rem #120145;
+    background-color: #29219d;
+    transition: background-color 1s ease; }
+    nav li:nth-child(2) button:hover {
+      background-color: #5e40b8; }
+nav li:nth-child(3) {
+  font-size: 1em;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  color: #fff; }
+  nav li:nth-child(3) button {
+    box-shadow: 0 0.15rem #1E9162;
+    background-color: #00d66c;
+    transition: background-color 1s ease; }
+    nav li:nth-child(3) button:hover {
+      background-color: #50df96; }
+nav button {
+  font-size: 1em;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  color: #fff; }
 
 .article_amount, .extra_title {
   font-size: 2em;
@@ -101,32 +130,8 @@ header ul {
   display: none;
   content: "\00a0"; }
 
-.search {
-  margin: 0 1rem;
-  margin-left: auto; }
-  .search input {
-    display: none; }
-
-.search_btn, .account_btn {
-  font-size: 1em;
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 1rem;
-  color: #fff; }
-
-.account_btn {
-  box-shadow: 0 0.15rem #1E9162;
-  background-color: #00d66c;
-  transition: background-color 1s ease; }
-  .account_btn:hover {
-    background-color: #50df96; }
-
-.search_btn {
-  box-shadow: 0 0.15rem #120145;
-  background-color: #29219d;
-  transition: background-color 1s ease; }
-  .search_btn:hover {
-    background-color: #5e40b8; }
+.login_form {
+  display: none; }
 
 section {
   margin-top: 1rem;
@@ -366,18 +371,16 @@ footer.article_meta {
     header ul .article_amount {
       font-size: 3em; }
 
-  .logo {
+  nav img {
     max-width: 2.5rem;
     max-height: 3rem; }
-
-  .search input {
+  nav ul li:nth-child(2) input {
     display: inline-block;
     width: 8rem;
     padding: 0.4rem 0.5rem;
     border: 0.1rem solid #000;
     border-radius: 1rem 0 0 1rem; }
-
-  .search_btn {
+  nav ul li:nth-child(2) button {
     margin-bottom: 0.14rem;
     padding: 0.33rem 1rem;
     border-radius: 0 1rem 1rem 0; }
@@ -419,5 +422,5 @@ footer.article_meta {
 form, fieldset {
   border: 0.01rem solid #000; }
 
-form[action] {
+.login_form {
   display: none; }

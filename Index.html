@@ -21,25 +21,22 @@
             <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
             <p class="extra_title">verhalen</p>
           </li>
-          <li class="search">
+          <li>
             <input type="text" placeholder="zoeken">
             <button class="search_btn fa fa-search" role="button"></button>
           </li>
           <li>
-            <a class="account_btn" href="new_account.html"><span class="fa fa-user"></span>account</a> <!-- an a for now will see wether i can use button/input -->
+            <!-- <a class="account_btn" href="new_account.html"><span class="fa fa-user"></span> -->
+              <button  type="button" name="button"><span class="fa fa-user"></span>account</button>
+            <!-- </a>  -->
+            <!-- an a for now will see wether i can use button/input -->
           </li>
         </ul>
       </nav>
     </header>
 
     <!-- login -->
-    <form action="">
-
-      <ul>
-        <li>Inloggen</li>
-        <li>Maak een account</li>
-      </ul>
-
+    <form class="login_form">
       <!-- login form -->
       <fieldset>
         <legend>Inloggen: </legend>
@@ -71,6 +68,27 @@
     <!-- aanbevolen -->
     <section class="aanbevolen">
       <h2>Aanbevolen voor jou:</h2>
+
+      <article>
+        <header>
+
+        </header>
+        <h3>Haiku</h3>
+        <footer>
+          <p><span>14w</span> woorden</p>
+          <time datetime="">y-m-d</time>
+        </footer>
+
+        <p>Op zoek naar een boek
+          Een vrouw vraagt de weg en ik
+          Koop babyschoentjes</p>
+        <span class="likes fa fa-heart"></span>
+        <span> 136</span>
+        <span class="comments fa fa-comment-o"></span>
+        <span> 42</span>
+      </article>
+
+
       <article>
         <h3>Haiku</h3>
         <footer>
@@ -113,7 +131,7 @@
     </section>
 
     <!-- sort/filter -->
-    <section class="sort_filt">
+    <form class="sort_filt">
       <div>
         <h3>Zoek je specifiek?</h3>
       </div>
@@ -137,6 +155,7 @@
       </select>
 
       <!-- filter -->
+
       <h4>Filteren</h4>
       <ul>
         <li class="filter_kopje">Thema
@@ -188,7 +207,7 @@
       <div>
         <span class="article_amount">Resultaat</span> <!-- js nodig hiervoor -->
       </div>
-    </section>
+    </form>
 
     <!-- alle verhalen -->
     <section class="verhalen">
