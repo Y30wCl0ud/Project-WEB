@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Transavia Verhalen - Overzichtspagina</title>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="style/main.css">
   </head>
 
@@ -22,8 +23,10 @@
             <p class="extra_title">verhalen</p>
           </li>
           <li>
-            <input type="text" placeholder="zoeken">
-            <button class="search_btn fa fa-search" role="button"></button>
+            <div>
+              <input type="text" placeholder="zoeken">
+              <button class="fa fa-search" role="button"></button>
+            </div>
           </li>
           <li>
             <button id="account_btn" type="button" name="button"><span class="fa fa-user"></span>account</button>
@@ -281,9 +284,10 @@
 
     </section>
 
-    <!-- delete script when done -->
-    <script src="main.js" charset="utf-8"></script>
+    <!-- delete this script when done -->
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+    <script src="main.js" charset="utf-8"></script>
   </body>
 
 </html>
