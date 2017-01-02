@@ -26,32 +26,38 @@
             <button class="search_btn fa fa-search" role="button"></button>
           </li>
           <li>
-            <!-- <a class="account_btn" href="new_account.html"><span class="fa fa-user"></span> -->
-              <button id="account_btn" type="button" name="button"><span class="fa fa-user"></span>account</button>
-            <!-- </a>  -->
-            <!-- an a for now will see wether i can use button/input -->
+            <button id="account_btn" type="button" name="button"><span class="fa fa-user"></span>account</button>
           </li>
         </ul>
       </nav>
+      <!-- login -->
+
+      <form class="visibility" id="login_form">
+        <!-- login form -->
+        <fieldset>
+          <div>
+            <legend>Inloggen: </legend>
+          </div>
+          <label>E-mail: </label>
+          <input type="email" placeholder="b.v. verhaal@live.nl" required>
+          <label>Wachtwoord: </label>
+          <input type="password" required>
+
+          <div>
+            <input type="submit" value="login">
+            <a href="#">Wachtwoord vergeten?</a>
+
+            <a href="new_account.html">
+              <input type="submit">Maak account</input> <!-- with a a tag as i still need to start with js -->
+            </a>
+          </div>
+
+        </fieldset>
+      </form>
+
     </header>
 
-    <!-- login -->
-    <form id="login_form">
-      <!-- login form -->
-      <fieldset>
-        <legend>Inloggen: </legend>
-        <label>E-mail: </label>
-        <input type="email" placeholder="b.v. verhaal@live.nl" required>
-        <label>Wachtwoord: </label>
-        <input type="password" required>
 
-        <input type="submit" value="login">
-        <a href="#">Wachtwoord vergeten?</a>
-
-        <button type="button"><a href="">Maak account</a></button> <!-- with a a tag as i still need to start with js -->
-      </fieldset>
-
-    </form>
 
     <section class="amount_intro">
       <section>

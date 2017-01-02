@@ -15,39 +15,41 @@
         <ul>
           <li>
             <a href="index.html">
-              <img src="./img/logo.png" alt="Logo of Transavia">
+              <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
             </a>
             <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
             <p class="extra_title">verhalen</p>
           </li>
-          <li class="search">
+          <li>
             <input type="text" placeholder="zoeken">
-            <button class="search_btn fa fa-search" aria="true"></button>
+            <button class="search_btn fa fa-search" role="button"></button>
           </li>
           <li>
-            <a class="account_btn" aria="true" href="new_account.html"><span class="fa fa-user"></span>account</a> <!-- an a for now will see wether i can use button/input -->
+            <button id="account_btn" type="button" name="button"><span class="fa fa-user"></span>account</button>
           </li>
         </ul>
       </nav>
+      <!-- login -->
+
+      <form id="login_form">
+        <!-- login form -->
+        <fieldset>
+          <legend>Inloggen: </legend>
+          <label>E-mail: </label>
+          <input type="email" placeholder="b.v. verhaal@live.nl" required>
+          <label>Wachtwoord: </label>
+          <input type="password" required>
+
+          <input type="submit" value="login">
+          <a href="#">Wachtwoord vergeten?</a>
+
+          <a href="new_account.html">
+            <input type="submit">Maak account</input> <!-- with a a tag as i still need to start with js -->
+          </a>
+        </fieldset>
+      </form>
+
     </header>
-
-    <!-- login -->
-    <form class="login_form">
-      <!-- login form -->
-      <fieldset>
-        <legend>Inloggen: </legend>
-        <label>E-mail: </label>
-        <input type="email" placeholder="b.v. verhaal@live.nl" required>
-        <label>Wachtwoord: </label>
-        <input type="password" required>
-
-        <input type="submit" value="login">
-        <a href="#">Wachtwoord vergeten?</a>
-
-        <button type="button"><a href="">Maak account</a></button> <!-- with a a tag as i still need to start with js -->
-      </fieldset>
-
-    </form>
 
 
     <!-- maak account formulier -->
