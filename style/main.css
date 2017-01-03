@@ -314,15 +314,47 @@ html, body, .mf-container, .pusher, .content {
   transition: opacity 0.5s; }
 
 .filter-menu {
+  display: flex;
+  flex-flow: column nowrap;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
-  visibility: hidden;
   width: 15rem;
   height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background: #f3e5d8;
+  padding: initial;
   transition: all 0.5s; }
+  .filter-menu::-webkit-scrollbar {
+    display: none; }
+  .filter-menu h3 {
+    margin: 1rem; }
+  .filter-menu li {
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    background: #F44336;
+    transition: all 0.5s; }
+    .filter-menu li:hover {
+      width: 14rem; }
+    .filter-menu li:nth-child(2) {
+      background: #03A9F4; }
+    .filter-menu li:nth-child(3) {
+      background: #4CAF50; }
+    .filter-menu li:nth-child(4) {
+      background: #FFEB3B; }
+    .filter-menu li:nth-child(5) {
+      background: #FF9800; }
+    .filter-menu li:nth-child(6) {
+      background: #795548; }
+    .filter-menu li:nth-child(7) {
+      background: #9E9E9E; }
+    .filter-menu li:nth-child(8) {
+      background: #fff; }
+    .filter-menu li:nth-child(9) {
+      background: #000; }
   .filter-menu::after {
     position: absolute;
     top: 0;
@@ -346,6 +378,9 @@ html, body, .mf-container, .pusher, .content {
   transition: transform 0.5s; }
 
 .filter-menu::after {
+  display: none; }
+
+#clickmij {
   display: none; }
 
 /*=============================================>>>>>

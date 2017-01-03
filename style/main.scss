@@ -386,6 +386,8 @@ input {
 	}
 }
 
+
+
 html, body, .mf-container, .pusher, .content {
 	height: 100%;
 }
@@ -394,6 +396,7 @@ html, body, .mf-container, .pusher, .content {
 	height: 100%;
 	position: relative;
 	overflow: hidden;
+
 }
 
 .content {
@@ -402,11 +405,6 @@ html, body, .mf-container, .pusher, .content {
 }
 
 // pusher/content
-//
-//
-
-
-
 .filter-menu-open, .pusher {
 	width: 100%;
 	opacity: 1;
@@ -443,15 +441,71 @@ html, body, .mf-container, .pusher, .content {
 }
 
 .filter-menu {
+	display: flex;
+	flex-flow: column nowrap;
 	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 100;
-	visibility: hidden;
+
+	// visibility: hidden;
 	width: 15rem;
 	height: 100%;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 	background: $bg_divide;
+	// background: #fff;
+	padding: initial;
 	transition: all 0.5s;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	h3 {
+		margin: 1rem;
+	}
+
+	li {
+		width: 100%;
+		height: 5rem;
+		padding: 1rem;
+		background: #F44336;
+		transition: all 0.5s;
+		&:hover {
+			width: 14rem;
+		}
+
+		&:nth-child(2) {
+			background: #03A9F4;
+		}
+		&:nth-child(3) {
+			background: #4CAF50;
+		}
+		&:nth-child(4) {
+			background: #FFEB3B;
+		}
+		&:nth-child(5) {
+			background: #FF9800;
+		}
+		&:nth-child(6) {
+			background: #795548;
+		}
+		&:nth-child(7) {
+			background: #9E9E9E;
+		}
+		&:nth-child(8) {
+			background: #fff;
+		}
+		&:nth-child(9) {
+			background: #000;
+		}
+
+	}
+
+	li:nth-child(2) {
+	}
 
 	&::after {
 		position: absolute;
@@ -486,6 +540,13 @@ html, body, .mf-container, .pusher, .content {
 .filter-menu::after {
 	display: none;
 }
+
+// filterbar style
+
+#clickmij {
+	display: none; // still works as radio btnz
+}
+
 
 
 /*=============================================>>>>>

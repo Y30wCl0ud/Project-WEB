@@ -2,9 +2,9 @@ var filterOn = document.querySelector('.filter button');
 var pusher = document.querySelector('.pusher');
 var menu = document.querySelector('.mf-container');
 
-// var check = document.querySelector('#clickmij');
-// check.addEventListener('click', scanning);
-// function scanning() {
+var check = document.querySelector('#clickmij');
+check.addEventListener('click', scanning);
+function scanning() {
 //   if (check.checked) {
 //     check.checked = false;
 //   } else {
@@ -12,7 +12,8 @@ var menu = document.querySelector('.mf-container');
 //   }
 //   // check.checked ^= true;
 //
-// }
+  console.log(check.checked);
+}
 
 
 filterOn.addEventListener('click', test);
