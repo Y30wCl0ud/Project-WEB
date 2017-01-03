@@ -68,9 +68,7 @@ a {
   box-sizing: border-box; }
 
 html {
-  font-family: nexa;
-  margin-left: 5vw;
-  margin-right: 5vw; }
+  font-family: nexa; }
 
 section {
   margin-top: 1rem;
@@ -112,7 +110,6 @@ header ul {
   align-items: center;
   max-height: 7vh;
   position: relative;
-  margin: 0 -5vw;
   padding: 0.5rem 0.5rem;
   box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15);
   background-color: #fff; }
@@ -130,12 +127,13 @@ nav input {
   opacity: 0;
   width: 0;
   margin: 0;
-  transition: all 2s; }
+  transition: all 1s; }
 nav li:nth-child(2) {
   margin-left: auto; }
   nav li:nth-child(2) div {
     display: flex; }
   nav li:nth-child(2) button {
+    margin-right: 1rem;
     box-shadow: 0 0.15rem #120145;
     background-color: #29219d;
     transition: all 1s ease; }
@@ -173,7 +171,7 @@ nav button {
   align-items: center;
   min-height: 35vh;
   max-height: 50vh;
-  margin: 0 -5vw;
+  margin: initial;
   background-image: url("../img/reading_beach3.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -191,7 +189,7 @@ nav button {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin: 0 -5vw;
+  margin: initial;
   padding: 5vw;
   background-color: #f3e5d8; }
   .aanbevolen h2, .verhalen h2 {
@@ -263,6 +261,93 @@ input {
 /*=============================================>>>>>
 = sort/filt =
 ===============================================>>>>>*/
+.filter, .mf-container form {
+  border-radius: initial; }
+
+.filter button {
+  margin-right: 1rem;
+  box-shadow: 0 0.15rem #120145;
+  background-color: #29219d;
+  transition: all 1s ease;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  color: #fff; }
+
+html, body, .mf-container, .pusher, .content {
+  height: 100%; }
+
+.mf-container {
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+
+.content {
+  position: relative;
+  overflow-y: scroll; }
+
+.filter-menu-open, .pusher {
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s; }
+
+.pusher {
+  position: relative;
+  left: 0;
+  z-index: 99;
+  transition: transform 0.5s; }
+  .pusher::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0.2);
+    content: '';
+    opacity: 0;
+    transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; }
+
+.filter-menu-open .pusher::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s; }
+
+.filter-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  visibility: hidden;
+  width: 15rem;
+  height: 100%;
+  background: #f3e5d8;
+  transition: all 0.5s; }
+  .filter-menu::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    content: '';
+    opacity: 1;
+    transition: opacity 0.5s; }
+
+/* Effect 2: Reveal */
+.filter-menu-open .pusher {
+  transform: translate3d(15rem, 0, 0); }
+
+.filter-menu-open {
+  z-index: 1; }
+
+.filter-menu-open .filter-menu {
+  visibility: visible;
+  transition: transform 0.5s; }
+
+.filter-menu::after {
+  display: none; }
+
 /*=============================================>>>>>
 = detail pagina =
 ===============================================>>>>>*/

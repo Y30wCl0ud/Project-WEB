@@ -11,211 +11,245 @@
   </head>
 
   <body>
-    <!-- header -->
-    <header>
-      <nav>
+
+    <div class="mf-container">
+      <form class="filter-menu">
+        <h3>Kies</h3>
         <ul>
-          <li>
-            <a href="index.html">
-              <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
-            </a>
-            <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
-            <p class="extra_title">verhalen</p>
-          </li>
-          <li>
-            <div>
-              <input type="text" placeholder="zoeken">
-              <button class="fa fa-search" role="button"></button>
-            </div>
-          </li>
-          <li>
-            <button id="account_btn" type="button" name="button"><span class="fa fa-user"></span>account</button>
-          </li>
+          <li><label for="hoi1">hoi</label><input type="radio" id="clickmij"></li>
+          <li><label for="">hoi</label></li>
+          <li><label for="">hoi</label></li>
+          <li><label for="">hoi</label></li>
+          <li><label for="">hoi</label></li>
         </ul>
-      </nav>
-      <!-- login -->
-
-      <form class="visibility" id="login_form">
-        <!-- login form -->
-        <fieldset>
-          <div>
-            <legend>Inloggen: </legend>
-          </div>
-          <label>E-mail: </label>
-          <input type="email" placeholder="b.v. verhaal@live.nl" required>
-          <label>Wachtwoord: </label>
-          <input type="password" required>
-
-          <div>
-            <input type="submit" value="login">
-            <a href="#">Wachtwoord vergeten?</a>
-
-            <a href="new_account.html">
-              <input type="submit">Maak account</input> <!-- with a a tag as i still need to start with js -->
-            </a>
-          </div>
-
-        </fieldset>
       </form>
 
-    </header>
+      <!-- div container to push the content when filter opens in mobile -->
+      <div class="pusher">
+        <div class="content">
+          <!-- header -->
+          <header>
+            <nav>
+              <ul>
+                <li>
+                  <a href="index.html">
+                    <img class="logo" src="./img/logo.png" alt="Logo of Transavia">
+                  </a>
+                  <span class="article_amount">100</span> <!-- amount of active(showing) articles (before & after filtering) -->
+                  <p class="extra_title">verhalen</p>
+                </li>
+                <li>
+                  <div>
+                    <input type="text" placeholder="zoeken">
+                    <button class="fa fa-search" role="button"></button>
+                  </div>
+                </li>
+                <li>
+                  <button id="account_btn" role="button" name="button"><span class="fa fa-user"></span>account</button>
+                </li>
+              </ul>
+            </nav>
+            <!-- login -->
+
+            <form class="visibility" id="login_form">
+              <!-- login form -->
+              <fieldset>
+                <div>
+                  <legend>Inloggen: </legend>
+                </div>
+                <label>E-mail: </label>
+                <input type="email" placeholder="b.v. verhaal@live.nl" required>
+                <label>Wachtwoord: </label>
+                <input type="password" required>
+
+                <div>
+                  <input type="submit" value="login">
+                  <a href="#">Wachtwoord vergeten?</a>
+
+                  <a href="new_account.html">
+                    <input type="submit">Maak account</input> <!-- with a a tag as i still need to start with js -->
+                  </a>
+                </div>
+
+              </fieldset>
+            </form>
+
+          </header>
+
+          <section class="amount_intro">
+            <section>
+              <span class="article_amount">100</span>
+              <p>
+                verhalen
+              </p>
+              <p>
+                 voor op reis
+              </p>
+            </section>
+          </section>
+
+          <!-- aanbevolen -->
+          <section class="aanbevolen">
+            <h2>Aanbevolen voor jou:</h2>
+
+            <article>
+              <header>
+
+              </header>
+              <h3>Haiku</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
+
+              <p>Op zoek naar een boek
+                Een vrouw vraagt de weg en ik
+                Koop babyschoentjes</p>
+              <span class="likes fa fa-heart"></span>
+              <span> 136</span>
+              <span class="comments fa fa-comment-o"></span>
+              <span> 42</span>
+            </article>
+
+
+            <article>
+              <h3>Haiku</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
+
+              <p>Op zoek naar een boek
+                Een vrouw vraagt de weg en ik
+                Koop babyschoentjes</p>
+              <span class="likes fa fa-heart"></span>
+              <span> 136</span>
+              <span class="comments fa fa-comment-o"></span>
+              <span> 42</span>
+            </article>
+
+            <article>
+              <h3>De verwarde man</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
+
+              <p>De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
+
+            <article>
+              <h3>Hardboiled</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
+
+              <p>Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank.</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
+          </section>
 
 
 
-    <section class="amount_intro">
-      <section>
-        <span class="article_amount">100</span>
-        <p>
-          verhalen
-        </p>
-        <p>
-           voor op reis
-        </p>
-      </section>
-    </section>
 
-    <!-- aanbevolen -->
-    <section class="aanbevolen">
-      <h2>Aanbevolen voor jou:</h2>
+          <!-- sort/filter
+          The div wrapper is the activator for mobile -->
 
-      <article>
-        <header>
-
-        </header>
-        <h3>Haiku</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
-
-        <p>Op zoek naar een boek
-          Een vrouw vraagt de weg en ik
-          Koop babyschoentjes</p>
-        <span class="likes fa fa-heart"></span>
-        <span> 136</span>
-        <span class="comments fa fa-comment-o"></span>
-        <span> 42</span>
-      </article>
+          <div id="f-pusher">
+          <form class="filter">
+            <fieldset>
+              <div>
+                <button type="button">click</button>
+              </div>
+            </fieldset>
+          </form>
+          </div>
 
 
-      <article>
-        <h3>Haiku</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
 
-        <p>Op zoek naar een boek
-          Een vrouw vraagt de weg en ik
-          Koop babyschoentjes</p>
-        <span class="likes fa fa-heart"></span>
-        <span> 136</span>
-        <span class="comments fa fa-comment-o"></span>
-        <span> 42</span>
-      </article>
 
-      <article>
-        <h3>De verwarde man</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
 
-        <p>De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
 
-      <article>
-        <h3>Hardboiled</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
+          <!-- alle verhalen -->
+          <section class="verhalen">
+            <h2>De verhalen:</h2>
 
-        <p>Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank.</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
-    </section>
+            <article>
+              <h3>Paranoia</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
 
-    <!-- sort/filter -->
-    <form class="filter">
-      <fieldset>
+              <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
 
-      </fieldset>
-    </form>
+            <article>
+              <h3>Enigszins aan de omslachtige kant</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
 
-    <!-- alle verhalen -->
-    <section class="verhalen">
-      <h2>De verhalen:</h2>
+              <p>Een autobus, eigendom van het Amsterdamse Gemeentevervoersbedrijf (hierna te noemen: GVB), zet mij en mijn gewaardeerde zoon, die zojuist in zijn </p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
 
-      <article>
-        <h3>Paranoia</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
+            <article>
+              <h3>Paranoia</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
 
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
+              <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
 
-      <article>
-        <h3>Enigszins aan de omslachtige kant</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
+            <article>
+              <h3>Paranoia</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
 
-        <p>Een autobus, eigendom van het Amsterdamse Gemeentevervoersbedrijf (hierna te noemen: GVB), zet mij en mijn gewaardeerde zoon, die zojuist in zijn </p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
+              <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
 
-      <article>
-        <h3>Paranoia</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
+            <article>
+              <h3>Alwetende verteller</h3>
+              <footer>
+                <p><span>14w</span> woorden</p>
+                <time datetime="">y-m-d</time>
+              </footer>
 
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
+              <p>Kijk, daar gaat Max J. Molovich. Hij is net uit de bus gestapt en loopt nu achter een gifgroene kinderwagen waarin zijn zoon ligt te slapen. Zie ‘m daar</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+            </article>
 
-      <article>
-        <h3>Paranoia</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
+          </section>
+        </div>
 
-        <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
+      </div>
 
-      <article>
-        <h3>Alwetende verteller</h3>
-        <footer>
-          <p><span>14w</span> woorden</p>
-          <time datetime="">y-m-d</time>
-        </footer>
 
-        <p>Kijk, daar gaat Max J. Molovich. Hij is net uit de bus gestapt en loopt nu achter een gifgroene kinderwagen waarin zijn zoon ligt te slapen. Zie ‘m daar</p>
-        <span class="likes fa fa-heart"></span><span> 136</span>
-        <span class="comments fa fa-comment-o"></span><span> 42</span>
-      </article>
-
-    </section>
 
     <!-- delete this script when done -->
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
     <script src="main.js" charset="utf-8"></script>
+    <script src="test.js" charset="utf-8"></script>
   </body>
 
 </html>

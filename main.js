@@ -1,8 +1,8 @@
-var account = document.getElementById("account_btn");
+var account = document.getElementById('account_btn');
 
-account.addEventListener("click", toggleLogin, false);
+account.addEventListener('click', toggleLogin, false);
 
 function toggleLogin() {
-  var loginForm = document.getElementById("login_form");
-  loginForm.classList.toggle("visibility");
+  var loginForm = document.getElementById('login_form');
+  loginForm.classList.toggle('visibility');
 }

@@ -97,10 +97,6 @@ $bg_divide: #f3e5d8;
 
 html {
 	font-family: nexa;
-	margin : {
-	  left: 5vw;
-		right: 5vw;
-	}
 }
 
 section {
@@ -145,7 +141,6 @@ p {
 = Header =
 ===============================================>>>>>*/
 
-
 header ul {
 	display: flex;
 	justify-content: space-between;;
@@ -153,7 +148,6 @@ header ul {
 	max-height: 7vh;
 	position: relative;
 
-	margin: 0 -5vw;
 	padding: 0.5rem 0.5rem;
 	// border-bottom: 0.15rem solid $h_green;
 	box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .15);
@@ -179,7 +173,7 @@ nav {
 		opacity: 0;
 		width: 0;
 		margin: 0;
-		transition: all 2s;
+		transition: all 1s;
 	}
 	//searchbar
 	li {
@@ -191,6 +185,7 @@ nav {
 			}
 
 			button {
+				margin-right: 1rem;
 				box-shadow: 0 0.15rem #120145;
 				background-color: $h_blue;
 				transition: all 1s ease;
@@ -249,7 +244,7 @@ nav {
 
 	min-height: 35vh;
 	max-height: 50vh;
-	margin: 0 -5vw;
+	margin: initial;
 
 	background-image: url("../img/reading_beach3.jpg");
 	background-size: cover;
@@ -275,7 +270,7 @@ nav {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	margin: 0 -5vw;
+	margin: initial;
 	padding: 5vw;
 	background-color: $bg_divide;
 
@@ -373,6 +368,124 @@ input {
 /*=============================================>>>>>
 = sort/filt =
 ===============================================>>>>>*/
+.filter, .mf-container form{
+	// border: initial; delete radius when done & uncomment
+	border-radius: initial;
+}
+
+.filter {
+	button {
+		margin-right: 1rem;
+		box-shadow: 0 0.15rem #120145;
+		background-color: $h_blue;
+		transition: all 1s ease;
+		padding: 0.4rem 0.8rem;
+		border: none;
+		border-radius: 1rem;
+		color: #fff;
+	}
+}
+
+html, body, .mf-container, .pusher, .content {
+	height: 100%;
+}
+
+.mf-container {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.content {
+	position: relative;
+	overflow-y: scroll;
+}
+
+// pusher/content
+//
+//
+
+
+
+.filter-menu-open, .pusher {
+	width: 100%;
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+.pusher {
+	position: relative;
+	// padding: 1rem; //for testing
+	left: 0;
+	z-index: 99;
+	transition: transform 0.5s;
+
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 0;
+		height: 0;
+		background: rgba(0, 0, 0, 0.2);
+		content: '';
+		opacity: 0;
+		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	}
+}
+
+
+.filter-menu-open .pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+.filter-menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	visibility: hidden;
+	width: 15rem;
+	height: 100%;
+	background: $bg_divide;
+	transition: all 0.5s;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		content: '';
+		opacity: 1;
+		transition: opacity 0.5s;
+	}
+}
+
+
+
+// effect
+/* Effect 2: Reveal */
+.filter-menu-open .pusher {
+	transform: translate3d(15rem, 0, 0);
+}
+
+.filter-menu-open {
+	z-index: 1;
+}
+
+.filter-menu-open .filter-menu {
+	visibility: visible;
+	transition: transform 0.5s;
+}
+
+.filter-menu::after {
+	display: none;
+}
 
 
 /*=============================================>>>>>
