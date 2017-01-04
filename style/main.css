@@ -101,6 +101,13 @@ p {
 .fa:after {
   content: "\00a0"; }
 
+button, [type="submit"] {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 1rem;
+  font-family: nexa_bold;
+  color: #fff; }
+
 /*=============================================>>>>>
 = Header =
 ===============================================>>>>>*/
@@ -145,11 +152,21 @@ nav li:nth-child(3) button {
   transition: background-color 1s ease; }
   nav li:nth-child(3) button:hover {
     background-color: #50df96; }
-nav button {
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 1rem;
-  color: #fff; }
+
+header form {
+  margin: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 1rem;
+  position: absolute;
+  box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15); }
+  header form fieldset div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center; }
+  header form [type="submit"] {
+    width: 15rem;
+    background: #ff3268; }
 
 .article_amount, .extra_title {
   font-size: 2em;
@@ -223,14 +240,8 @@ nav button {
 /*=============================================>>>>>
 = forms =
 ===============================================>>>>>*/
-header form {
-  margin: 0;
-  padding: 0 1rem;
-  position: absolute; }
-
 form {
   background-color: #fff;
-  border: none;
   border: 0.01rem solid #000;
   border-radius: 1rem;
   padding: 1rem; }
@@ -262,7 +273,7 @@ input {
 = sort/filt =
 ===============================================>>>>>*/
 .filter, .mf-container form {
-  border-radius: initial; }
+  border: initial; }
 
 .filter button {
   margin-right: 1rem;
@@ -320,10 +331,13 @@ html, body, .mf-container, .pusher, .content {
   top: 0;
   left: 0;
   z-index: 100;
+  visibility: hidden;
+  border-radius: initial;
   width: 15rem;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  background: none;
   background: #f3e5d8;
   padding: initial;
   transition: all 0.5s; }
@@ -354,7 +368,10 @@ html, body, .mf-container, .pusher, .content {
     .filter-menu li:nth-child(8) {
       background: #fff; }
     .filter-menu li:nth-child(9) {
-      background: #000; }
+      background: #000;
+      color: #fff; }
+    .filter-menu li [type="radio"]:checked {
+      width: 14rem; }
   .filter-menu::after {
     position: absolute;
     top: 0;
@@ -469,9 +486,9 @@ footer.article_meta {
     border-radius: 0 1rem 1rem 0; }
 
   header form {
-    top: 5rem;
-    right: 1rem;
-    position: absolute; }
+    right: 0.5rem;
+    position: absolute;
+    width: 20rem; }
 
   .amount_intro {
     min-height: 70vh;

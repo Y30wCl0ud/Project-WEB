@@ -3,15 +3,16 @@ var pusher = document.querySelector('.pusher');
 var menu = document.querySelector('.mf-container');
 
 var check = document.querySelector('#clickmij');
-check.addEventListener('click', scanning);
+var item = document.querySelector('.filter-menu li');
+item.addEventListener('click', scanning);
 function scanning() {
-//   if (check.checked) {
-//     check.checked = false;
-//   } else {
-//     check.checked = true;
-//   }
-//   // check.checked ^= true;
-//
+  // if (check.checked) {
+  //   check.checked = false;
+  // } else {
+  //   check.checked = true;
+  // }
+  check.checked ^= true;
+
   console.log(check.checked);
 }
 

@@ -137,6 +137,14 @@ p {
 	content: "\00a0";
 }
 
+button, [type="submit"] {
+	padding: 0.4rem 0.8rem;
+	border: none;
+	border-radius: 1rem;
+	font-family: nexa_bold;
+	color: #fff;
+}
+
 /*=============================================>>>>>
 = Header =
 ===============================================>>>>>*/
@@ -208,14 +216,31 @@ nav {
 		}
 	}
 
-	button {
-		padding: 0.4rem 0.8rem;
-		border: none;
-		border-radius: 1rem;
-		color: #fff;
-	}
 }
 
+
+header form {
+	margin: 0;
+	border: {
+		top-left-radius: 0;
+		top-right-radius: 0;
+	}
+	padding: 1rem;
+	position: absolute;
+	box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .15);
+	fieldset div {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+	}
+
+	[type="submit"] {
+		width: 15rem;
+		background: $h_red;
+	}
+
+
+}
 
 .article_amount, .extra_title {
 	font-size: 2em;
@@ -322,15 +347,8 @@ nav {
 = forms =
 ===============================================>>>>>*/
 
-header form {
- margin: 0;
- padding: 0 1rem;
- position: absolute;
-}
-
 form {
 	background-color: #fff;
-	border: none;
 	border: 0.01rem solid #000;
 	border-radius: 1rem;
 	padding: 1rem;
@@ -369,8 +387,7 @@ input {
 = sort/filt =
 ===============================================>>>>>*/
 .filter, .mf-container form{
-	// border: initial; delete radius when done & uncomment
-	border-radius: initial;
+	border: initial; // delete radius when done & uncomment
 }
 
 .filter {
@@ -448,14 +465,17 @@ html, body, .mf-container, .pusher, .content {
 	left: 0;
 	z-index: 100;
 
-	// visibility: hidden;
+	visibility: hidden;
+	border-radius: initial;
+
 	width: 15rem;
 	height: 100%;
 
 	overflow-y: scroll;
 	overflow-x: hidden;
+	background: none;
 	background: $bg_divide;
-	// background: #fff;
+
 	padding: initial;
 	transition: all 0.5s;
 
@@ -500,12 +520,14 @@ html, body, .mf-container, .pusher, .content {
 		}
 		&:nth-child(9) {
 			background: #000;
+			color: #fff;
 		}
 
+		[type="radio"]:checked {
+			width: 14rem;
+		}
 	}
 
-	li:nth-child(2) {
-	}
 
 	&::after {
 		position: absolute;
@@ -679,9 +701,9 @@ footer.article_meta {
 	}
 
 	header form {
-		top: 5rem;
-		right: 1rem;
+		right: 0.5rem;
 		position: absolute;
+		width: 20rem;
 	}
 
 	.amount_intro {
