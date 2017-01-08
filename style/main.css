@@ -117,6 +117,7 @@ header ul {
   align-items: center;
   max-height: 7vh;
   position: relative;
+  z-index: 2;
   padding: 0.5rem 0.5rem;
   box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15);
   background-color: #fff; }
@@ -154,12 +155,17 @@ nav li:nth-child(3) button {
     background-color: #50df96; }
 
 header form {
+  height: 17rem;
   margin: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   padding: 1rem;
+  padding-top: 0;
   position: absolute;
-  box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15); }
+  z-index: 1;
+  opacity: 1;
+  box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15);
+  transition: all .5s; }
   header form fieldset div {
     display: flex;
     flex-flow: column nowrap;
@@ -167,6 +173,10 @@ header form {
   header form [type="submit"] {
     width: 15rem;
     background: #ff3268; }
+  header form.visibility {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%); }
 
 .article_amount, .extra_title {
   font-size: 2em;
@@ -370,7 +380,7 @@ html, body, .mf-container, .pusher, .content {
     .filter-menu li:nth-child(9) {
       background: #000;
       color: #fff; }
-    .filter-menu li [type="radio"]:checked {
+    .filter-menu li.selected {
       width: 14rem; }
   .filter-menu::after {
     position: absolute;
@@ -482,7 +492,6 @@ footer.article_meta {
     border-radius: 1rem 0 0 1rem; }
   nav ul li:nth-child(2) button {
     margin-bottom: 0.14rem;
-    padding: 0.33rem 1rem;
     border-radius: 0 1rem 1rem 0; }
 
   header form {
@@ -525,4 +534,4 @@ footer.article_meta {
     min-width: 23%;
     max-width: 33%; } }
 .visibility {
-  display: none; }
+  visibility: hidden; }

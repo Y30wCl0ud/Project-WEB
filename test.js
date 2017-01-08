@@ -5,15 +5,14 @@ var menu = document.querySelector('.mf-container');
 var check = document.querySelector('#clickmij');
 var item = document.querySelector('.filter-menu li');
 item.addEventListener('click', scanning);
-function scanning() {
-  // if (check.checked) {
-  //   check.checked = false;
-  // } else {
-  //   check.checked = true;
-  // }
-  check.checked ^= true;
-
+function scanning(e) {
+  check.checked ^= false; // settingit true = click twice why???
+  if (check.checked == true) {
+    item.classList.toggle('selected');
+  }
   console.log(check.checked);
+  console.log(check);
+
 }
 
 
