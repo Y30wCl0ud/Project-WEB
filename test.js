@@ -4,7 +4,9 @@ var menu = document.querySelector('.mf-container');
 
 var check = document.querySelector('#clickmij');
 var item = document.querySelector('.filter-menu li');
-item.addEventListener('click', scanning);
+
+
+
 function scanning(e) {
   check.checked ^= false; // settingit true = click twice why???
   if (check.checked == true) {
@@ -15,11 +17,8 @@ function scanning(e) {
 
 }
 
-
-filterOn.addEventListener('click', test);
-pusher.addEventListener('click', closeFilter);
-
 function test(e) {
+  console.log(1);
   // menu.classList.toggle('st-effect-2');
   menu.classList.toggle('filter-menu-open');
 }
@@ -30,3 +29,7 @@ function closeFilter(e) {
     console.log(e.target);
   }
 }
+
+item.addEventListener('click', scanning);
+filterOn.addEventListener('click', test);
+pusher.addEventListener('click', closeFilter);

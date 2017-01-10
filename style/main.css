@@ -341,7 +341,8 @@ html, body, .mf-container, .pusher, .content {
   top: 0;
   left: 0;
   z-index: 100;
-  visibility: hidden;
+  opacity: 0;
+  transform:translateX(-15rem);
   border-radius: initial;
   width: 15rem;
   height: 100%;
@@ -350,7 +351,8 @@ html, body, .mf-container, .pusher, .content {
   background: none;
   background: #f3e5d8;
   padding: initial;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+}
   .filter-menu::-webkit-scrollbar {
     display: none; }
   .filter-menu h3 {
@@ -401,9 +403,9 @@ html, body, .mf-container, .pusher, .content {
   z-index: 1; }
 
 .filter-menu-open .filter-menu {
-  visibility: visible;
-  transition: transform 0.5s; }
-
+  opacity: 1;
+  transform:translateX(0);
+}
 .filter-menu::after {
   display: none; }
 
@@ -480,8 +482,6 @@ footer.article_meta {
 
   header ul {
     max-height: 10vh; }
-    header ul .article_amount {
-      font-size: 3em; }
 
   nav img {
     max-width: 2.5rem;
@@ -500,13 +500,7 @@ footer.article_meta {
     width: 20rem; }
 
   .amount_intro {
-    min-height: 70vh;
     font-size: 2em; }
-    .amount_intro section {
-      padding: 2rem;
-      border-radius: 1rem; }
-    .amount_intro .article_amount {
-      font-size: 2.375em; }
 
   /*=============================================>>>>>
   = overzichtpagina mq =
