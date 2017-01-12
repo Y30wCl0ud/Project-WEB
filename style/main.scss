@@ -99,6 +99,12 @@ html {
 	font-family: nexa;
 }
 
+html, body {
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
 section {
 	@include vertical_margin(1rem);
 }
@@ -187,6 +193,12 @@ nav {
 		margin: 0;
 		transition: all 1s;
 	}
+	p {
+		font-size: 2em;
+		color: $h_green;
+		display: none;
+		content: "\00a0";
+	}
 	//searchbar
 	li {
 		&:nth-child(2) {
@@ -249,9 +261,6 @@ header form {
 	}
 	transition: all .5s;
 
-	&::before {
-		// transform: scaleY(1,0);
-	}
 	&.visibility {
 		visibility: hidden;
 		opacity: 0;
@@ -261,19 +270,8 @@ header form {
 
 
 
-.article_amount, .extra_title {
-	font-size: 2em;
-	color: $h_green;
-}
 
-.article_amount {
-	font-family: nexa_bold;
-}
 
-.extra_title {
-	display: none;
-	content: "\00a0";
-}
 
 
 
@@ -310,7 +308,32 @@ header form {
 	}
 }
 
-.aanbevolen, .verhalen {
+section:nth-of-type(1) {
+	display: flex;
+	flex-flow: column wrap;
+	height: 60vh;
+	width: 100%;
+	margin: initial;
+
+	h2 {
+		display: inline-block;
+		position: absolute;
+	}
+
+	article {
+		height: 50%;
+		width: 40%;
+		border: 5px solid black;
+	}
+
+	article:nth-of-type(1) {
+		height: 100%;
+		width: 60%;
+		background: blue;
+	}
+}
+
+.verhalen {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
@@ -405,7 +428,7 @@ input {
 /*=============================================>>>>>
 = sort/filt =
 ===============================================>>>>>*/
-.filter, .mf-container form{
+.filter, form{
 	border: initial; // delete radius when done & uncomment
 }
 
@@ -424,18 +447,13 @@ input {
 
 
 
-html, body, .mf-container, .pusher, .content {
+.pusher, .pusher > div {
 	height: 100%;
 }
 
-.mf-container {
-	height: 100%;
-	position: relative;
-	overflow: hidden;
 
-}
 
-.content {
+.pusher > div {
 	position: relative;
 	overflow-y: scroll;
 }
@@ -449,7 +467,6 @@ html, body, .mf-container, .pusher, .content {
 
 .pusher {
 	position: relative;
-	// padding: 1rem; //for testing
 	left: 0;
 	z-index: 99;
 	transition: transform 0.5s;
@@ -484,7 +501,8 @@ html, body, .mf-container, .pusher, .content {
 	left: 0;
 	z-index: 100;
 
-	visibility: hidden;
+	opacity: 0;
+	transform: translateX(-15rem);
 	border-radius: initial;
 
 	width: 15rem;
@@ -574,8 +592,8 @@ html, body, .mf-container, .pusher, .content {
 }
 
 .filter-menu-open .filter-menu {
-	visibility: visible;
-	transition: transform 0.5s;
+	opacity: 1;
+	transform: translateX(0);
 }
 
 .filter-menu::after {
@@ -723,11 +741,7 @@ footer.article_meta {
 		width: 20rem;
 	}
 
-	.amount_intro {
-		// min-height: 70vh;
-		font-size: 2em;
 
-	}
 
 	/*=============================================>>>>>
 	= overzichtpagina mq =
@@ -761,18 +775,15 @@ footer.article_meta {
 
 
 @media screen and(min-width: 70rem) {
-
-	.extra_title {
-		display: inline-block;
-		&:before {
-			content: "\00a0";
+	nav {
+		p {
+			display: inline-block;
 		}
 	}
 
 	.verhalen {
 		article {
-			min-width: 23%;
-			max-width: 33%
+			width: 24%;
 		}
 	}
 }

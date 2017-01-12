@@ -1,6 +1,6 @@
 var account = document.getElementById('account_btn');
 
-account.addEventListener('click', toggleLogin, false);
+account.addEventListener('click', toggleLogin);
 
 function toggleLogin() {
   var loginForm = document.getElementById('login_form');

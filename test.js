@@ -1,6 +1,6 @@
 var filterOn = document.querySelector('.filter button');
 var pusher = document.querySelector('.pusher');
-var menu = document.querySelector('.mf-container');
+var menu = document.querySelector('body');
 
 var check = document.querySelector('#clickmij');
 var item = document.querySelector('.filter-menu li');

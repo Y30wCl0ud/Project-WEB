@@ -70,6 +70,11 @@ a {
 html {
   font-family: nexa; }
 
+html, body {
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+
 section {
   margin-top: 1rem;
   margin-bottom: 1rem; }
@@ -136,6 +141,11 @@ nav input {
   width: 0;
   margin: 0;
   transition: all 1s; }
+nav p {
+  font-size: 2em;
+  color: #00d66c;
+  display: none;
+  content: "\00a0"; }
 nav li:nth-child(2) {
   margin-left: auto; }
   nav li:nth-child(2) div {
@@ -178,17 +188,6 @@ header form {
     opacity: 0;
     transform: translateY(-100%); }
 
-.article_amount, .extra_title {
-  font-size: 2em;
-  color: #00d66c; }
-
-.article_amount {
-  font-family: nexa_bold; }
-
-.extra_title {
-  display: none;
-  content: "\00a0"; }
-
 /*=============================================>>>>>
 = overzichtpagina =
 ===============================================>>>>>*/
@@ -212,16 +211,34 @@ header form {
   .amount_intro .article_amount {
     color: #fff; }
 
-.aanbevolen, .verhalen {
+section:nth-of-type(1) {
+  display: flex;
+  flex-flow: column wrap;
+  height: 60vh;
+  width: 100%;
+  margin: initial; }
+  section:nth-of-type(1) h2 {
+    display: inline-block;
+    position: absolute; }
+  section:nth-of-type(1) article {
+    height: 50%;
+    width: 40%;
+    border: 5px solid black; }
+  section:nth-of-type(1) article:nth-of-type(1) {
+    height: 100%;
+    width: 60%;
+    background: blue; }
+
+.verhalen {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   margin: initial;
   padding: 5vw;
   background-color: #f3e5d8; }
-  .aanbevolen h2, .verhalen h2 {
+  .verhalen h2 {
     margin-left: 0.5rem; }
-  .aanbevolen article, .verhalen article {
+  .verhalen article {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
@@ -232,18 +249,18 @@ header form {
     padding: 1rem;
     border-radius: 1rem;
     background-color: #fff; }
-    .aanbevolen article > p, .verhalen article > p {
+    .verhalen article > p {
       margin-top: 0.5rem;
       margin-bottom: 0.5rem; }
-    .aanbevolen article > span, .verhalen article > span {
+    .verhalen article > span {
       align-self: flex-end; }
-  .aanbevolen .likes, .verhalen .likes {
+  .verhalen .likes {
     color: #ff3268; }
-  .aanbevolen .comments, .verhalen .comments {
+  .verhalen .comments {
     margin-left: 1em; }
-  .aanbevolen footer, .verhalen footer {
+  .verhalen footer {
     font-size: 0.75em; }
-    .aanbevolen footer p, .verhalen footer p {
+    .verhalen footer p {
       font-family: nexa_bold;
       color: #29219d; }
 
@@ -282,7 +299,7 @@ input {
 /*=============================================>>>>>
 = sort/filt =
 ===============================================>>>>>*/
-.filter, .mf-container form {
+.filter, form {
   border: initial; }
 
 .filter button {
@@ -295,15 +312,10 @@ input {
   border-radius: 1rem;
   color: #fff; }
 
-html, body, .mf-container, .pusher, .content {
+.pusher, .pusher > div {
   height: 100%; }
 
-.mf-container {
-  height: 100%;
-  position: relative;
-  overflow: hidden; }
-
-.content {
+.pusher > div {
   position: relative;
   overflow-y: scroll; }
 
@@ -342,7 +354,7 @@ html, body, .mf-container, .pusher, .content {
   left: 0;
   z-index: 100;
   opacity: 0;
-  transform:translateX(-15rem);
+  transform: translateX(-15rem);
   border-radius: initial;
   width: 15rem;
   height: 100%;
@@ -351,8 +363,7 @@ html, body, .mf-container, .pusher, .content {
   background: none;
   background: #f3e5d8;
   padding: initial;
-  transition: all 0.5s;
-}
+  transition: all 0.5s; }
   .filter-menu::-webkit-scrollbar {
     display: none; }
   .filter-menu h3 {
@@ -404,8 +415,8 @@ html, body, .mf-container, .pusher, .content {
 
 .filter-menu-open .filter-menu {
   opacity: 1;
-  transform:translateX(0);
-}
+  transform: translateX(0); }
+
 .filter-menu::after {
   display: none; }
 
@@ -499,9 +510,6 @@ footer.article_meta {
     position: absolute;
     width: 20rem; }
 
-  .amount_intro {
-    font-size: 2em; }
-
   /*=============================================>>>>>
   = overzichtpagina mq =
   ===============================================>>>>>*/
@@ -519,13 +527,10 @@ footer.article_meta {
     .new_account_form fieldset:first-child {
       padding: 1rem 2rem; } }
 @media screen and (min-width: 70rem) {
-  .extra_title {
+  nav p {
     display: inline-block; }
-    .extra_title:before {
-      content: "\00a0"; }
 
   .verhalen article {
-    min-width: 23%;
-    max-width: 33%; } }
+    width: 24%; } }
 .visibility {
   visibility: hidden; }
