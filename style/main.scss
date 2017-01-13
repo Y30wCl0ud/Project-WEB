@@ -279,58 +279,65 @@ header form {
 = overzichtpagina =
 ===============================================>>>>>*/
 
-.amount_intro {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	min-height: 35vh;
-	max-height: 50vh;
-	margin: initial;
-
-	background-image: url("../img/reading_beach3.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-
-	font-size: 1.5em;
-	color: #fff;
-	text-align: center;
-
-	section {
-		padding: 1rem;
-		border-radius: 1rem;
-
-		background-color: $h_green;
-	}
-
-	.article_amount {
-		color: #fff;
-	}
-}
-
 section:nth-of-type(1) {
 	display: flex;
+	position: relative;
 	flex-flow: column wrap;
 	height: 60vh;
 	width: 100%;
 	margin: initial;
 
+	div {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 1rem;
+		top: 1rem;
+		border-radius: .5rem;
+		padding: 1rem;
+		background: $h_green;
+		opacity: 0.9;
+	}
+
+
 	h2 {
 		display: inline-block;
-		position: absolute;
+		text-align: center;
+		font-size: 1.5em;
+		color: #fff;
 	}
 
 	article {
+		display: flex;
+		align-items: flex-end;
 		height: 50%;
 		width: 40%;
-		border: 5px solid black;
+		h1 {
+			margin-left: 1rem;
+			font-size: 2.5em;
+			color: #fff;
+		}
 	}
 
 	article:nth-of-type(1) {
 		height: 100%;
 		width: 60%;
-		background: blue;
+		background: url('../img/medium.jpg');
+		background-size: cover;
 	}
+
+	article:nth-of-type(2) {
+		background: url('../img/medium.jpg');
+		background-size: cover;
+
+	}
+
+	article:nth-of-type(3) {
+		background: url('../img/medium.jpg');
+		background-size: cover;
+
+	}
+
 }
 
 .verhalen {
@@ -354,18 +361,34 @@ section:nth-of-type(1) {
 	  max-height: 22rem;
 
 		margin: 1rem 0.5rem;
-		padding: 1rem;
+		// padding: 1rem;
 		border-radius: 1rem;
 		background-color: #fff;
 
-			& > p {
-				@include vertical_margin(0.5rem);
-				// overflow: hidden; does not work atm need an alt
-			}
+		& > p {
+			@include vertical_margin(0.5rem);
+			// overflow: hidden; does not work atm need an alt
+		}
 
-			& > span {
-				align-self: flex-end;
+		& > span {
+			align-self: flex-end;
+		}
+
+		div {
+			padding: 1rem;
+
+			&:nth-of-type(1) {
+				display: none;
+				width: 100%;
+				height: 40%;
+				background: red;
 			}
+			&:nth-of-type(2) {
+				width: 100%;
+				height: 60;
+			}
+		}
+
 		}
 
 		.likes {
@@ -747,13 +770,8 @@ footer.article_meta {
 	= overzichtpagina mq =
 	===============================================>>>>>*/
 
-	.aanbevolen, .verhalen {
-		article {
-			max-width: 48%;
-		}
-		h2 {
-			// margin-left: 15%;
-		}
+	.verhalen {
+
 	}
 	.teaser {
 		font-size: 1em;
@@ -782,9 +800,7 @@ footer.article_meta {
 	}
 
 	.verhalen {
-		article {
-			width: 24%;
-		}
+
 	}
 }
 

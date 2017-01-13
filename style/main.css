@@ -191,43 +191,48 @@ header form {
 /*=============================================>>>>>
 = overzichtpagina =
 ===============================================>>>>>*/
-.amount_intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 35vh;
-  max-height: 50vh;
-  margin: initial;
-  background-image: url("../img/reading_beach3.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  font-size: 1.5em;
-  color: #fff;
-  text-align: center; }
-  .amount_intro section {
-    padding: 1rem;
-    border-radius: 1rem;
-    background-color: #00d66c; }
-  .amount_intro .article_amount {
-    color: #fff; }
-
 section:nth-of-type(1) {
   display: flex;
+  position: relative;
   flex-flow: column wrap;
   height: 60vh;
   width: 100%;
   margin: initial; }
+  section:nth-of-type(1) div {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    border-radius: .5rem;
+    padding: 1rem;
+    background: #00d66c;
+    opacity: 0.9; }
   section:nth-of-type(1) h2 {
     display: inline-block;
-    position: absolute; }
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff; }
   section:nth-of-type(1) article {
+    display: flex;
+    align-items: flex-end;
     height: 50%;
-    width: 40%;
-    border: 5px solid black; }
+    width: 40%; }
+    section:nth-of-type(1) article h1 {
+      margin-left: 1rem;
+      font-size: 2.5em;
+      color: #fff; }
   section:nth-of-type(1) article:nth-of-type(1) {
     height: 100%;
     width: 60%;
-    background: blue; }
+    background: url("../img/medium.jpg");
+    background-size: cover; }
+  section:nth-of-type(1) article:nth-of-type(2) {
+    background: url("../img/medium.jpg");
+    background-size: cover; }
+  section:nth-of-type(1) article:nth-of-type(3) {
+    background: url("../img/medium.jpg");
+    background-size: cover; }
 
 .verhalen {
   display: flex;
@@ -246,7 +251,6 @@ section:nth-of-type(1) {
     min-height: 10rem;
     max-height: 22rem;
     margin: 1rem 0.5rem;
-    padding: 1rem;
     border-radius: 1rem;
     background-color: #fff; }
     .verhalen article > p {
@@ -254,6 +258,16 @@ section:nth-of-type(1) {
       margin-bottom: 0.5rem; }
     .verhalen article > span {
       align-self: flex-end; }
+    .verhalen article div {
+      padding: 1rem; }
+      .verhalen article div:nth-of-type(1) {
+        display: none;
+        width: 100%;
+        height: 40%;
+        background: red; }
+      .verhalen article div:nth-of-type(2) {
+        width: 100%;
+        height: 60; }
   .verhalen .likes {
     color: #ff3268; }
   .verhalen .comments {
@@ -513,9 +527,6 @@ footer.article_meta {
   /*=============================================>>>>>
   = overzichtpagina mq =
   ===============================================>>>>>*/
-  .aanbevolen article, .verhalen article {
-    max-width: 48%; }
-
   .teaser {
     font-size: 1em; }
 
@@ -528,9 +539,6 @@ footer.article_meta {
       padding: 1rem 2rem; } }
 @media screen and (min-width: 70rem) {
   nav p {
-    display: inline-block; }
-
-  .verhalen article {
-    width: 24%; } }
+    display: inline-block; } }
 .visibility {
   visibility: hidden; }
