@@ -282,8 +282,8 @@ header form {
 section:nth-of-type(1) {
 	display: flex;
 	position: relative;
-	flex-flow: column wrap;
-	height: 60vh;
+	flex-flow: column nowrap;
+	height: 100%;
 	width: 100%;
 	margin: initial;
 
@@ -311,7 +311,7 @@ section:nth-of-type(1) {
 		display: flex;
 		align-items: flex-end;
 		height: 50%;
-		width: 40%;
+		width: 100%;
 		h1 {
 			margin-left: 1rem;
 			font-size: 2.5em;
@@ -320,8 +320,8 @@ section:nth-of-type(1) {
 	}
 
 	article:nth-of-type(1) {
-		height: 100%;
-		width: 60%;
+		// height: 100%;
+		// width: 60%;
 		background: url('../img/medium.jpg');
 		background-size: cover;
 	}
@@ -365,8 +365,13 @@ section:nth-of-type(1) {
 		border-radius: 1rem;
 		background-color: #fff;
 
-		& > p {
-			@include vertical_margin(0.5rem);
+		& p {
+			// @include vertical_margin(0.5rem);
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+
 			// overflow: hidden; does not work atm need an alt
 		}
 
@@ -379,17 +384,10 @@ section:nth-of-type(1) {
 
 			&:nth-of-type(1) {
 				display: none;
-				width: 100%;
-				height: 40%;
-				background: red;
-			}
-			&:nth-of-type(2) {
-				width: 100%;
-				height: 60;
 			}
 		}
 
-		}
+
 
 		.likes {
 			color: $h_red;
@@ -407,6 +405,7 @@ section:nth-of-type(1) {
 			}
 		}
 	}
+}
 
 /*=============================================>>>>>
 = forms =
@@ -707,6 +706,7 @@ footer.article_meta {
 
 		&:hover {
 			background-color: #ff658e;
+
 		}
 	}
 
@@ -717,7 +717,7 @@ footer.article_meta {
 ===============================================>>>>>*/
 
 
-@media screen and(min-width: 30rem) {
+@media screen and(min-width: 40rem) {
 	h2 {
 		font-size: 2.375em;
 		color: $h_blue;
@@ -730,8 +730,6 @@ footer.article_meta {
 
 	header ul {
 		max-height: 10vh;
-
-
 	}
 
 	nav {
@@ -770,9 +768,108 @@ footer.article_meta {
 	= overzichtpagina mq =
 	===============================================>>>>>*/
 
-	.verhalen {
+	section:nth-of-type(1) {
+		display: flex;
+		position: relative;
+		flex-flow: column wrap;
+		height: 60vh;
+		width: 100%;
+		margin: initial;
 
+		div {
+			display: flex;
+			align-items: center;
+			position: absolute;
+			left: 1rem;
+			top: 1rem;
+			border-radius: .5rem;
+			padding: 1rem;
+			background: $h_green;
+			opacity: 0.9;
+		}
+
+
+		h2 {
+			display: inline-block;
+			text-align: center;
+			font-size: 1.5em;
+			color: #fff;
+		}
+
+		article {
+			display: flex;
+			align-items: flex-end;
+			height: 50%;
+			width: 40%;
+			h1 {
+				margin-left: 1rem;
+				font-size: 2.5em;
+				color: #fff;
+			}
+		}
+
+		article:nth-of-type(1) {
+			height: 100%;
+			width: 60%;
+		}
+
+		article:nth-of-type(2) {
+			background-size: cover;
+		}
+
+		article:nth-of-type(3) {
+			background-size: cover;
+		}
 	}
+
+
+	.verhalen {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		margin: initial;
+		padding: 5vw;
+		background-color: $bg_divide;
+
+		h2 {
+			margin-left: 0.5rem;
+		}
+
+		& p {
+			@include vertical_margin(0.5rem);
+
+		}
+
+		article {
+			flex: 1 1 30%;
+		  height: 20rem;
+
+			div {
+
+				&:nth-of-type(1) {
+					display: inherit;
+					border-radius: 1rem 1rem 0 0;
+					width: 100%;
+					height: 40%;
+					background: url('../img/medium.jpg');
+					background-size: cover;
+				}
+
+			}
+
+
+
+			footer {
+				font-size: 0.75em;
+				p {
+					font-family: nexa_bold;
+					color: $h_blue;
+				}
+			}
+		}
+	}
+
+
 	.teaser {
 		font-size: 1em;
 	}
@@ -792,7 +889,7 @@ footer.article_meta {
 } //end mq min-width 30rem
 
 
-@media screen and(min-width: 70rem) {
+@media screen and(min-width: 60rem) {
 	nav {
 		p {
 			display: inline-block;
@@ -800,6 +897,10 @@ footer.article_meta {
 	}
 
 	.verhalen {
+		article {
+			flex: 1 1 22%;
+
+		}
 
 	}
 }
