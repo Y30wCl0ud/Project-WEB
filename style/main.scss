@@ -67,6 +67,20 @@ $h_blue: #29219d;
 $h_red: #ff3268;
 $bg_divide: #f3e5d8;
 
+//filter options
+//slight tan for black and white
+$f_red: #f44336;
+$f_blue: #2196f3;
+$f_yellow: #ffeb3b;
+$f_green: #4caf50;
+$f_purple: #673ab7;
+$f_black: #212121;
+$f_white: #fafafa;
+$f_orange: #ff9800;
+$f_pink: #ec407a;
+$f_brown: #795548;
+
+
 @mixin vertical_margin($v_margin) {
 	margin : {
 		top: $v_margin;
@@ -151,6 +165,10 @@ button, [type="submit"] {
 	color: #fff;
 }
 
+.visibility {
+		visibility: hidden;
+}
+
 /*=============================================>>>>>
 = Header =
 ===============================================>>>>>*/
@@ -165,8 +183,7 @@ header {
 		position: relative;
 		z-index: 2;
 
-		padding: 0.5rem 0.5rem;
-		// border-bottom: 0.15rem solid $h_green;
+		padding: 0.5rem 1rem;
 		box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .15);
 
 		background-color: #fff;
@@ -185,7 +202,6 @@ nav {
 	img {
 		max-width: 1.5rem;
 		max-height: 2rem;
-		margin-right: 1rem;
 	}
 	input {
 		opacity: 0;
@@ -320,8 +336,6 @@ section:nth-of-type(1) {
 	}
 
 	article:nth-of-type(1) {
-		// height: 100%;
-		// width: 60%;
 		background: url('../img/medium.jpg');
 		background-size: cover;
 	}
@@ -361,18 +375,14 @@ section:nth-of-type(1) {
 	  max-height: 22rem;
 
 		margin: 1rem 0.5rem;
-		// padding: 1rem;
 		border-radius: 1rem;
 		background-color: #fff;
 
 		& p {
-			// @include vertical_margin(0.5rem);
 			overflow: hidden;
 			display: -webkit-box;
 			-webkit-line-clamp: 3;
 			-webkit-box-orient: vertical;
-
-			// overflow: hidden; does not work atm need an alt
 		}
 
 		& > span {
@@ -443,7 +453,7 @@ input {
 	&:focus {
 		border: 1.5px solid $h_blue;
 		outline: none;
-		// transistion here
+		// transition here
 	}
 }
 
@@ -455,11 +465,12 @@ input {
 }
 
 .filter {
+	// verwijder button wanneer klaar
 	button {
 		margin-right: 1rem;
 		box-shadow: 0 0.15rem #120145;
 		background-color: $h_blue;
-		transition: all 1s ease;
+		// transition: all 1s ease;
 		padding: 0.4rem 0.8rem;
 		border: none;
 		border-radius: 1rem;
@@ -467,13 +478,9 @@ input {
 	}
 }
 
-
-
 .pusher, .pusher > div {
 	height: 100%;
 }
-
-
 
 .pusher > div {
 	position: relative;
@@ -481,8 +488,89 @@ input {
 }
 
 // pusher/content
+
+.filter-menu {
+	border-radius: initial;
+	padding: initial;
+	display: flex;
+	flex-flow: column nowrap;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+
+	width: 15rem;
+	height: 100%;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+	background: none;
+	background: $bg_divide;
+
+	transition: all 0.5s;
+	opacity: 0;
+	transform: translateX(-15rem);
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	h3 {
+		margin: 1rem;
+	}
+
+	li {
+		width: 100%;
+		height: 5rem;
+		padding: 1rem;
+		background: $f_red;
+		transition: all 0.5s;
+		color: #fff;
+
+		// De meeste hebben maar een lijn code dus heb ik ze op een lijn gelaten
+		&:nth-child(2) {background: $f_blue;}
+		&:nth-child(3) {background: $f_green;}
+		&:nth-child(4) {
+			background: $f_yellow;
+			color: #202020;
+		}
+		&:nth-child(5) {background: $f_orange;}
+		&:nth-child(6) {background: $f_purple;}
+		&:nth-child(7) {background: $f_pink;}
+		&:nth-child(8) {
+			background: $f_white;
+			color: #202020;
+		}
+		&:nth-child(9) {background: $f_brown;}
+		&:nth-child(10) {background: $f_black;}
+		&.selected {width: 14rem;}
+	}
+
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.2);
+		content: '';
+		opacity: 1;
+		transition: opacity 0.5s;
+	}
+}
+
+
 .filter-menu-open, .pusher {
 	width: 100%;
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+
+.filter-menu-open .pusher::after {
+	width: 100%;
+	height: 100%;
 	opacity: 1;
 	transition: opacity 0.5s;
 }
@@ -504,100 +592,6 @@ input {
 		content: '';
 		opacity: 0;
 		transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
-	}
-}
-
-
-.filter-menu-open .pusher::after {
-	width: 100%;
-	height: 100%;
-	opacity: 1;
-	transition: opacity 0.5s;
-}
-
-.filter-menu {
-	display: flex;
-	flex-flow: column nowrap;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 100;
-
-	opacity: 0;
-	transform: translateX(-15rem);
-	border-radius: initial;
-
-	width: 15rem;
-	height: 100%;
-
-	overflow-y: scroll;
-	overflow-x: hidden;
-	background: none;
-	background: $bg_divide;
-
-	padding: initial;
-	transition: all 0.5s;
-
-	&::-webkit-scrollbar {
-		display: none;
-	}
-
-	h3 {
-		margin: 1rem;
-	}
-
-	li {
-		width: 100%;
-		height: 5rem;
-		padding: 1rem;
-		background: #F44336;
-		transition: all 0.5s;
-		&:hover {
-			width: 14rem;
-		}
-
-		&:nth-child(2) {
-			background: #03A9F4;
-		}
-		&:nth-child(3) {
-			background: #4CAF50;
-		}
-		&:nth-child(4) {
-			background: #FFEB3B;
-		}
-		&:nth-child(5) {
-			background: #FF9800;
-		}
-		&:nth-child(6) {
-			background: #795548;
-		}
-		&:nth-child(7) {
-			background: #9E9E9E;
-		}
-		&:nth-child(8) {
-			background: #fff;
-		}
-		&:nth-child(9) {
-			background: #000;
-			color: #fff;
-		}
-
-		&.selected {
-			width: 14rem;
-		}
-	}
-
-
-	&::after {
-		position: absolute;
-		top: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.2);
-		content: '';
-		opacity: 1;
-		transition: opacity 0.5s;
 	}
 }
 
@@ -628,88 +622,98 @@ input {
 	display: none; // still works as radio btnz
 }
 
+section:nth-of-type(2) {
+	margin: initial;
+	background: $bg_divide;
 
+	& * {
+		background: initial;
+	}
+	form {
+		padding: initial;
+	}
+	h2 {
+		font-size: 1.5em;
+		text-align: center;
 
-/*=============================================>>>>>
-= detail pagina =
-===============================================>>>>>*/
-
-.story_container {
-	@include vertical_margin(1rem);
-}
-
-.story {
-	max-width: 20em;
-
-	p {
-		@include vertical_margin(1rem);
 	}
 
-	.column_2 {
-		column-count: 2;
-	}
-}
-
-footer.article_meta {
-	@include vertical_margin(1.5rem);
-	display: flex;
-	h4 ~ *:before {
-		content: "\00a0 - ";
-	}
-}
-
-
-/*=============================================>>>>>
-= new account =
-===============================================>>>>>*/
-
-.new_account {
-	background-color: $bg_divide;
-}
-
-.new_account_form {
-	display: flex;
-	flex-direction: column;
-	max-width: 25rem;
-
-	margin: 2rem auto;
-	padding: 2rem 2rem;
-	background-color: hsla(100, 100, 100, 0.5);
-
-	fieldset {
-		div {
-			&:first-child {
-				margin: -2rem -2rem 1rem -2rem;
-				background-color: #fff;
-			}
-			&:nth-last-child(1) {
-				margin: 0rem -2rem -2rem -2rem;
-				background-color: #fff;
-			}
-		}
+	ul {
+		display: flex;
+		flex-flow: row wrap;
 	}
 
-	[type="submit"] {
-		display: block;
-		min-width: 8rem;
-		max-width: 10em;
 
-		margin: 1rem auto;
-		border: none;
-		border-radius: 1rem;
-		box-shadow: 0 0.15rem #ca2b55;
-		background-color: $h_red;
 
-		font-family: nexa_bold;
+	li {
+		width: calc(100%/3);
+		height: 20vh;
 		color: #fff;
-		transition: background-color 1s ease;
 
-		&:hover {
-			background-color: #ff658e;
+		transition: all .3s;
+
+		// De container met tekst van de filter
+		&:nth-of-type(1) {
+			display: flex;
+			align-items: center;
+			order: 2;
+			font-size: 0.8em;
 
 		}
-	}
+		&:nth-of-type(2) {
+			order: 1;
+			background: $f_red;
+		}
+		&:nth-of-type(3) {
+			order: 3;
+			background: $f_blue;
+		}
+		&:nth-of-type(4) {
+			background: $f_green;
+		}
+		&:nth-of-type(5) {
+			background: $f_yellow;
+			color: #202020;
+		}
+		&:nth-of-type(6) {
+			background: $f_orange;
+		}
+		&:nth-of-type(7) {
+			background: $f_purple;
+		}
+		&:nth-of-type(8) {
+			background: $f_pink;
+		}
+		&:nth-of-type(9) {
+			background: $f_white;
+			color: #202020;
+		}
+		&:nth-of-type(10) {
+			background: $f_brown;
+		}
+		&:nth-of-type(11) {
+			background: $f_black;
+		}
 
+		&:nth-of-type(4) ,&:nth-of-type(5), &:nth-of-type(6), &:nth-of-type(7), &:nth-of-type(8), &:nth-of-type(9), &:nth-of-type(10), &:nth-of-type(11) {
+			order: 10;
+		}
+		&:nth-of-type(10), &:nth-of-type(11) {
+			display: none;
+		}
+
+		input {
+			// display: none;
+		}
+
+		&.selected {
+			transform: scale(.9);
+		}
+
+	}
+	li:hover:not(:first-child) {
+		transform: scale(.9);
+	}
 }
 
 /*=============================================>>>>>
@@ -735,7 +739,6 @@ footer.article_meta {
 	nav {
 		img {
 			max-width: 2.5rem;
-			max-height: 3rem;
 		}
 
 		// the searchbar/btn
@@ -749,7 +752,7 @@ footer.article_meta {
 
 				button {
 					margin-bottom: 0.14rem;
-					// padding: 0.33rem 1rem;
+					padding: 0.33rem 1rem;
 					border-radius: 0 1rem 1rem 0;
 				}
 			}
@@ -808,6 +811,7 @@ footer.article_meta {
 			}
 		}
 
+		// de 3 aanbevolen artikelen
 		article:nth-of-type(1) {
 			height: 100%;
 			width: 60%;
@@ -822,6 +826,26 @@ footer.article_meta {
 		}
 	}
 
+	section:nth-of-type(2) {
+		margin: initial;
+
+
+		li {
+			width: calc(100%/4);
+			height: 22vh;
+			&:nth-of-type(1) {
+				order: 2;
+				width: 50%;
+				font-size: 1em;
+			}
+
+			&:nth-of-type(10), &:nth-of-type(11) {
+				display: initial;
+			}
+
+		}
+
+	}
 
 	.verhalen {
 		display: flex;
@@ -870,26 +894,12 @@ footer.article_meta {
 	}
 
 
-	.teaser {
-		font-size: 1em;
-	}
 
-	/*=============================================>>>>>
-	= new account  mq=
-	===============================================>>>>>*/
-
-	.new_account_form {
-		padding: 0;
-
-		fieldset:first-child {
-				padding: 1rem 2rem;
-			}
-		}
 
 } //end mq min-width 30rem
 
 
-@media screen and(min-width: 60rem) {
+@media screen and(min-width: 70rem) {
 	nav {
 		p {
 			display: inline-block;
@@ -903,11 +913,4 @@ footer.article_meta {
 		}
 
 	}
-}
-
-
-// just to divide visually for now to avoid confusion
-
-.visibility {
-		visibility: hidden;
 }
