@@ -119,10 +119,6 @@ html, body {
 	overflow: hidden;
 }
 
-section {
-	@include vertical_margin(1rem);
-}
-
 h1, h2, h3 {
 	display: block;
 	font-family: nexa_bold;
@@ -151,10 +147,7 @@ h4 {
 
 p {
 	line-height: 1.3em;
-}
-
-.fa:after {
-	content: "\00a0";
+	color: #202020;
 }
 
 button, [type="submit"] {
@@ -278,7 +271,6 @@ header form {
 	transition: all .5s;
 
 	&.visibility {
-		visibility: hidden;
 		opacity: 0;
 		transform: translateY(-100%);
 	}
@@ -295,7 +287,8 @@ header form {
 = overzichtpagina =
 ===============================================>>>>>*/
 
-section:nth-of-type(1) {
+// section:nth-of-type(1)
+.aanbevolen {
 	display: flex;
 	position: relative;
 	flex-flow: column nowrap;
@@ -367,16 +360,14 @@ section:nth-of-type(1) {
 	}
 
 	article {
-		display: flex;
-		flex-flow: row wrap;
-		align-items: flex-start;
-		flex: 1 2 12em;
-		min-height: 10rem;
-	  max-height: 22rem;
-
+		flex: 1 1 100%;
+		min-width: 10em;
+		min-height: 8em;
+		position: relative;
 		margin: 1rem 0.5rem;
 		border-radius: 1rem;
 		background-color: #fff;
+		transition: all .3s;
 
 		& p {
 			overflow: hidden;
@@ -403,18 +394,71 @@ section:nth-of-type(1) {
 			color: $h_red;
 		}
 
-		.comments {
-			margin-left: 1em;
-		}
+		.comments {margin-left: 1em;}
 
-		footer {
-			font-size: 0.75em;
-			p {
-				font-family: nexa_bold;
-				color: $h_blue;
+// voor het swipen
+		section:nth-child(1) {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+
+			// opacity: 0;
+
+			div {
+				border-radius: 1rem;
+
 			}
 		}
+
+		section:nth-child(2) {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background-color: initial;
+
+			span {
+				font-size: 3rem;
+				transition: all .5s;
+			}
+
+			span:nth-child(1) {
+				position: relative;
+				&:hover::after {
+					content: "\f004";
+					color: red;
+					position: absolute;
+					left: 0;
+				}
+			}
+
+			span:nth-child(2) {
+				&:hover {
+					color: yellow;
+				}
+			}
+		}
+
+
+
 	}
+
+}
+
+.trans {
+  transform: scale(0, 1);
+/*   transform-origin: right; */
+  opacity: 0;
+}
+
+.filter-order {
+	order: 100;
+	visibility: hidden;
+	opacity: 0;
+	transform: scale(0);
 }
 
 /*=============================================>>>>>
@@ -616,11 +660,7 @@ input {
 	display: none;
 }
 
-// filterbar style
-
-#clickmij {
-	display: none; // still works as radio btnz
-}
+// filter color tiles style
 
 section:nth-of-type(2) {
 	margin: initial;
@@ -635,17 +675,24 @@ section:nth-of-type(2) {
 	h2 {
 		font-size: 1.5em;
 		text-align: center;
-
 	}
+
+	label {
+		font-size: 2rem;
+		pointer-events: none;
+	}
+
+
 
 	ul {
 		display: flex;
 		flex-flow: row wrap;
 	}
 
-
-
 	li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: calc(100%/3);
 		height: 20vh;
 		color: #fff;
@@ -702,15 +749,12 @@ section:nth-of-type(2) {
 			display: none;
 		}
 
-		input {
-			// display: none;
-		}
-
 		&.selected {
 			transform: scale(.9);
 		}
 
 	}
+	// do not scale on the tile with instructions
 	li:hover:not(:first-child) {
 		transform: scale(.9);
 	}
@@ -772,43 +816,12 @@ section:nth-of-type(2) {
 	===============================================>>>>>*/
 
 	section:nth-of-type(1) {
-		display: flex;
-		position: relative;
 		flex-flow: column wrap;
 		height: 60vh;
 		width: 100%;
-		margin: initial;
-
-		div {
-			display: flex;
-			align-items: center;
-			position: absolute;
-			left: 1rem;
-			top: 1rem;
-			border-radius: .5rem;
-			padding: 1rem;
-			background: $h_green;
-			opacity: 0.9;
-		}
-
-
-		h2 {
-			display: inline-block;
-			text-align: center;
-			font-size: 1.5em;
-			color: #fff;
-		}
 
 		article {
-			display: flex;
-			align-items: flex-end;
-			height: 50%;
 			width: 40%;
-			h1 {
-				margin-left: 1rem;
-				font-size: 2.5em;
-				color: #fff;
-			}
 		}
 
 		// de 3 aanbevolen artikelen
@@ -816,19 +829,11 @@ section:nth-of-type(2) {
 			height: 100%;
 			width: 60%;
 		}
-
-		article:nth-of-type(2) {
-			background-size: cover;
-		}
-
-		article:nth-of-type(3) {
-			background-size: cover;
-		}
 	}
 
-	section:nth-of-type(2) {
-		margin: initial;
 
+// filter
+	section:nth-of-type(2) {
 
 		li {
 			width: calc(100%/4);
@@ -840,7 +845,7 @@ section:nth-of-type(2) {
 			}
 
 			&:nth-of-type(10), &:nth-of-type(11) {
-				display: initial;
+				display: inherit;
 			}
 
 		}
@@ -848,16 +853,6 @@ section:nth-of-type(2) {
 	}
 
 	.verhalen {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		margin: initial;
-		padding: 5vw;
-		background-color: $bg_divide;
-
-		h2 {
-			margin-left: 0.5rem;
-		}
 
 		& p {
 			@include vertical_margin(0.5rem);
@@ -869,7 +864,6 @@ section:nth-of-type(2) {
 		  height: 20rem;
 
 			div {
-
 				&:nth-of-type(1) {
 					display: inherit;
 					border-radius: 1rem 1rem 0 0;
@@ -881,15 +875,32 @@ section:nth-of-type(2) {
 
 			}
 
+			section:nth-child(1) {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				z-index: 2;
+				top: 0;
 
-
-			footer {
-				font-size: 0.75em;
-				p {
-					font-family: nexa_bold;
-					color: $h_blue;
+				// opacity: 0;
+				div {
+					border-radius: 1rem 1rem 0 0;
 				}
 			}
+			section:nth-child(2) {
+				display: flex;
+				flex-direction: column;
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				z-index: 3;
+				background-color: initial;
+
+				span:nth-child(1) {
+
+				}
+			}
+
 		}
 	}
 

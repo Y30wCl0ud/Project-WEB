@@ -75,10 +75,6 @@ html, body {
   position: relative;
   overflow: hidden; }
 
-section {
-  margin-top: 1rem;
-  margin-bottom: 1rem; }
-
 h1, h2, h3 {
   display: block;
   font-family: nexa_bold;
@@ -101,10 +97,8 @@ h4 {
   color: #29219d; }
 
 p {
-  line-height: 1.3em; }
-
-.fa:after {
-  content: "\00a0"; }
+  line-height: 1.3em;
+  color: #202020; }
 
 button, [type="submit"] {
   padding: 0.4rem 0.8rem;
@@ -186,21 +180,20 @@ header form {
     width: 15rem;
     background: #ff3268; }
   header form.visibility {
-    visibility: hidden;
     opacity: 0;
     transform: translateY(-100%); }
 
 /*=============================================>>>>>
 = overzichtpagina =
 ===============================================>>>>>*/
-section:nth-of-type(1) {
+.aanbevolen {
   display: flex;
   position: relative;
   flex-flow: column nowrap;
   height: 100%;
   width: 100%;
   margin: initial; }
-  section:nth-of-type(1) div {
+  .aanbevolen div {
     display: flex;
     align-items: center;
     position: absolute;
@@ -210,27 +203,27 @@ section:nth-of-type(1) {
     padding: 1rem;
     background: #00d66c;
     opacity: 0.9; }
-  section:nth-of-type(1) h2 {
+  .aanbevolen h2 {
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
     color: #fff; }
-  section:nth-of-type(1) article {
+  .aanbevolen article {
     display: flex;
     align-items: flex-end;
     height: 50%;
     width: 100%; }
-    section:nth-of-type(1) article h1 {
+    .aanbevolen article h1 {
       margin-left: 1rem;
       font-size: 2.5em;
       color: #fff; }
-  section:nth-of-type(1) article:nth-of-type(1) {
+  .aanbevolen article:nth-of-type(1) {
     background: url("../img/medium.jpg");
     background-size: cover; }
-  section:nth-of-type(1) article:nth-of-type(2) {
+  .aanbevolen article:nth-of-type(2) {
     background: url("../img/medium.jpg");
     background-size: cover; }
-  section:nth-of-type(1) article:nth-of-type(3) {
+  .aanbevolen article:nth-of-type(3) {
     background: url("../img/medium.jpg");
     background-size: cover; }
 
@@ -244,15 +237,14 @@ section:nth-of-type(1) {
   .verhalen h2 {
     margin-left: 0.5rem; }
   .verhalen article {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    flex: 1 2 12em;
-    min-height: 10rem;
-    max-height: 22rem;
+    flex: 1 1 100%;
+    min-width: 10em;
+    min-height: 8em;
+    position: relative;
     margin: 1rem 0.5rem;
     border-radius: 1rem;
-    background-color: #fff; }
+    background-color: #fff;
+    transition: all .3s; }
     .verhalen article p {
       overflow: hidden;
       display: -webkit-box;
@@ -268,11 +260,44 @@ section:nth-of-type(1) {
       color: #ff3268; }
     .verhalen article .comments {
       margin-left: 1em; }
-    .verhalen article footer {
-      font-size: 0.75em; }
-      .verhalen article footer p {
-        font-family: nexa_bold;
-        color: #29219d; }
+    .verhalen article section:nth-child(1) {
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+      .verhalen article section:nth-child(1) div {
+        border-radius: 1rem; }
+    .verhalen article section:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: initial; }
+      .verhalen article section:nth-child(2) span {
+        font-size: 3rem;
+        transition: all .5s; }
+      .verhalen article section:nth-child(2) span:nth-child(1) {
+        position: relative; }
+        .verhalen article section:nth-child(2) span:nth-child(1):hover::after {
+          content: "\f004";
+          color: red;
+          position: absolute;
+          left: 0; }
+      .verhalen article section:nth-child(2) span:nth-child(2):hover {
+        color: yellow; }
+
+.trans {
+  transform: scale(0, 1);
+  /*   transform-origin: right; */
+  opacity: 0; }
+
+.filter-order {
+  order: 100;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0); }
 
 /*=============================================>>>>>
 = forms =
@@ -431,9 +456,6 @@ input {
 .filter-menu::after {
   display: none; }
 
-#clickmij {
-  display: none; }
-
 section:nth-of-type(2) {
   margin: initial;
   background: #f3e5d8; }
@@ -444,10 +466,16 @@ section:nth-of-type(2) {
   section:nth-of-type(2) h2 {
     font-size: 1.5em;
     text-align: center; }
+  section:nth-of-type(2) label {
+    font-size: 2rem;
+    pointer-events: none; }
   section:nth-of-type(2) ul {
     display: flex;
     flex-flow: row wrap; }
   section:nth-of-type(2) li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: calc(100%/3);
     height: 20vh;
     color: #fff;
@@ -525,83 +553,54 @@ section:nth-of-type(2) {
   = overzichtpagina mq =
   ===============================================>>>>>*/
   section:nth-of-type(1) {
-    display: flex;
-    position: relative;
     flex-flow: column wrap;
     height: 60vh;
-    width: 100%;
-    margin: initial; }
-    section:nth-of-type(1) div {
-      display: flex;
-      align-items: center;
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
-      border-radius: .5rem;
-      padding: 1rem;
-      background: #00d66c;
-      opacity: 0.9; }
-    section:nth-of-type(1) h2 {
-      display: inline-block;
-      text-align: center;
-      font-size: 1.5em;
-      color: #fff; }
+    width: 100%; }
     section:nth-of-type(1) article {
-      display: flex;
-      align-items: flex-end;
-      height: 50%;
       width: 40%; }
-      section:nth-of-type(1) article h1 {
-        margin-left: 1rem;
-        font-size: 2.5em;
-        color: #fff; }
     section:nth-of-type(1) article:nth-of-type(1) {
       height: 100%;
       width: 60%; }
-    section:nth-of-type(1) article:nth-of-type(2) {
-      background-size: cover; }
-    section:nth-of-type(1) article:nth-of-type(3) {
-      background-size: cover; }
 
-  section:nth-of-type(2) {
-    margin: initial; }
-    section:nth-of-type(2) li {
-      width: calc(100%/4);
-      height: 22vh; }
-      section:nth-of-type(2) li:nth-of-type(1) {
-        order: 2;
-        width: 50%;
-        font-size: 1em; }
-      section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
-        display: initial; }
+  section:nth-of-type(2) li {
+    width: calc(100%/4);
+    height: 22vh; }
+    section:nth-of-type(2) li:nth-of-type(1) {
+      order: 2;
+      width: 50%;
+      font-size: 1em; }
+    section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
+      display: inherit; }
 
-  .verhalen {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: initial;
-    padding: 5vw;
-    background-color: #f3e5d8; }
-    .verhalen h2 {
-      margin-left: 0.5rem; }
-    .verhalen p {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem; }
-    .verhalen article {
-      flex: 1 1 30%;
-      height: 20rem; }
-      .verhalen article div:nth-of-type(1) {
-        display: inherit;
-        border-radius: 1rem 1rem 0 0;
-        width: 100%;
-        height: 40%;
-        background: url("../img/medium.jpg");
-        background-size: cover; }
-      .verhalen article footer {
-        font-size: 0.75em; }
-        .verhalen article footer p {
-          font-family: nexa_bold;
-          color: #29219d; } }
+  .verhalen p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .verhalen article {
+    flex: 1 1 30%;
+    height: 20rem; }
+    .verhalen article div:nth-of-type(1) {
+      display: inherit;
+      border-radius: 1rem 1rem 0 0;
+      width: 100%;
+      height: 40%;
+      background: url("../img/medium.jpg");
+      background-size: cover; }
+    .verhalen article section:nth-child(1) {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      top: 0; }
+      .verhalen article section:nth-child(1) div {
+        border-radius: 1rem 1rem 0 0; }
+    .verhalen article section:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 3;
+      background-color: initial; } }
 @media screen and (min-width: 70rem) {
   nav p {
     display: inline-block; }

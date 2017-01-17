@@ -14,16 +14,16 @@
       <form class="filter-menu">
         <h3>Kies</h3>
         <ul>
-          <li><label for="clickmij">Rood</label><input type="radio" id="clickmij" checked></li>
-          <li><label for="clickmij">Blauw</label><input type="radio" id="clickmij" checked></li>
-          <li><label for="">Groen</label></li>
-          <li><label for="">Geel</label></li>
-          <li><label for="">Orange</label></li>
-          <li><label for="">Paars</label></li>
-          <li><label for="">Roze</label></li>
-          <li><label for="">Wit</label></li>
-          <li><label for="">Bruin</label></li>
-          <li><label for="">Zwart</label></li>
+          <li data-color="red"><label>Rood</label></li>
+          <li><label>Blauw</label></li>
+          <li><label>Groen</label></li>
+          <li><label>Geel</label></li>
+          <li><label>Orange</label></li>
+          <li><label>Paars</label></li>
+          <li><label>Roze</label></li>
+          <li><label>Wit</label></li>
+          <li><label>Bruin</label></li>
+          <li><label>Zwart</label></li>
         </ul>
       </form>
 
@@ -78,7 +78,7 @@
 
           </header>
 
-          <section>
+          <section class="aanbevolen">
             <div>
               <h2>Aanbevolen artikelen</h2>
             </div>
@@ -103,45 +103,35 @@
             <form>
               <ul>
                 <li><h2>Kies je verhaal op kleur</h2></li>
-                <li>
-                  <label for="klik">Rood</label>
-                  <input type="checkbox" id="klik">
+                <li data-color="red">
+                  <label>Rood</label>
                 </li>
                 <li>
-                  <label for="">Blauw</label>
-                  <input type="checkbox">
+                  <label>Blauw</label>
                 </li>
                 <li>
-                  <label for="">Groen</label>
-                  <input type="checkbox">
+                  <label>Groen</label>
                 </li>
                 <li>
-                  <label for="">Geel</label>
-                  <input type="checkbox">
+                  <label>Geel</label>
                 </li>
                 <li>
-                  <label for="">Oranje</label>
-                  <input type="checkbox">
+                  <label>Oranje</label>
                 </li>
                 <li>
-                  <label for="">Paars</label>
-                  <input type="checkbox">
+                  <label>Paars</label>
                 </li>
                 <li>
-                  <label for="">Roze</label>
-                  <input type="checkbox">
+                  <label>Roze</label>
                 </li>
                 <li>
-                  <label for="">Wit</label>
-                  <input type="checkbox">
+                  <label>Wit</label>
                 </li>
                 <li>
-                  <label for="">Bruin</label>
-                  <input type="checkbox">
+                  <label>Bruin</label>
                 </li>
                 <li>
-                  <label for="">Zwart</label>
-                  <input type="checkbox">
+                  <label>Zwart</label>
                 </li>
               </ul>
             </form>
@@ -171,16 +161,48 @@
           <section class="verhalen">
             <h2>De verhalen:</h2>
 
+            <!-- prototype swipe -->
+            <article>
+              <section>
+                <div>
+                  <!-- teaser image -->
+                </div>
+                <div>
+                  <h3>Paranoia</h3>
+
+                  <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
+                  <span class="likes fa fa-heart"></span><span> 136</span>
+                  <span class="comments fa fa-comment-o"></span><span> 42</span>
+                </div>
+              </section>
+
+              <section class="trans">
+                <span class="likes fa fa-heart-o"></span>
+                <span class="fa fa-bookmark-o"></span>
+
+              </section>
+            </article>
+            <!-- prototype swipe end -->
+
             <article>
               <div>
 
               </div>
               <div>
                 <h3>Paranoia</h3>
-                <footer>
-                  <p><span>14w</span> woorden</p>
-                </footer>
+                <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
+                <span class="likes fa fa-heart"></span><span> 136</span>
+                <span class="comments fa fa-comment-o"></span><span> 42</span>
+              </div>
+            </article>
 
+
+            <article data-color="red">
+              <div>
+
+              </div>
+              <div>
+                <h3>Paranoia</h3>
                 <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
                 <span class="likes fa fa-heart"></span><span> 136</span>
                 <span class="comments fa fa-comment-o"></span><span> 42</span>
@@ -194,10 +216,6 @@
               </div>
               <div>
                 <h3>Paranoia</h3>
-                <footer>
-                  <p><span>14w</span> woorden</p>
-                </footer>
-
                 <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
                 <span class="likes fa fa-heart"></span><span> 136</span>
                 <span class="comments fa fa-comment-o"></span><span> 42</span>
@@ -211,10 +229,6 @@
               </div>
               <div>
                 <h3>Paranoia</h3>
-                <footer>
-                  <p><span>14w</span> woorden</p>
-                </footer>
-
                 <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
                 <span class="likes fa fa-heart"></span><span> 136</span>
                 <span class="comments fa fa-comment-o"></span><span> 42</span>
@@ -228,44 +242,6 @@
               </div>
               <div>
                 <h3>Paranoia</h3>
-                <footer>
-                  <p><span>14w</span> woorden</p>
-                </footer>
-
-                <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-              </div>
-            </article>
-
-
-            <article>
-              <div>
-
-              </div>
-              <div>
-                <h3>Paranoia</h3>
-                <footer>
-                  <p><span>14w</span> woorden</p>
-                </footer>
-
-                <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-              </div>
-            </article>
-
-
-            <article>
-              <div>
-
-              </div>
-              <div>
-                <h3>Paranoia</h3>
-                <footer>
-                  <p><span>14w</span> woorden</p>
-                </footer>
-
                 <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
                 <span class="likes fa fa-heart"></span><span> 136</span>
                 <span class="comments fa fa-comment-o"></span><span> 42</span>
@@ -282,54 +258,9 @@
     <!-- delete this script when done -->
     <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" charset="utf-8"></script>
     <script src="main.js" charset="utf-8"></script>
     <script src="test.js" charset="utf-8"></script>
   </body>
 
 </html>
-
-
-
-<!-- <article>
-  <h3>Enigszins aan de omslachtige kant</h3>
-  <footer>
-    <p><span>14w</span> woorden</p>
-  </footer>
-
-  <p>Een autobus, eigendom van het Amsterdamse Gemeentevervoersbedrijf (hierna te noemen: GVB), zet mij en mijn gewaardeerde zoon, die zojuist in zijn </p>
-  <span class="likes fa fa-heart"></span><span> 136</span>
-  <span class="comments fa fa-comment-o"></span><span> 42</span>
-</article>
-
-<article>
-  <h3>Paranoia</h3>
-  <footer>
-    <p><span>14w</span> woorden</p>
-  </footer>
-
-  <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.veel te veel aandacht. De mensen lopen over</p>
-  <span class="likes fa fa-heart"></span><span> 136</span>
-  <span class="comments fa fa-comment-o"></span><span> 42</span>
-</article>
-
-<article>
-  <h3>Paranoia</h3>
-  <footer>
-    <p><span>14w</span> woorden</p>
-  </footer>
-
-  <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.veel te veel aandacht. De mensen lopen over</p>
-  <span class="likes fa fa-heart"></span><span> 136</span>
-  <span class="comments fa fa-comment-o"></span><span> 42</span>
-</article>
-
-<article>
-  <h3>Alwetende verteller</h3>
-  <footer>
-    <p><span>14w</span> woorden</p>
-  </footer>
-
-  <p>Kijk, daar gaat Max J. Molovich. Hij is net uit de bus gestapt en loopt nu achter een gifgroene kinderwagen waarin zijn zoon ligt te slapen. Zie ‘m daar</p>
-  <span class="likes fa fa-heart"></span><span> 136</span>
-  <span class="comments fa fa-comment-o"></span><span> 42</span>
-</article> -->
