@@ -5,34 +5,60 @@ var item = document.querySelector('.filter-menu li');
 var state = false;
 var articles = document.querySelectorAll('.verhalen article');
 var filterItem = document.querySelectorAll('section:nth-of-type(2) li');
+var windowSize;
 
 
-function scanning(e) {
-  check.checked ^= false;
-  if (check.checked == true) {
-    item.classList.toggle('selected');
+
+
+
+
+// var filterOn = document.querySelector('.filter button');
+var filterOn = document.querySelector('section:nth-of-type(2) li');
+
+var pusher = document.querySelector('.pusher');
+var menu = document.querySelector('body');
+
+
+function mobileFilterToggle(e) {
+  console.log(1);
+  menu.classList.toggle('filter-menu-open');
+}
+
+function closeFilter(e) {
+  if (e.target.classList.contains('pusher')) {
+    menu.classList.toggle('filter-menu-open');
+    console.log(e.target);
   }
-  console.log(check.checked);
 }
-item.addEventListener('click', filterStories);
 
-for (var i = 0; i < filterItem.length; i++) {
-  filterItem[i].addEventListener('click', filterStories);
-}
+filterOn.addEventListener('click', mobileFilterToggle);
+pusher.addEventListener('click', closeFilter);
+
+
+
 
 function filterStories(e) {
+  // var foo = true;
+  if (window.innerWidth < 480) {
+    // mobileFilterToggle();
+    // foo = false;
+    // return;
+  }
+
+
+
   var chosenColor = e.target.getAttribute('data-color');
   console.log(chosenColor);
   var i = 0;
-  console.log(e.target);
   //e.target.classList.toggle('selected');
-  //set add class
-  //make a loop check all li for class and remove if they have it
+  //set add class//make a loop check all li for class and remove if they have it
   if (state === false) {
 
     for (i = 0; i < articles.length; i++) {
       if (articles[i].getAttribute('data-color') === chosenColor) {
         articles[i].classList.remove('filter-order');
+        e.target.classList.add('selected');
+
       } else {
         articles[i].classList.add('filter-order');
       }
@@ -50,6 +76,19 @@ function filterStories(e) {
 }
 
 // console.log(attri[2].getAttribute('data-color'));
+window.addEventListener('resize', function() {
+  // console.log(window.innerWidth);
+  windowSize = window.innerWidth;
+});
+
+item.addEventListener('click', filterStories);
+
+for (var i = 1; i < filterItem.length; i++) {
+  filterItem[i].addEventListener('click', filterStories);
+}
+
+
+
 
 
 
@@ -75,15 +114,22 @@ function swiping(event) {
 function resetElement(event) {
   var toReset = event.target;
 
-  for (var i = 0; i < swipeElements.length; i++) {
-    if (i % 2 == 0 && event.deltaX < -100) {
-      swipeElements[i + 1].style.transform = 'translateX(0px)';
-      swipeElements[i + 1].classList.toggle('trans');
-      swipeElements[i].classList.toggle('trans');
-    } else if (i % 2 == 1 && event.deltaX > 100) {
-      swipeElements[i - 1].style.transform = 'translateX(0px)';
-      swipeElements[i - 1].classList.toggle('trans');
-      swipeElements[i].classList.toggle('trans');
+  if (event.target === swipeElements[0] || event.target === swipeElements[1]) {
+    for (var i = 0; i < swipeElements.length; i++) {
+      if (i % 2 == 0 && event.deltaX < -30) {
+        swipeElements[i + 1].style.transform = 'translateX(0px)';
+        swipeElements[i + 1].classList.toggle('trans');
+        swipeElements[i].classList.toggle('trans');
+      } else if (i % 2 == 1 && event.deltaX > 30) {
+        swipeElements[i - 1].style.transform = 'translateX(0px)';
+        swipeElements[i - 1].classList.toggle('trans');
+        swipeElements[i].classList.toggle('trans');
+      }
     }
   }
+  else {
+    return;
+  }
+
+
 }

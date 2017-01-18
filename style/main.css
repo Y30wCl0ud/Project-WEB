@@ -110,6 +110,9 @@ button, [type="submit"] {
 .visibility {
   visibility: hidden; }
 
+.disable {
+  pointer-events: none; }
+
 /*=============================================>>>>>
 = Header =
 ===============================================>>>>>*/
@@ -117,7 +120,7 @@ header ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 7vh;
+  max-height: 10vh;
   position: relative;
   z-index: 2;
   padding: 0.5rem 1rem;
@@ -142,6 +145,8 @@ nav p {
   color: #00d66c;
   display: none;
   content: "\00a0"; }
+nav li .fa {
+  font-size: 0.8em; }
 nav li:nth-child(2) {
   margin-left: auto; }
   nav li:nth-child(2) div {
@@ -159,6 +164,8 @@ nav li:nth-child(3) button {
   transition: background-color 1s ease; }
   nav li:nth-child(3) button:hover {
     background-color: #50df96; }
+  nav li:nth-child(3) button::after {
+    content: " account"; }
 
 header form {
   height: 17rem;
@@ -218,13 +225,13 @@ header form {
       font-size: 2.5em;
       color: #fff; }
   .aanbevolen article:nth-of-type(1) {
-    background: url("../img/medium.jpg");
+    background: url("../img/para_large.jpg");
     background-size: cover; }
   .aanbevolen article:nth-of-type(2) {
-    background: url("../img/medium.jpg");
+    background: url("../img/hard_large.jpg");
     background-size: cover; }
   .aanbevolen article:nth-of-type(3) {
-    background: url("../img/medium.jpg");
+    background: url("../img/ono_large.jpg");
     background-size: cover; }
 
 .verhalen {
@@ -260,6 +267,12 @@ header form {
       color: #ff3268; }
     .verhalen article .comments {
       margin-left: 1em; }
+    .verhalen article section {
+      border-radius: 1rem;
+      background: white;
+      transition: all .3s; }
+    .verhalen article section * {
+      pointer-events: none; }
     .verhalen article section:nth-child(1) {
       position: absolute;
       height: 100%;
@@ -274,7 +287,7 @@ header form {
       position: absolute;
       height: 100%;
       width: 100%;
-      background-color: initial; }
+      z-index: 3; }
       .verhalen article section:nth-child(2) span {
         font-size: 3rem;
         transition: all .5s; }
@@ -362,7 +375,7 @@ input {
   top: 0;
   left: 0;
   z-index: 100;
-  width: 15rem;
+  width: 12rem;
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -370,7 +383,7 @@ input {
   background: #f3e5d8;
   transition: all 0.5s;
   opacity: 0;
-  transform: translateX(-15rem); }
+  transform: translateX(-12rem); }
   .filter-menu::-webkit-scrollbar {
     display: none; }
   .filter-menu h3 {
@@ -403,7 +416,7 @@ input {
     .filter-menu li:nth-child(10) {
       background: #212121; }
     .filter-menu li.selected {
-      width: 14rem; }
+      width: 11rem; }
   .filter-menu::after {
     position: absolute;
     top: 0;
@@ -440,11 +453,12 @@ input {
     background: rgba(0, 0, 0, 0.2);
     content: '';
     opacity: 0;
-    transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s; }
+    transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+    z-index: 100; }
 
 /* Effect 2: Reveal */
 .filter-menu-open .pusher {
-  transform: translate3d(15rem, 0, 0); }
+  transform: translate3d(12rem, 0, 0); }
 
 .filter-menu-open {
   z-index: 1; }
@@ -467,7 +481,7 @@ section:nth-of-type(2) {
     font-size: 1.5em;
     text-align: center; }
   section:nth-of-type(2) label {
-    font-size: 2rem;
+    font-size: 1.5em;
     pointer-events: none; }
   section:nth-of-type(2) ul {
     display: flex;
@@ -514,14 +528,12 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
       display: none; }
     section:nth-of-type(2) li.selected {
-      transform: scale(0.9); }
-  section:nth-of-type(2) li:hover:not(:first-child) {
-    transform: scale(0.9); }
+      transform: scale(0.85); }
 
 /*=============================================>>>>>
 = mediaqueries =
 ===============================================>>>>>*/
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 30rem) {
   h2 {
     font-size: 2.375em;
     color: #29219d; }
@@ -530,16 +542,15 @@ section:nth-of-type(2) {
     font-size: 1.5em;
     color: #00d66c; }
 
-  header ul {
-    max-height: 10vh; }
-
   nav img {
-    max-width: 2.5rem; }
-  nav ul li:nth-child(2) input {
+    max-width: 3rem; }
+  nav li .fa {
+    font-size: 1em; }
+  nav li:nth-child(2) input {
     opacity: 1;
     width: 8rem;
     border-radius: 1rem 0 0 1rem; }
-  nav ul li:nth-child(2) button {
+  nav li:nth-child(2) button {
     margin-bottom: 0.14rem;
     padding: 0.33rem 1rem;
     border-radius: 0 1rem 1rem 0; }
@@ -561,6 +572,8 @@ section:nth-of-type(2) {
     section:nth-of-type(1) article:nth-of-type(1) {
       height: 100%;
       width: 60%; }
+    section:nth-of-type(1) h1 {
+      font-size: 2em; }
 
   section:nth-of-type(2) li {
     width: calc(100%/4);
@@ -571,39 +584,48 @@ section:nth-of-type(2) {
       font-size: 1em; }
     section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
       display: inherit; }
+  section:nth-of-type(2) li:hover:not(:first-child) {
+    transform: scale(0.85); }
 
   .verhalen p {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; }
   .verhalen article {
-    flex: 1 1 30%;
+    flex: 1 1 31%;
     height: 20rem; }
-    .verhalen article div:nth-of-type(1) {
+    .verhalen article div:first-child {
       display: inherit;
       border-radius: 1rem 1rem 0 0;
       width: 100%;
-      height: 40%;
-      background: url("../img/medium.jpg");
-      background-size: cover; }
+      height: 40%; }
     .verhalen article section:nth-child(1) {
-      position: absolute;
-      height: 100%;
-      width: 100%;
       z-index: 2;
       top: 0; }
-      .verhalen article section:nth-child(1) div {
-        border-radius: 1rem 1rem 0 0; }
     .verhalen article section:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      z-index: 3;
-      background-color: initial; } }
+      flex-direction: column; }
+  .verhalen article:nth-of-type(1) {
+    background: initial; }
+    .verhalen article:nth-of-type(1) div:first-child {
+      background: url("https://blokweb.jstur.org/uploads/500729445.10.imgLarge.png");
+      background-size: cover; }
+  .verhalen article:nth-of-type(2) div:first-child {
+    background: url("../img/hard_large.jpg");
+    background-size: cover; }
+  .verhalen article:nth-of-type(3) div:first-child {
+    background: url("../img/ono_large.jpg");
+    background-size: cover; }
+  .verhalen article:nth-of-type(4) div:first-child {
+    background: url("https://blokweb.jstur.org/uploads/500733475.84.imgMedium.png");
+    background-size: cover; }
+  .verhalen article:nth-of-type(5) div:first-child {
+    background: url("https://blokweb.jstur.org/uploads/500729445.17.imgLarge.png");
+    background-size: cover; }
+  .verhalen article:nth-of-type(6) div:first-child {
+    background: url("../img/para_large.jpg");
+    background-size: cover; }
+  .verhalen article:nth-of-type(7) div:first-child {
+    background: url("https://blokweb.jstur.org/uploads/500728620.80.imgSmall.jpeg");
+    background-size: cover; } }
 @media screen and (min-width: 70rem) {
-  nav p {
-    display: inline-block; }
-
   .verhalen article {
     flex: 1 1 22%; } }
