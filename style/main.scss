@@ -314,7 +314,10 @@ header form {
 	}
 
 	h1 {
+		padding: 1rem;
+		padding-bottom: .5rem;
 		color: #fff;
+		background: linear-gradient(to top, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
 	}
 
 	h2 {
@@ -322,16 +325,11 @@ header form {
 		color: #fff;
 	}
 
-	article {
-		display: flex;
-		padding-left: 1rem;
-		padding-bottom: 0.5rem;
-		align-items: flex-end;
-	}
-
 	a {
-		display: inline-flex;
+		display: flex;
 		height: 100%;
+		align-items: flex-end;
+
 	}
 
 	a:nth-of-type(1) {
@@ -831,7 +829,7 @@ section:nth-of-type(2) {
 
 	section:nth-of-type(1) {
 		flex-flow: column wrap;
-		height: 80vh;
+		height: 75vh;
 		width: 100%;
 
 		a {
