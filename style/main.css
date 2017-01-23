@@ -127,11 +127,6 @@ header ul {
   padding: 0.5rem 1rem;
   box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, 0.15);
   background-color: #fff; }
-  header ul li {
-    display: flex;
-    align-items: center; }
-    header ul li .article_amount {
-      font-size: 1.5em; }
 
 nav img {
   max-width: 1.5rem;
@@ -235,20 +230,21 @@ header form {
   justify-content: space-between;
   padding: 5vw;
   background-color: #f3e5d8; }
+  .verhalen article:not(:nth-of-type(1)) {
+    background-color: #fff; }
   .verhalen article {
     flex: 1 1 100%;
-    min-width: 10em;
-    min-height: 8em;
+    height: 9.5em;
     position: relative;
     margin: 1rem 0.5rem;
     border-radius: 1rem;
-    background-color: #fff;
     transition: all .3s; }
     .verhalen article p {
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical; }
+      -webkit-box-orient: vertical;
+      margin: 0.8rem 0; }
     .verhalen article div {
       padding: 1rem; }
       .verhalen article div:nth-of-type(1) {
@@ -259,7 +255,6 @@ header form {
       margin-left: 1em; }
     .verhalen article section {
       border-radius: 1rem;
-      background: white;
       transition: all .3s; }
     .verhalen article section * {
       pointer-events: none; }
@@ -267,7 +262,8 @@ header form {
       overflow: hidden;
       position: absolute;
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      background: white; }
       .verhalen article section:nth-child(1)::before, .verhalen article section:nth-child(1)::after {
         display: block;
         position: absolute;
@@ -294,7 +290,8 @@ header form {
       align-items: center;
       position: absolute;
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      background: white; }
       .verhalen article section:nth-child(2)::before, .verhalen article section:nth-child(2)::after {
         display: block;
         position: absolute;
@@ -622,7 +619,7 @@ section:nth-of-type(2) {
     margin-bottom: 0.5rem; }
   .verhalen article {
     flex: 1 1 31%;
-    height: 20rem; }
+    height: 18rem; }
     .verhalen article div:first-child {
       display: inherit;
       border-radius: 1rem 1rem 0 0;

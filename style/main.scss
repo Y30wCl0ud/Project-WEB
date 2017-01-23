@@ -186,14 +186,6 @@ header {
 		box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .15);
 
 		background-color: #fff;
-
-		li {
-			display: flex;
-			align-items: center;
-			.article_amount {
-				font-size: 1.5em;
-			}
-		}
 	}
 }
 
@@ -360,15 +352,16 @@ header form {
 	background-color: $bg_divide;
 
 
+	article:not(:nth-of-type(1)) {
+		background-color: #fff;
+	}
 
 	article {
 		flex: 1 1 100%;
-		min-width: 10em;
-		min-height: 8em;
+		height: 9.5em;
 		position: relative;
 		margin: 1rem 0.5rem;
 		border-radius: 1rem;
-		background-color: #fff;
 		transition: all .3s;
 
 		& p {
@@ -376,14 +369,19 @@ header form {
 			display: -webkit-box;
 			-webkit-line-clamp: 3;
 			-webkit-box-orient: vertical;
+			margin: 0.8rem 0;
 		}
 
 		div {
 			padding: 1rem;
-
 			&:nth-of-type(1) {
 				display: none;
 			}
+
+		}
+
+		span {
+			// margin-top: 10%;
 		}
 
 		.likes {color: $h_red;}
@@ -393,7 +391,6 @@ header form {
 // voor het swipen
 		section {
 			border-radius: 1rem;
-			background: white;
 			transition: all .3s;
 		}
 
@@ -407,6 +404,8 @@ header form {
 			position: absolute;
 			height: 100%;
 			width: 100%;
+			background: white;
+
 			&::before, &::after {
 				display: block;
 				position: absolute;
@@ -439,6 +438,8 @@ header form {
 			position: absolute;
 			height: 100%;
 			width: 100%;
+			background: white;
+
 
 			&::before, &::after {
 				display: block;
@@ -917,7 +918,7 @@ section:nth-of-type(2) {
 		}
 		article {
 			flex: 1 1 31%;
-		  height: 20rem;
+		  height: 18rem;
 
 			div:first-child {
 				display: inherit;
