@@ -401,13 +401,37 @@ header form {
 			pointer-events: none;
 		}
 
+		//folded corners from: http://callmenick.com/post/css-folded-corner-effect
 		section:nth-child(1) {
+			overflow: hidden;
 			position: absolute;
 			height: 100%;
 			width: 100%;
+			&::before, &::after {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				content: "";
+			}
+			&::before {
+				border-top: solid 1rem $bg_divide;
+				border-right: solid 1rem $bg_divide;
+				border-left: solid 1rem transparent;
+				border-bottom: solid 1rem transparent;
+			}
+			&::after {
+				border-bottom: solid 1rem #f2f2f2;
+				border-left: solid 1rem #f2f2f2;
+				border-right: solid 1rem transparent;
+				border-top: solid 1rem transparent;
+				border-radius: 0 1rem;
+				box-shadow: -1px 1px 5px black;
+			}
 		}
 
 		section:nth-child(2) {
+			overflow: hidden;
 			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
@@ -415,6 +439,31 @@ header form {
 			position: absolute;
 			height: 100%;
 			width: 100%;
+
+			&::before, &::after {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				content: "";
+			}
+			&::before {
+				border-top: solid 1rem $bg_divide;
+				border-right: solid 1rem transparent;
+				border-left: solid 1rem $bg_divide;
+				border-bottom: solid 1rem transparent;
+			}
+			&::after {
+				border-bottom: solid 1rem #f2f2f2;
+				border-left: solid 1rem transparent;
+				border-right: solid 1rem #f2f2f2;
+				border-top: solid 1rem transparent;
+				border-radius: 1rem 0;
+				box-shadow: 1px 1px 5px black;
+			}
+
+
+
 
 			span {
 				pointer-events: stroke;

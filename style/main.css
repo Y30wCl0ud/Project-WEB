@@ -264,10 +264,30 @@ header form {
     .verhalen article section * {
       pointer-events: none; }
     .verhalen article section:nth-child(1) {
+      overflow: hidden;
       position: absolute;
       height: 100%;
       width: 100%; }
+      .verhalen article section:nth-child(1)::before, .verhalen article section:nth-child(1)::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: ""; }
+      .verhalen article section:nth-child(1)::before {
+        border-top: solid 1rem #f3e5d8;
+        border-right: solid 1rem #f3e5d8;
+        border-left: solid 1rem transparent;
+        border-bottom: solid 1rem transparent; }
+      .verhalen article section:nth-child(1)::after {
+        border-bottom: solid 1rem #f2f2f2;
+        border-left: solid 1rem #f2f2f2;
+        border-right: solid 1rem transparent;
+        border-top: solid 1rem transparent;
+        border-radius: 0 1rem;
+        box-shadow: -1px 1px 5px black; }
     .verhalen article section:nth-child(2) {
+      overflow: hidden;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -275,6 +295,24 @@ header form {
       position: absolute;
       height: 100%;
       width: 100%; }
+      .verhalen article section:nth-child(2)::before, .verhalen article section:nth-child(2)::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: ""; }
+      .verhalen article section:nth-child(2)::before {
+        border-top: solid 1rem #f3e5d8;
+        border-right: solid 1rem transparent;
+        border-left: solid 1rem #f3e5d8;
+        border-bottom: solid 1rem transparent; }
+      .verhalen article section:nth-child(2)::after {
+        border-bottom: solid 1rem #f2f2f2;
+        border-left: solid 1rem transparent;
+        border-right: solid 1rem #f2f2f2;
+        border-top: solid 1rem transparent;
+        border-radius: 1rem 0;
+        box-shadow: 1px 1px 5px black; }
       .verhalen article section:nth-child(2) span {
         pointer-events: stroke;
         height: 3rem;
