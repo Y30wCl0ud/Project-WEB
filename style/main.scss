@@ -132,6 +132,8 @@ h1 {
 h2 {
 	font-size: 2em;
 	color: $h_blue;
+
+	margin-left: 0.5rem;
 }
 
 h3 {
@@ -329,7 +331,6 @@ header form {
 		display: flex;
 		height: 100%;
 		align-items: flex-end;
-
 	}
 
 	a:nth-of-type(1) {
@@ -355,13 +356,10 @@ header form {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	margin: initial;
 	padding: 5vw;
 	background-color: $bg_divide;
 
-	h2 {
-		margin-left: 0.5rem;
-	}
+
 
 	article {
 		flex: 1 1 100%;
@@ -516,20 +514,6 @@ input {
 	border: initial; // delete radius when done & uncomment
 }
 
-.filter {
-	// verwijder button wanneer klaar
-	button {
-		margin-right: 1rem;
-		box-shadow: 0 0.15rem #120145;
-		background-color: $h_blue;
-		// transition: all 1s ease;
-		padding: 0.4rem 0.8rem;
-		border: none;
-		border-radius: 1rem;
-		color: #fff;
-	}
-}
-
 .pusher, .pusher > div {
 	height: 100%;
 }
@@ -669,12 +653,12 @@ input {
 	display: none;
 }
 
-// filter color tiles style
 
+
+// filter color tiles style
 section:nth-of-type(2) {
 
 
-	margin: initial;
 	background: $bg_divide;
 
 	& * {
@@ -684,8 +668,7 @@ section:nth-of-type(2) {
 		padding: initial;
 	}
 	h2 {
-		font-size: 1.5em;
-		text-align: center;
+		padding: 0 5vw;
 	}
 
 	label {
@@ -698,6 +681,7 @@ section:nth-of-type(2) {
 	ul {
 		display: flex;
 		flex-flow: row wrap;
+		justify-content: center;
 	}
 
 	li {
@@ -714,12 +698,13 @@ section:nth-of-type(2) {
 		&:nth-of-type(1) {
 			display: flex;
 			align-items: center;
-			order: 2;
+			order: 1;
+			width: 100%;;
 			font-size: 0.8em;
 
 		}
 		&:nth-of-type(2) {
-			order: 1;
+			order: 2;
 			background: $f_red;
 		}
 		&:nth-of-type(3) {
@@ -756,7 +741,7 @@ section:nth-of-type(2) {
 		&:nth-of-type(4) ,&:nth-of-type(5), &:nth-of-type(6), &:nth-of-type(7), &:nth-of-type(8), &:nth-of-type(9), &:nth-of-type(10), &:nth-of-type(11) {
 			order: 10;
 		}
-		&:nth-of-type(10), &:nth-of-type(11) {
+		&:nth-of-type(11) {
 			display: none;
 		}
 
@@ -862,7 +847,7 @@ section:nth-of-type(2) {
 			height: 22vh;
 			&:nth-of-type(1) {
 				order: 2;
-				width: 50%;
+				width: 100%;
 				font-size: 1em;
 			}
 

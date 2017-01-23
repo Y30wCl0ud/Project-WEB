@@ -85,7 +85,8 @@ h1 {
 
 h2 {
   font-size: 2em;
-  color: #29219d; }
+  color: #29219d;
+  margin-left: 0.5rem; }
 
 h3 {
   font-size: 1.25em;
@@ -232,11 +233,8 @@ header form {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin: initial;
   padding: 5vw;
   background-color: #f3e5d8; }
-  .verhalen h2 {
-    margin-left: 0.5rem; }
   .verhalen article {
     flex: 1 1 100%;
     min-width: 10em;
@@ -352,15 +350,6 @@ input {
 .filter, form {
   border: initial; }
 
-.filter button {
-  margin-right: 1rem;
-  box-shadow: 0 0.15rem #120145;
-  background-color: #29219d;
-  padding: 0.4rem 0.8rem;
-  border: none;
-  border-radius: 1rem;
-  color: #fff; }
-
 .pusher, .pusher > div {
   height: 100%; }
 
@@ -473,21 +462,20 @@ input {
   display: none; }
 
 section:nth-of-type(2) {
-  margin: initial;
   background: #f3e5d8; }
   section:nth-of-type(2) * {
     background: initial; }
   section:nth-of-type(2) form {
     padding: initial; }
   section:nth-of-type(2) h2 {
-    font-size: 1.5em;
-    text-align: center; }
+    padding: 0 5vw; }
   section:nth-of-type(2) label {
     font-size: 1.5em;
     pointer-events: none; }
   section:nth-of-type(2) ul {
     display: flex;
-    flex-flow: row wrap; }
+    flex-flow: row wrap;
+    justify-content: center; }
   section:nth-of-type(2) li {
     display: flex;
     align-items: center;
@@ -499,10 +487,11 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li:nth-of-type(1) {
       display: flex;
       align-items: center;
-      order: 2;
+      order: 1;
+      width: 100%;
       font-size: 0.8em; }
     section:nth-of-type(2) li:nth-of-type(2) {
-      order: 1;
+      order: 2;
       background: #f44336; }
     section:nth-of-type(2) li:nth-of-type(3) {
       order: 3;
@@ -527,7 +516,7 @@ section:nth-of-type(2) {
       background: #212121; }
     section:nth-of-type(2) li:nth-of-type(4), section:nth-of-type(2) li:nth-of-type(5), section:nth-of-type(2) li:nth-of-type(6), section:nth-of-type(2) li:nth-of-type(7), section:nth-of-type(2) li:nth-of-type(8), section:nth-of-type(2) li:nth-of-type(9), section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
       order: 10; }
-    section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
+    section:nth-of-type(2) li:nth-of-type(11) {
       display: none; }
     section:nth-of-type(2) li.selected {
       transform: scale(0.85); }
@@ -583,7 +572,7 @@ section:nth-of-type(2) {
     height: 22vh; }
     section:nth-of-type(2) li:nth-of-type(1) {
       order: 2;
-      width: 50%;
+      width: 100%;
       font-size: 1em; }
     section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
       display: inherit; }
