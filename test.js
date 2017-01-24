@@ -6,7 +6,7 @@ var filterItem = document.querySelectorAll('section:nth-of-type(2) li');
 var filterInfo = document.querySelectorAll('section:nth-of-type(2) li p')
 var windowSize;
 
-
+var stories = document.querySelector('section:nth-of-type(3)');
 
 
 
@@ -73,7 +73,7 @@ function filterStories(e) {
     }
 
 
-  // articles[1].scrollIntoView(true);
+  stories.scrollIntoView(true);
 
 
 }
