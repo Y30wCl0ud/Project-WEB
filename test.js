@@ -1,7 +1,6 @@
 
 var item = document.querySelector('.filter-menu li');
 
-var state = false;
 var articles = document.querySelectorAll('.verhalen article');
 var filterItem = document.querySelectorAll('section:nth-of-type(2) li');
 var filterInfo = document.querySelectorAll('section:nth-of-type(2) li p')
@@ -47,14 +46,32 @@ function filterStories(e) {
 
 
   var chosenColor = e.target.getAttribute('data-color');
-  // articles[1].scrollIntoView(true);
-  var i = 0;
+  // var i = 0;
 
-  //set add class//make a loop check all li for class and remove if they have it
-  if (state === false) {
 
+// filtering the articles
+  for (var i = 0; i < articles.length; i++) {
+    articles[i].classList.add('filtered');
+
+    if (articles[i].getAttribute('data-color') === chosenColor) {
+      articles[i].classList.remove('filtered');
+    } else {
+    }
+  }
+
+
+  if (e.target.classList.contains('selected')) {
+
+  }
+
+
+  // check whether the filter is selected or not
     if (e.target.classList.contains('selected')) {
       e.target.classList.remove('selected');
+    // to deactivate a already active filter
+      for (var i = 0; i < articles.length; i++) {
+        articles[i].classList.remove('filtered');
+      }
     } else {
       for (var i = 0; i < filterItem.length; i++) {
         filterItem[i].classList.remove('selected');
@@ -63,32 +80,8 @@ function filterStories(e) {
     }
 
 
+  // articles[1].scrollIntoView(true);
 
-    for (i = 0; i < articles.length; i++) {
-      // if (articles[i].classList.contains('selected')) {
-      //   console.log("test");
-      //   return;
-      // }
-
-      if (articles[i].getAttribute('data-color') === chosenColor) {
-        articles[i].classList.remove('filtered');
-        console.log(articles[i]);
-
-      } else {
-        articles[i].classList.add('filtered');
-      }
-    }
-
-    // state = true;
-  }
-
-  else {
-    for (i = 0; i < articles.length; i++) {
-      articles[i].classList.remove('filtered');
-      filterItem[i].classList.remove('selected');
-    }
-    // state = false;
-  }
 
 }
 
