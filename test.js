@@ -47,15 +47,24 @@ function filterStories(e) {
 
 
   var chosenColor = e.target.getAttribute('data-color');
-  console.log(chosenColor);
   // articles[1].scrollIntoView(true);
   var i = 0;
 
   //set add class//make a loop check all li for class and remove if they have it
   if (state === false) {
-    for (i = 0; i < articles.length; i++) {
-      articles[i].classList.remove('filtered', 'selected');
 
+    if (e.target.classList.contains('selected')) {
+      e.target.classList.remove('selected');
+    } else {
+      for (var i = 0; i < filterItem.length; i++) {
+        filterItem[i].classList.remove('selected');
+      }
+      e.target.classList.add('selected');
+    }
+
+
+
+    for (i = 0; i < articles.length; i++) {
       // if (articles[i].classList.contains('selected')) {
       //   console.log("test");
       //   return;
@@ -63,21 +72,22 @@ function filterStories(e) {
 
       if (articles[i].getAttribute('data-color') === chosenColor) {
         articles[i].classList.remove('filtered');
-        e.target.classList.add('selected');
+        console.log(articles[i]);
+
       } else {
         articles[i].classList.add('filtered');
       }
     }
 
-    state = true;
+    // state = true;
   }
 
   else {
     for (i = 0; i < articles.length; i++) {
-      articles[i].classList.remove('filtered', 'selected');
-      e.target.classList.remove('selected');
+      articles[i].classList.remove('filtered');
+      filterItem[i].classList.remove('selected');
     }
-    state = false;
+    // state = false;
   }
 
 }
