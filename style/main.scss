@@ -114,9 +114,9 @@ html {
 }
 
 html, body {
-	height: 100%;
+	// height: 100%;
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 h1, h2, h3 {
@@ -589,13 +589,21 @@ input {
 	border: initial; // delete radius when done & uncomment
 }
 
+body {
+	&.transition {
+		transition: all 900ms ease;
+	}
+	// transform: translate(0, 500px);
+}
+
 .pusher, .pusher > div {
-	height: 100%;
+	// height: 100%;
 }
 
 .pusher > div {
 	position: relative;
-	overflow-y: scroll;
+	// overflow-y: scroll;
+
 }
 
 // pusher/content
@@ -605,7 +613,7 @@ input {
 	padding: initial;
 	display: flex;
 	flex-flow: column nowrap;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 100;
@@ -613,7 +621,6 @@ input {
 	width: 12rem;
 	height: 100%;
 
-	overflow-y: scroll;
 	overflow-x: hidden;
 	background: none;
 	background: $bg_divide;
@@ -823,7 +830,7 @@ section:nth-of-type(2) {
 	}
 
 	li p {
-		visibility: collapse;
+		// visibility: collapse;
 		// position: relative;
 		color: #fff;
 		&:hover {

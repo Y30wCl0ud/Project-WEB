@@ -71,9 +71,7 @@ html {
   font-family: nexa; }
 
 html, body {
-  height: 100%;
-  position: relative;
-  overflow: hidden; }
+  position: relative; }
 
 h1, h2, h3 {
   display: block;
@@ -408,25 +406,23 @@ input {
 .filter, form {
   border: initial; }
 
-.pusher, .pusher > div {
-  height: 100%; }
+body.transition {
+  transition: all 900ms ease; }
 
 .pusher > div {
-  position: relative;
-  overflow-y: scroll; }
+  position: relative; }
 
 .filter-menu {
   border-radius: initial;
   padding: initial;
   display: flex;
   flex-flow: column nowrap;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
   width: 12rem;
   height: 100%;
-  overflow-y: scroll;
   overflow-x: hidden;
   background: none;
   background: #f3e5d8;
@@ -580,7 +576,6 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li.selected {
       transform: scale(0.85); }
   section:nth-of-type(2) li p {
-    visibility: collapse;
     color: #fff; }
     section:nth-of-type(2) li p:hover {
       display: block; }

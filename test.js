@@ -7,8 +7,7 @@ var filterInfo = document.querySelectorAll('section:nth-of-type(2) li p')
 var windowSize;
 
 var stories = document.querySelector('section:nth-of-type(3)');
-
-
+var content = document.querySelector('.pusher > div');
 
 // var filterOn = document.querySelector('.filter button');
 var filterOn = document.querySelector('section:nth-of-type(2) li');
@@ -34,8 +33,12 @@ pusher.addEventListener('click', closeFilter);
 
 
 
+var storiesOffset;
+var pageOffset;
 
 function filterStories(e) {
+  storiesOffset = stories.offsetTop;
+  pageOffset = window.pageYOffset;
   // var foo = true;
   if (window.innerWidth < 480) {
     // mobileFilterToggle();
@@ -69,11 +72,19 @@ function filterStories(e) {
         filterItem[i].classList.remove('selected');
         mFilterItem[i].classList.remove('selected');
       }
+      menu.classList.add('transition');
+      if (storiesOffset != pageOffset) {
+        menu.style.transform = "translate(0, -" + (storiesOffset - pageOffset) + "px)";
+      }
+
+      window.setTimeout(function(){
+        menu.classList.remove('transition');
+        menu.style.cssText = "";
+          window.scrollTo(0, storiesOffset);
+      }, 900)
+
       e.target.classList.add('selected');
     }
-
-
-  stories.scrollIntoView(true);
 
 
 }
@@ -105,3 +116,7 @@ function showInfo(e) {
   console.log(target);
   // articles[1].scrollIntoView(true);
 }
+
+
+
+console.log(stories.offsetTop);
