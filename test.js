@@ -1,12 +1,11 @@
 
-var check = document.querySelector('#clickmij');
 var item = document.querySelector('.filter-menu li');
 
 var state = false;
 var articles = document.querySelectorAll('.verhalen article');
 var filterItem = document.querySelectorAll('section:nth-of-type(2) li');
+var filterInfo = document.querySelectorAll('section:nth-of-type(2) li p')
 var windowSize;
-
 
 
 
@@ -49,26 +48,34 @@ function filterStories(e) {
 
   var chosenColor = e.target.getAttribute('data-color');
   console.log(chosenColor);
+  // articles[1].scrollIntoView(true);
   var i = 0;
-  //e.target.classList.toggle('selected');
+
   //set add class//make a loop check all li for class and remove if they have it
   if (state === false) {
-
     for (i = 0; i < articles.length; i++) {
-      if (articles[i].getAttribute('data-color') === chosenColor) {
-        articles[i].classList.remove('filter-order');
-        e.target.classList.add('selected');
+      articles[i].classList.remove('filtered', 'selected');
 
+      // if (articles[i].classList.contains('selected')) {
+      //   console.log("test");
+      //   return;
+      // }
+
+      if (articles[i].getAttribute('data-color') === chosenColor) {
+        articles[i].classList.remove('filtered');
+        e.target.classList.add('selected');
       } else {
-        articles[i].classList.add('filter-order');
+        articles[i].classList.add('filtered');
       }
     }
-    state = true;
 
-  } else {
+    state = true;
+  }
+
+  else {
     for (i = 0; i < articles.length; i++) {
-      articles[i].classList.remove('filter-order');
-      articles[i].classList.remove('selected');
+      articles[i].classList.remove('filtered', 'selected');
+      e.target.classList.remove('selected');
     }
     state = false;
   }
@@ -85,10 +92,20 @@ item.addEventListener('click', filterStories);
 
 for (var i = 1; i < filterItem.length; i++) {
   filterItem[i].addEventListener('click', filterStories);
+  // filterItem[i].addEventListener('mouseover', showInfo);
+
 }
 
 
 
+
+
+function showInfo(e) {
+  // var target = document.querySelector(e);
+  var target = e.target.childnodes;
+  console.log(target);
+  // articles[1].scrollIntoView(true);
+}
 
 
 
@@ -130,22 +147,4 @@ function resetElement(event) {
   else {
     return;
   }
-
-
 }
-
-
-// quick fix for the like and bookmark prototype
-var articleLike = document.getElementById('like');
-var articleBookmark = document.getElementById('bookmark');
-console.log(articleLike, articleBookmark);
-
-
-function aniArtiSelection(e) {
-  console.log(e.target);
-  e.target.classList.toggle('animated');
-  e.target.classList.toggle('inactiveArtiItem');
-}
-
-articleLike.addEventListener('click', aniArtiSelection);
-articleBookmark.addEventListener('click', aniArtiSelection);

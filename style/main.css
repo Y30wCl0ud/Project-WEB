@@ -253,6 +253,9 @@ header form {
       color: #ff3268; }
     .verhalen article .comments {
       margin-left: 1em; }
+    .verhalen article .fa-circle {
+      position: absolute;
+      right: 1rem; }
     .verhalen article section {
       border-radius: 1rem;
       transition: all .3s; }
@@ -321,6 +324,26 @@ header form {
       .verhalen article section:nth-child(2) span:nth-child(2) {
         background: url("../img/bookmark.svg");
         background-size: cover; }
+  .verhalen [data-color="red"] .fa-circle {
+    color: #f44336; }
+  .verhalen [data-color="blue"] .fa-circle {
+    color: #2196f3; }
+  .verhalen [data-color="green"] .fa-circle {
+    color: #4caf50; }
+  .verhalen [data-color="yellow"] .fa-circle {
+    color: #ffeb3b; }
+  .verhalen [data-color="orange"] .fa-circle {
+    color: #ff9800; }
+  .verhalen [data-color="purple"] .fa-circle {
+    color: #673ab7; }
+  .verhalen [data-color="pink"] .fa-circle {
+    color: #f06292; }
+  .verhalen [data-color="white"] .fa-circle {
+    color: #fafafa; }
+  .verhalen [data-color="brown"] .fa-circle {
+    color: #795548; }
+  .verhalen [data-color="black"] .fa-circle {
+    color: #212121; }
 
 @keyframes activeItem {
   from {
@@ -341,7 +364,7 @@ header form {
   transform: scale(0, 1);
   opacity: 0; }
 
-.filter-order {
+.filtered {
   order: 100;
   visibility: hidden;
   opacity: 0;
@@ -433,7 +456,7 @@ input {
     .filter-menu li:nth-child(6) {
       background: #673ab7; }
     .filter-menu li:nth-child(7) {
-      background: #ec407a; }
+      background: #f06292; }
     .filter-menu li:nth-child(8) {
       background: #fafafa;
       color: #202020; }
@@ -513,6 +536,7 @@ section:nth-of-type(2) {
     justify-content: center; }
   section:nth-of-type(2) li {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: calc(100%/3);
@@ -522,14 +546,12 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li:nth-of-type(1) {
       display: flex;
       align-items: center;
-      order: 1;
+      height: 15vh;
       width: 100%;
       font-size: 0.8em; }
     section:nth-of-type(2) li:nth-of-type(2) {
-      order: 2;
       background: #f44336; }
     section:nth-of-type(2) li:nth-of-type(3) {
-      order: 3;
       background: #2196f3; }
     section:nth-of-type(2) li:nth-of-type(4) {
       background: #4caf50; }
@@ -541,7 +563,7 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li:nth-of-type(7) {
       background: #673ab7; }
     section:nth-of-type(2) li:nth-of-type(8) {
-      background: #ec407a; }
+      background: #f06292; }
     section:nth-of-type(2) li:nth-of-type(9) {
       background: #fafafa;
       color: #202020; }
@@ -549,12 +571,15 @@ section:nth-of-type(2) {
       background: #795548; }
     section:nth-of-type(2) li:nth-of-type(11) {
       background: #212121; }
-    section:nth-of-type(2) li:nth-of-type(4), section:nth-of-type(2) li:nth-of-type(5), section:nth-of-type(2) li:nth-of-type(6), section:nth-of-type(2) li:nth-of-type(7), section:nth-of-type(2) li:nth-of-type(8), section:nth-of-type(2) li:nth-of-type(9), section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
-      order: 10; }
     section:nth-of-type(2) li:nth-of-type(11) {
       display: none; }
     section:nth-of-type(2) li.selected {
       transform: scale(0.85); }
+  section:nth-of-type(2) li p {
+    visibility: collapse;
+    color: #fff; }
+    section:nth-of-type(2) li p:hover {
+      display: block; }
 
 /*=============================================>>>>>
 = mediaqueries =
@@ -606,8 +631,6 @@ section:nth-of-type(2) {
     width: calc(100%/4);
     height: 22vh; }
     section:nth-of-type(2) li:nth-of-type(1) {
-      order: 2;
-      width: 100%;
       font-size: 1em; }
     section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
       display: inherit; }
@@ -651,7 +674,7 @@ section:nth-of-type(2) {
     background: url("../img/para_large.jpg");
     background-size: cover; }
   .verhalen article:nth-of-type(7) div:first-child {
-    background: url("https://blokweb.jstur.org/uploads/500728620.80.imgSmall.jpeg");
+    background: url("https://blokweb.jstur.org/uploads/500728620.80.imgLarge.jpeg");
     background-size: cover; } }
 @media screen and (min-width: 70rem) {
   .verhalen article {
