@@ -656,7 +656,8 @@ section:nth-of-type(2) {
       z-index: 2;
       top: 0; }
     .verhalen article section:nth-child(2) {
-      flex-direction: column; }
+      flex-direction: column;
+      padding: 0; }
   .verhalen article:nth-of-type(1) {
     background: initial; }
     .verhalen article:nth-of-type(1) div:first-child {
