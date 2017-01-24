@@ -29,7 +29,12 @@ account.addEventListener('click', toggleLogin);
 // filterOn.addEventListener('click', mobileFilterToggle);
 // pusher.addEventListener('click', closeFilter);
 
-// like and bookmark events
+
+/*=============================================>>>>>
+= like and bookmark events =
+===============================================>>>>>*/
+
+
 var articleLike = document.getElementById('like');
 var articleBookmark = document.getElementById('bookmark');
 console.log(articleLike, articleBookmark);
@@ -43,3 +48,46 @@ function aniArtiSelection(e) {
 
 articleLike.addEventListener('click', aniArtiSelection);
 articleBookmark.addEventListener('click', aniArtiSelection);
+
+
+
+
+/*=============================================>>>>>
+= swipe prototype =
+===============================================>>>>>*/
+
+var swipeElements = document.querySelectorAll('.verhalen article section');
+
+// initializing swipe elements to be swiped
+for (var i = 0; i < swipeElements.length; i++) {
+  var hammerCard = new Hammer (swipeElements[i]);
+  hammerCard.on('panend', resetElement);
+  i % 2 ? hammerCard.on('panright', swiping) : hammerCard.on('panleft', swiping);
+}
+
+// allows the element to be swiped
+function swiping(event) {
+  var elToSwipe = event.target;
+  // elToSwipe.style.left =  event.deltaX + 'px';
+  elToSwipe.style.transform = 'translateX(' + event.deltaX + 'px)';
+}
+
+// toggling between the two faces
+// this is a starting setup to add the function to all the cards (alas)
+function resetElement(event) {
+  var toReset = event.target;
+
+  if (event.target === swipeElements[0] || event.target === swipeElements[1]) {
+    for (var i = 0; i < swipeElements.length; i++) {
+      if (i % 2 == 0 && event.deltaX < -30) {
+        swipeElements[i + 1].style.transform = 'translateX(0px)';
+        swipeElements[i + 1].classList.toggle('trans');
+        swipeElements[i].classList.toggle('trans');
+      } else if (i % 2 == 1 && event.deltaX > 30) {
+        swipeElements[i - 1].style.transform = 'translateX(0px)';
+        swipeElements[i - 1].classList.toggle('trans');
+        swipeElements[i].classList.toggle('trans');
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 
-var item = document.querySelector('.filter-menu li');
+var mFilterItem = document.querySelectorAll('.filter-menu li');
 
 var articles = document.querySelectorAll('.verhalen article');
 var filterItem = document.querySelectorAll('section:nth-of-type(2) li');
@@ -46,8 +46,6 @@ function filterStories(e) {
 
 
   var chosenColor = e.target.getAttribute('data-color');
-  // var i = 0;
-
 
 // filtering the articles
   for (var i = 0; i < articles.length; i++) {
@@ -59,12 +57,6 @@ function filterStories(e) {
     }
   }
 
-
-  if (e.target.classList.contains('selected')) {
-
-  }
-
-
   // check whether the filter is selected or not
     if (e.target.classList.contains('selected')) {
       e.target.classList.remove('selected');
@@ -73,8 +65,9 @@ function filterStories(e) {
         articles[i].classList.remove('filtered');
       }
     } else {
-      for (var i = 0; i < filterItem.length; i++) {
+      for (var i = 0; i < mFilterItem.length; i++) {
         filterItem[i].classList.remove('selected');
+        mFilterItem[i].classList.remove('selected');
       }
       e.target.classList.add('selected');
     }
@@ -91,12 +84,15 @@ window.addEventListener('resize', function() {
   windowSize = window.innerWidth;
 });
 
-item.addEventListener('click', filterStories);
 
 for (var i = 1; i < filterItem.length; i++) {
   filterItem[i].addEventListener('click', filterStories);
   // filterItem[i].addEventListener('mouseover', showInfo);
 
+}
+
+for (var i = 0; i < mFilterItem.length; i++) {
+  mFilterItem[i].addEventListener('click', filterStories);
 }
 
 
@@ -108,46 +104,4 @@ function showInfo(e) {
   var target = e.target.childnodes;
   console.log(target);
   // articles[1].scrollIntoView(true);
-}
-
-
-
-
-// card swipe prototype
-var swipeElements = document.querySelectorAll('.verhalen article section');
-
-for (var i = 0; i < swipeElements.length; i++) {
-  var hammerCard = new Hammer (swipeElements[i]);
-  hammerCard.on('panend', resetElement);
-  i % 2 ? hammerCard.on('panright', swiping) : hammerCard.on('panleft', swiping);
-}
-
-
-
-function swiping(event) {
-  var elToSwipe = event.target;
-  // elToSwipe.style.left =  event.deltaX + 'px';
-  elToSwipe.style.transform = 'translateX(' + event.deltaX + 'px)';
-}
-
-
-function resetElement(event) {
-  var toReset = event.target;
-
-  if (event.target === swipeElements[0] || event.target === swipeElements[1]) {
-    for (var i = 0; i < swipeElements.length; i++) {
-      if (i % 2 == 0 && event.deltaX < -30) {
-        swipeElements[i + 1].style.transform = 'translateX(0px)';
-        swipeElements[i + 1].classList.toggle('trans');
-        swipeElements[i].classList.toggle('trans');
-      } else if (i % 2 == 1 && event.deltaX > 30) {
-        swipeElements[i - 1].style.transform = 'translateX(0px)';
-        swipeElements[i - 1].classList.toggle('trans');
-        swipeElements[i].classList.toggle('trans');
-      }
-    }
-  }
-  else {
-    return;
-  }
 }
