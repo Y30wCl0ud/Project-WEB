@@ -625,7 +625,7 @@ section:nth-of-type(2) {
       height: 100%;
       width: 60%; }
     section:nth-of-type(1) h1 {
-      font-size: 2em; }
+      font-size: 1.5rem; }
 
   section:nth-of-type(2) li {
     width: calc(100%/4);
@@ -677,6 +677,9 @@ section:nth-of-type(2) {
   .verhalen article:nth-of-type(7) div:first-child {
     background: url("https://blokweb.jstur.org/uploads/500728620.80.imgLarge.jpeg");
     background-size: cover; } }
+@media screen and (min-width: 45rem) {
+  section:nth-of-type(1) h1 {
+    font-size: 2.5em; } }
 @media screen and (min-width: 70rem) {
   .verhalen article {
     flex: 1 1 22%; } }
