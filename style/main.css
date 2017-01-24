@@ -523,7 +523,7 @@ section:nth-of-type(2) {
   section:nth-of-type(2) form {
     padding: initial; }
   section:nth-of-type(2) h2 {
-    padding: 0 5vw;
+    padding-left: 5vw;
     color: #00d66c; }
   section:nth-of-type(2) label {
     font-size: 1.5em;
@@ -537,6 +537,7 @@ section:nth-of-type(2) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
     width: calc(100%/3);
     height: 20vh;
     color: #fff;
