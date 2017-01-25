@@ -70,8 +70,8 @@ a {
 html {
   font-family: nexa; }
 
-html, body {
-  position: relative; }
+body {
+  overflow-x: hidden; }
 
 h1, h2, h3 {
   display: block;
@@ -189,7 +189,7 @@ header form {
   display: flex;
   position: relative;
   flex-flow: column nowrap;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   margin: initial; }
   .aanbevolen div {
@@ -292,7 +292,8 @@ header form {
       position: absolute;
       height: 100%;
       width: 100%;
-      background: white; }
+      background: white;
+      padding: initial; }
       .verhalen article section:nth-child(2)::before, .verhalen article section:nth-child(2)::after {
         display: block;
         position: absolute;
@@ -409,9 +410,6 @@ input {
 body.transition {
   transition: all 900ms ease; }
 
-.pusher > div {
-  position: relative; }
-
 .filter-menu {
   border-radius: initial;
   padding: initial;
@@ -463,46 +461,44 @@ body.transition {
     .filter-menu li.selected {
       width: 11rem; }
   .filter-menu::after {
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
-    content: '';
     opacity: 1;
     transition: opacity 0.5s; }
 
-.filter-menu-open, .pusher {
+.filter-menu-open, main {
   width: 100%;
   opacity: 1;
   transition: opacity 0.5s; }
 
-.filter-menu-open .pusher::after {
+.filter-menu-open main::after {
   width: 100%;
   height: 100%;
   opacity: 1;
   transition: opacity 0.5s; }
 
-.pusher {
-  position: relative;
-  left: 0;
+main {
   z-index: 99;
   transition: transform 0.5s; }
-  .pusher::after {
+  main::after {
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 0;
     height: 0;
     background: rgba(0, 0, 0, 0.2);
-    content: '';
     opacity: 0;
     transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
     z-index: 100; }
 
 /* Effect 2: Reveal */
-.filter-menu-open .pusher {
+.filter-menu-open main {
   transform: translate3d(12rem, 0, 0); }
 
 .filter-menu-open {
@@ -531,13 +527,21 @@ section:nth-of-type(2) {
   section:nth-of-type(2) ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center; }
+    justify-content: center;
+    position: relative; }
+    section:nth-of-type(2) ul::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 60vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.2); }
   section:nth-of-type(2) li {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     width: calc(100%/3);
     height: 20vh;
     color: #fff;
@@ -627,6 +631,8 @@ section:nth-of-type(2) {
     section:nth-of-type(1) h1 {
       font-size: 1.5rem; }
 
+  section:nth-of-type(2) ul::after {
+    display: none; }
   section:nth-of-type(2) li {
     width: calc(100%/4);
     height: 22vh; }

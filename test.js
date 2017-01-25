@@ -7,28 +7,25 @@ var filterInfo = document.querySelectorAll('section:nth-of-type(2) li p')
 var windowSize;
 
 var stories = document.querySelector('section:nth-of-type(3)');
-var content = document.querySelector('.pusher > div');
 
-// var filterOn = document.querySelector('.filter button');
-var filterOn = document.querySelector('section:nth-of-type(2) li');
 
-var pusher = document.querySelector('.pusher');
-var menu = document.querySelector('body');
+var pusher = document.querySelector('main');
+var pageBody = document.querySelector('body');
 
 
 function mobileFilterToggle(e) {
-  console.log(1);
-  menu.classList.toggle('filter-menu-open');
+  if (window.innerWidth < 480) {
+    pageBody.classList.toggle('filter-menu-open');
+  }
 }
 
 function closeFilter(e) {
-  if (e.target.classList.contains('pusher')) {
-    menu.classList.toggle('filter-menu-open');
+  if (e.target.getAttribute('data-effect') === 'pusher') {
+    pageBody.classList.toggle('filter-menu-open');
     console.log(e.target);
   }
 }
 
-filterOn.addEventListener('click', mobileFilterToggle);
 pusher.addEventListener('click', closeFilter);
 
 
@@ -40,11 +37,7 @@ function filterStories(e) {
   storiesOffset = stories.offsetTop;
   pageOffset = window.pageYOffset;
   // var foo = true;
-  if (window.innerWidth < 480) {
-    // mobileFilterToggle();
-    // foo = false;
-    // return;
-  }
+
 
 
 
@@ -72,14 +65,14 @@ function filterStories(e) {
         filterItem[i].classList.remove('selected');
         mFilterItem[i].classList.remove('selected');
       }
-      menu.classList.add('transition');
+      pageBody.classList.add('transition');
       if (storiesOffset != pageOffset) {
-        menu.style.transform = "translate(0, -" + (storiesOffset - pageOffset) + "px)";
+        pageBody.style.transform = "translate(0, -" + (storiesOffset - pageOffset) + "px)";
       }
 
       window.setTimeout(function(){
-        menu.classList.remove('transition');
-        menu.style.cssText = "";
+        pageBody.classList.remove('transition');
+        pageBody.style.cssText = "";
           window.scrollTo(0, storiesOffset);
       }, 900)
 
@@ -119,4 +112,6 @@ function showInfo(e) {
 
 
 
-console.log(stories.offsetTop);
+var mobiletrigger = document.querySelector('section:nth-of-type(2) ul');
+
+mobiletrigger.addEventListener('click', mobileFilterToggle);

@@ -37,11 +37,8 @@ account.addEventListener('click', toggleLogin);
 
 var articleLike = document.getElementById('like');
 var articleBookmark = document.getElementById('bookmark');
-console.log(articleLike, articleBookmark);
-
 
 function aniArtiSelection(e) {
-  console.log(e.target);
   e.target.classList.toggle('animated');
   e.target.classList.toggle('inactiveArtiItem');
 }

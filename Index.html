@@ -27,241 +27,240 @@
       </form>
 
       <!-- div container to push the content when filter opens in mobile -->
-      <div class="pusher">
-        <div>
-          <!-- header -->
-          <header>
-            <nav>
-              <ul>
-                <li>
-                  <a href="index.html">
-                    <img src="./img/logo.png" alt="Logo of Transavia">
-                  </a>
-                  <p>verhalen</p>
-                </li>
-                <li>
-                  <div>
-                    <input type="text" placeholder="zoeken">
-                    <button class="fa fa-search" role="button"></button>
-                  </div>
-                </li>
-                <li>
-                  <button id="account_btn" role="button" name="button"><span class="fa fa-user"></span></button>
-                </li>
-              </ul>
-            </nav>
-            <!-- login -->
-
-            <form class="visibility" id="login_form">
-              <!-- login form -->
-              <fieldset>
-                <legend>Inloggen: </legend>
-
-                <label>E-mail: </label>
-                <input type="email" placeholder="b.v. verhaal@live.nl" required>
-                <label>Wachtwoord: </label>
-                <input type="password" required>
-
+      <main data-effect="pusher">
+        <!-- header -->
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <a href="index.html">
+                  <img src="./img/logo.png" alt="Logo of Transavia">
+                </a>
+                <p>verhalen</p>
+              </li>
+              <li>
                 <div>
-                  <input type="submit" value="login">
-                  <a href="#">Wachtwoord vergeten?</a>
-
-                  <a href="new_account.html">
-                    maak account <!-- with a a tag as i still need to start with js -->
-                  </a>
+                  <input type="text" placeholder="zoeken">
+                  <button class="fa fa-search" role="button"></button>
                 </div>
-              </fieldset>
-            </form>
+              </li>
+              <li>
+                <button id="account_btn" role="button" name="button"><span class="fa fa-user"></span></button>
+              </li>
+            </ul>
+          </nav>
+          <!-- login -->
 
-          </header>
+          <form class="visibility" id="login_form">
+            <!-- login form -->
+            <fieldset>
+              <legend>Inloggen: </legend>
 
-          <section class="aanbevolen">
+              <label>E-mail: </label>
+              <input type="email" placeholder="b.v. verhaal@live.nl" required>
+              <label>Wachtwoord: </label>
+              <input type="password" required>
+
+              <div>
+                <input type="submit" value="login">
+                <a href="#">Wachtwoord vergeten?</a>
+
+                <a href="new_account.html">
+                  maak account <!-- with a a tag as i still need to start with js -->
+                </a>
+              </div>
+            </fieldset>
+          </form>
+
+        </header>
+
+        <section class="aanbevolen">
+          <div>
+            <h2>Aanbevolen artikelen</h2>
+          </div>
+          <a href="paranoia.html">
+            <h1>Paranoia</h1>
+          </a>
+
+          <a href="hardboiled.html">
+            <h1>Hardboiled</h1>
+          </a>
+
+          <a href="onomatopee.html">
+            <h1>Onomatopee</h1>
+          </a>
+
+        </section>
+
+
+
+        <!-- sort/filter
+        The div wrapper is the activator for mobile -->
+
+        <section>
+          <form>
+            <ul>
+              <li><h2>Kies je verhaal op kleur</h2></li>
+              <li data-color="red">
+                <label>Rood</label>
+                <p>sda</p>
+
+              </li>
+              <li data-color="blue">
+                <label>Blauw</label>
+                <p>sda</p>
+
+              </li>
+              <li data-color="green">
+                <label>Groen</label>
+              </li>
+              <li data-color="yellow">
+                <label>Geel</label>
+              </li>
+              <li data-color="orange">
+                <label>Oranje</label>
+              </li>
+              <li data-color="purple">
+                <label>Paars</label>
+              </li>
+              <li data-color="pink">
+                <label>Roze</label>
+              </li>
+              <li data-color="white">
+                <label>Wit</label>
+              </li>
+              <li data-color="brown">
+                <label>Bruin</label>
+              </li>
+              <li data-color="black">
+                <label>Zwart</label>
+              </li>
+            </ul>
+          </form>
+
+        </section>
+
+
+
+        <!-- alle verhalen -->
+        <section class="verhalen">
+          <h2>De verhalen:</h2>
+
+          <!-- prototype swipe -->
+          <article data-color="pink">
+            <section>
+              <div>
+                <!-- teaser image -->
+              </div>
+              <div>
+                <h3>Verliefd</h3>
+
+                <p>Licht van mijn leven. Ik stapte vandaag bus 21 uit. Het was op het midden van de dag. En wat een heerlijke dag! Het was twaalf uur, onze fantastische zoon sliep net. De miezelregen aaide de haartjes op mijn hand en ik dacht aan jou. </p>
+                <span class="likes fa fa-heart"></span><span> 136</span>
+                <span class="comments fa fa-comment-o"></span><span> 42</span>
+
+                <span class="fa fa-circle"></span>
+
+              </div>
+            </section>
+
+            <section class="trans">
+              <span id="like" class="inactiveArtiItem"></span>
+              <!-- <span class="fa fa-bookmark-o"></span> -->
+              <span id="bookmark" class="inactiveArtiItem"></span>
+
+            </section>
+          </article>
+          <!-- prototype swipe end -->
+
+          <article data-color="red">
             <div>
-              <h2>Aanbevolen artikelen</h2>
+
             </div>
-            <a href="paranoia.html">
-              <h1>Paranoia</h1>
-            </a>
+            <div>
+              <h3>Hardboiled</h3>
+              <p>Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank. Een hardnekkige kater bonkt tegen mijn slapen. Flashback naar de avond ervoor. Een fles goedkope whiskey en oude kaaskoekjes. Ik stap uit. Centraal Station, de anus van Amsterdam. Pneumatisch geboor trilt </p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+              <span class="fa fa-circle"></span>
 
-            <a href="hardboiled.html">
-              <h1>Hardboiled</h1>
-            </a>
-
-            <a href="onomatopee.html">
-              <h1>Onomatopee</h1>
-            </a>
-
-          </section>
+            </div>
+          </article>
 
 
+          <article data-color="yellow">
+            <div>
 
-          <!-- sort/filter
-          The div wrapper is the activator for mobile -->
-
-          <section>
-            <form>
-              <ul>
-                <li><h2>Kies je verhaal op kleur</h2></li>
-                <li data-color="red">
-                  <label>Rood</label>
-                  <p>sda</p>
-
-                </li>
-                <li data-color="blue">
-                  <label>Blauw</label>
-                  <p>sda</p>
-
-                </li>
-                <li data-color="green">
-                  <label>Groen</label>
-                </li>
-                <li data-color="yellow">
-                  <label>Geel</label>
-                </li>
-                <li data-color="orange">
-                  <label>Oranje</label>
-                </li>
-                <li data-color="purple">
-                  <label>Paars</label>
-                </li>
-                <li data-color="pink">
-                  <label>Roze</label>
-                </li>
-                <li data-color="white">
-                  <label>Wit</label>
-                </li>
-                <li data-color="brown">
-                  <label>Bruin</label>
-                </li>
-                <li data-color="black">
-                  <label>Zwart</label>
-                </li>
-              </ul>
-            </form>
-
-          </section>
+            </div>
+            <div>
+              <h3>Onomatopee</h3>
+              <p>De ronk-ronk-bus komt met piiieeepende remmen tot stilstand en opent sssslissend en sssissend haar deuren. Ik stap-stap-stap uit de bus en push oef-oef de kinderwagen voort waarvan de rrrollende wielen mijn zzzlapende zoontje dragen. Sloffende mensen staren naar de grond, zingende tramkabels zwiepen tegen een grauwgrijze hemel. De woeiwoeiwind zorgt ervoor dat </p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+              <span class="fa fa-circle"></span>
+            </div>
+          </article>
 
 
+          <article data-color="orange">
+            <div>
 
-          <!-- alle verhalen -->
-          <section class="verhalen">
-            <h2>De verhalen:</h2>
-
-            <!-- prototype swipe -->
-            <article data-color="pink">
-              <section>
-                <div>
-                  <!-- teaser image -->
-                </div>
-                <div>
-                  <h3>Verliefd</h3>
-
-                  <p>Licht van mijn leven. Ik stapte vandaag bus 21 uit. Het was op het midden van de dag. En wat een heerlijke dag! Het was twaalf uur, onze fantastische zoon sliep net. De miezelregen aaide de haartjes op mijn hand en ik dacht aan jou. </p>
-                  <span class="likes fa fa-heart"></span><span> 136</span>
-                  <span class="comments fa fa-comment-o"></span><span> 42</span>
-
-                  <span class="fa fa-circle"></span>
-
-                </div>
-              </section>
-
-              <section class="trans">
-                <span id="like" class="inactiveArtiItem"></span>
-                <!-- <span class="fa fa-bookmark-o"></span> -->
-                <span id="bookmark" class="inactiveArtiItem"></span>
-
-              </section>
-            </article>
-            <!-- prototype swipe end -->
-
-            <article data-color="red">
-              <div>
-
-              </div>
-              <div>
-                <h3>Hardboiled</h3>
-                <p>Het is snikheet in die godverdomde bus. Stinkend zweet vermengd met de geur van klamme jassen en natte hond. Mijn zoon slaapt. Goddank. Een hardnekkige kater bonkt tegen mijn slapen. Flashback naar de avond ervoor. Een fles goedkope whiskey en oude kaaskoekjes. Ik stap uit. Centraal Station, de anus van Amsterdam. Pneumatisch geboor trilt </p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-                <span class="fa fa-circle"></span>
-
-              </div>
-            </article>
+            </div>
+            <div>
+              <h3>De Verwarde Man</h3>
+              <p>De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig babyschoentjes te kopen. Een luttele drie uur daarvoor stapte de verwarde man op het stationsplein uit de bus.</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+              <span class="fa fa-circle"></span>
+            </div>
+          </article>
 
 
-            <article data-color="yellow">
-              <div>
+          <article data-color="red">
+            <div>
 
-              </div>
-              <div>
-                <h3>Onomatopee</h3>
-                <p>De ronk-ronk-bus komt met piiieeepende remmen tot stilstand en opent sssslissend en sssissend haar deuren. Ik stap-stap-stap uit de bus en push oef-oef de kinderwagen voort waarvan de rrrollende wielen mijn zzzlapende zoontje dragen. Sloffende mensen staren naar de grond, zingende tramkabels zwiepen tegen een grauwgrijze hemel. De woeiwoeiwind zorgt ervoor dat </p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-                <span class="fa fa-circle"></span>
-              </div>
-            </article>
-
-
-            <article data-color="orange">
-              <div>
-
-              </div>
-              <div>
-                <h3>De Verwarde Man</h3>
-                <p>De politie heeft dinsdag 2 februari een verwarde man aangehouden. Hij was op dat moment in een babywinkel op het Bos en Lommerplein bezig babyschoentjes te kopen. Een luttele drie uur daarvoor stapte de verwarde man op het stationsplein uit de bus.</p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-                <span class="fa fa-circle"></span>
-              </div>
-            </article>
+            </div>
+            <div>
+              <h3>Geert Wilders</h3>
+              <p>Een tsunami van forenzen loopt van en naar het Centraal Station in Amsterdam. Ik ben net uit bus 21 gestapt, een prachtige, roomblanke bus 21 die ontsierd werd door foeilelijke kopvodden waaronder potentiële terroristenvrouwtjes met hun onderdrukte gezichtjes verveeld naar buiten za</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+              <span class="fa fa-circle"></span>
+            </div>
+          </article>
 
 
-            <article data-color="red">
-              <div>
+          <article data-color="black">
+            <div>
 
-              </div>
-              <div>
-                <h3>Geert Wilders</h3>
-                <p>Een tsunami van forenzen loopt van en naar het Centraal Station in Amsterdam. Ik ben net uit bus 21 gestapt, een prachtige, roomblanke bus 21 die ontsierd werd door foeilelijke kopvodden waaronder potentiële terroristenvrouwtjes met hun onderdrukte gezichtjes verveeld naar buiten za</p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-                <span class="fa fa-circle"></span>
-              </div>
-            </article>
-
-
-            <article data-color="black">
-              <div>
-
-              </div>
-              <div>
-                <h3>Paranoia</h3>
-                <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-                <span class="fa fa-circle"></span>
-              </div>
-            </article>
+            </div>
+            <div>
+              <h3>Paranoia</h3>
+              <p>Ik sluip de bus uit. Kop in de kraag. Ik maak me klein en duw m’n zoon vooruit. Hij slaapt. Eindelijk. Zijn gejengel trok veel te veel aandacht. De mensen lopen over het stationsplein. Het voelt alsof er een grote, knipperende pijl boven m’n hoofd hangt: HIER LOOPT HIJ! Gelukkig is het kloteweer en kijken de mensen vooral naar de grond. Ik moet naar de Openbare Bibliotheek om het laatste stuk wrakhout te vinden waar ik mij aan kan vastklampen: Stijloefeningen van Raymond Queneau.</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+              <span class="fa fa-circle"></span>
+            </div>
+          </article>
 
 
-            <article data-color="black">
-              <div>
+          <article data-color="black">
+            <div>
 
-              </div>
-              <div>
-                <h3>Blind</h3>
-                <p>Piepende remmen, bus 21 komt tot stilstand. De stem van de buschauffeur, naar mij gericht, zakelijk, niet vriendelijk, niet onvriendelijk: ‘Centraal Station, eindhalte’. Het sissende geluid van busdeuren die open gaan. Mensen drommen naar buiten. Voorzichtig vind ik mijn weg naar de uitgang</p>
-                <span class="likes fa fa-heart"></span><span> 136</span>
-                <span class="comments fa fa-comment-o"></span><span> 42</span>
-                <span class="fa fa-circle"></span>
-              </div>
-            </article>
+            </div>
+            <div>
+              <h3>Blind</h3>
+              <p>Piepende remmen, bus 21 komt tot stilstand. De stem van de buschauffeur, naar mij gericht, zakelijk, niet vriendelijk, niet onvriendelijk: ‘Centraal Station, eindhalte’. Het sissende geluid van busdeuren die open gaan. Mensen drommen naar buiten. Voorzichtig vind ik mijn weg naar de uitgang</p>
+              <span class="likes fa fa-heart"></span><span> 136</span>
+              <span class="comments fa fa-comment-o"></span><span> 42</span>
+              <span class="fa fa-circle"></span>
+            </div>
+          </article>
 
 
-          </section>
+        </section>
 
-      </div>
+    </main>
 
 
 
