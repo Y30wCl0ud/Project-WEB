@@ -70,9 +70,6 @@ a {
 html {
   font-family: nexa; }
 
-body {
-  overflow-x: hidden; }
-
 h1, h2, h3 {
   display: block;
   font-family: nexa_bold;
@@ -421,7 +418,6 @@ body.transition {
   z-index: 100;
   width: 12rem;
   height: 100%;
-  overflow-x: hidden;
   background: none;
   background: #f3e5d8;
   transition: all 0.5s;
@@ -513,7 +509,8 @@ main {
 
 section:nth-of-type(2) {
   background: #f3e5d8;
-  padding-bottom: 10vh; }
+  padding-bottom: 10vh;
+  overflow-x: hidden; }
   section:nth-of-type(2) * {
     background: initial; }
   section:nth-of-type(2) form {

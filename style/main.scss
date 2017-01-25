@@ -113,10 +113,6 @@ html {
 	font-family: nexa;
 }
 
-body {
-	overflow-x: hidden;
-}
-
 h1, h2, h3 {
 	display: block;
 	font-family: nexa_bold;
@@ -610,7 +606,6 @@ body {
 	width: 12rem;
 	height: 100%;
 
-	overflow-x: hidden;
 	background: none;
 	background: $bg_divide;
 
@@ -728,6 +723,7 @@ main {
 section:nth-of-type(2) {
 	background: $bg_divide;
 	padding-bottom: 10vh;
+	overflow-x: hidden;
 
 	& * {
 		background: initial;
@@ -918,10 +914,6 @@ section:nth-of-type(2) {
 
 // filter
 	section:nth-of-type(2) {
-		ul {
-			// pointer-events: none;
-
-		}
 		ul::after {
 			display: none;
 		}
