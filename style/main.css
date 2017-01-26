@@ -104,6 +104,7 @@ button, [type="submit"] {
   color: #fff; }
 
 .visibility {
+  display: none;
   visibility: hidden; }
 
 .disable {
@@ -383,7 +384,6 @@ legend {
   color: #00d66c; }
 
 label {
-  margin-bottom: 0.2rem;
   font-family: nexa_bold; }
 
 input {
@@ -393,9 +393,10 @@ input {
   border-radius: 0.3rem;
   padding: .4rem;
   font-family: nexa;
-  font-size: 1em; }
+  font-size: 1em;
+  transition: border 1s ease; }
   input:focus {
-    border: 1.5px solid #29219d;
+    border: 1.9px solid #29219d;
     outline: none; }
 
 /*=============================================>>>>>
@@ -418,6 +419,7 @@ body.transition {
   z-index: 100;
   width: 12rem;
   height: 100%;
+  overflow-y: scroll;
   background: none;
   background: #f3e5d8;
   transition: all 0.5s;
@@ -543,6 +545,8 @@ section:nth-of-type(2) {
     height: 20vh;
     color: #fff;
     transition: all .3s; }
+    section:nth-of-type(2) li > *:not(h2) {
+      display: none; }
     section:nth-of-type(2) li:nth-of-type(1) {
       display: flex;
       height: 15vh;
@@ -560,6 +564,8 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li:nth-of-type(5) {
       background: #ffeb3b;
       color: #202020; }
+      section:nth-of-type(2) li:nth-of-type(5) p {
+        color: #202020; }
     section:nth-of-type(2) li:nth-of-type(6) {
       background: #ff9800; }
     section:nth-of-type(2) li:nth-of-type(7) {
@@ -569,6 +575,8 @@ section:nth-of-type(2) {
     section:nth-of-type(2) li:nth-of-type(9) {
       background: #fafafa;
       color: #202020; }
+      section:nth-of-type(2) li:nth-of-type(9) p {
+        color: #202020; }
     section:nth-of-type(2) li:nth-of-type(10) {
       background: #795548; }
     section:nth-of-type(2) li:nth-of-type(11) {
@@ -577,10 +585,6 @@ section:nth-of-type(2) {
       display: none; }
     section:nth-of-type(2) li.selected {
       transform: scale(0.85); }
-  section:nth-of-type(2) li p {
-    color: #fff; }
-    section:nth-of-type(2) li p:hover {
-      display: block; }
 
 /*=============================================>>>>>
 = mediaqueries =
@@ -633,12 +637,24 @@ section:nth-of-type(2) {
   section:nth-of-type(2) li {
     width: calc(100%/4);
     height: 22vh; }
+    section:nth-of-type(2) li > *:not(h2) {
+      display: block; }
     section:nth-of-type(2) li:nth-of-type(1) {
       font-size: 1em; }
     section:nth-of-type(2) li:nth-of-type(10), section:nth-of-type(2) li:nth-of-type(11) {
       display: inherit; }
   section:nth-of-type(2) li:hover:not(:first-child) {
     transform: scale(0.85); }
+  section:nth-of-type(2) li p {
+    word-spacing: 100rem;
+    pointer-events: none;
+    opacity: 1;
+    margin: 0 15%;
+    color: #fff;
+    text-align: center;
+    transition: all .3s; }
+    section:nth-of-type(2) li p.visibility {
+      opacity: 0; }
 
   .verhalen p {
     margin-top: 0.5rem;

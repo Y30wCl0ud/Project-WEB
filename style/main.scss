@@ -155,7 +155,8 @@ button, [type="submit"] {
 }
 
 .visibility {
-		visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
 .disable {
@@ -263,6 +264,7 @@ header form {
 		width: 15rem;
 		background: $h_red;
 	}
+
 	transition: all .5s;
 
 	&.visibility {
@@ -557,7 +559,6 @@ legend {
 }
 
 label {
-	margin-bottom: 0.2rem;
 	font-family: nexa_bold;
 }
 
@@ -570,10 +571,11 @@ input {
 
 	font-family: nexa;
 	font-size: 1em;
+
+	transition: border 1s ease;
 	&:focus {
-		border: 1.5px solid $h_blue;
+		border: 1.9px solid $h_blue;
 		outline: none;
-		// transition here
 	}
 }
 
@@ -605,7 +607,7 @@ body {
 
 	width: 12rem;
 	height: 100%;
-
+	overflow-y: scroll;
 	background: none;
 	background: $bg_divide;
 
@@ -769,6 +771,10 @@ section:nth-of-type(2) {
 
 		transition: all .3s;
 
+		& > *:not(h2) {
+			display: none;
+		}
+
 		// De container met tekst van de filter
 		&:nth-of-type(1) {
 			display: flex;
@@ -793,6 +799,9 @@ section:nth-of-type(2) {
 		&:nth-of-type(5) {
 			background: $f_yellow;
 			color: #202020;
+			p {
+				color: #202020;
+			}
 		}
 		&:nth-of-type(6) {
 			background: $f_orange;
@@ -806,6 +815,9 @@ section:nth-of-type(2) {
 		&:nth-of-type(9) {
 			background: $f_white;
 			color: #202020;
+			p {
+				color: #202020;
+			}
 		}
 		&:nth-of-type(10) {
 			background: $f_brown;
@@ -823,14 +835,6 @@ section:nth-of-type(2) {
 		}
 	}
 
-	li p {
-		// visibility: collapse;
-		// position: relative;
-		color: #fff;
-		&:hover {
-			display: block;
-		}
-	}
 
 
 }
@@ -919,6 +923,9 @@ section:nth-of-type(2) {
 		}
 
 		li {
+			& > *:not(h2) {
+				display: block;
+			}
 			width: calc(100%/4);
 			height: 22vh;
 			&:nth-of-type(1) {
@@ -932,6 +939,21 @@ section:nth-of-type(2) {
 
 		li:hover:not(:first-child) {
 			transform: scale(.85);
+		}
+
+
+		li p {
+			// voor een woord per lijn: http://stackoverflow.com/questions/18184881/separate-sentence-to-one-word-per-line
+			word-spacing: 100rem;
+			pointer-events: none;
+			opacity: 1;
+			margin: 0 15%;
+			color: #fff;
+			text-align: center;
+			transition: all .3s;
+			&.visibility {
+				opacity: 0;
+			}
 		}
 	}
 
