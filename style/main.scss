@@ -620,7 +620,7 @@ body {
 	}
 
 	h3 {
-		margin: 1rem;
+		padding: 1rem;
 	}
 
 	li {
@@ -664,7 +664,6 @@ body {
 	}
 }
 
-
 .filter-menu-open, main {
 	width: 100%;
 	opacity: 1;
@@ -682,7 +681,6 @@ body {
 main {
 	z-index: 99;
 	transition: transform 0.5s;
-
 
 	&::after {
 		content: '';
@@ -707,6 +705,7 @@ main {
 }
 
 .filter-menu-open {
+	overflow: hidden;
 	z-index: 1;
 }
 
@@ -947,12 +946,13 @@ section:nth-of-type(2) {
 			word-spacing: 100rem;
 			pointer-events: none;
 			opacity: 1;
-			margin: 0 15%;
 			color: #fff;
 			text-align: center;
 			transition: all .3s;
 			&.visibility {
 				opacity: 0;
+				position: absolute;
+				transform: translateY(3rem);
 			}
 		}
 	}

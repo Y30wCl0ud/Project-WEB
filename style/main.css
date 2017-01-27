@@ -428,7 +428,7 @@ body.transition {
   .filter-menu::-webkit-scrollbar {
     display: none; }
   .filter-menu h3 {
-    margin: 1rem; }
+    padding: 1rem; }
   .filter-menu li {
     width: 100%;
     height: 5rem;
@@ -500,6 +500,7 @@ main {
   transform: translate3d(12rem, 0, 0); }
 
 .filter-menu-open {
+  overflow: hidden;
   z-index: 1; }
 
 .filter-menu-open .filter-menu {
@@ -649,12 +650,13 @@ section:nth-of-type(2) {
     word-spacing: 100rem;
     pointer-events: none;
     opacity: 1;
-    margin: 0 15%;
     color: #fff;
     text-align: center;
     transition: all .3s; }
     section:nth-of-type(2) li p.visibility {
-      opacity: 0; }
+      opacity: 0;
+      position: absolute;
+      transform: translateY(3rem); }
 
   .verhalen p {
     margin-top: 0.5rem;
