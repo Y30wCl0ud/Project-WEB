@@ -83,8 +83,6 @@ var articles = document.querySelectorAll('.verhalen article'),
     pageOffset;
 
 
-
-
 // two functions to toggle the mobile color filter
 function mobileFilterToggle() {
   if (window.innerWidth < 480) {
@@ -92,7 +90,7 @@ function mobileFilterToggle() {
   }
 }
 
-function closeFilter(event) {
+function mobileCloseFilter(event) {
   if (event.target.getAttribute('data-effect') === 'pusher') {
     pageBody.classList.toggle('filter-menu-open');
   }
@@ -116,7 +114,7 @@ function filterStories(event) {
   // check whether the filter (tile) is selected or not
   if (event.target.classList.contains('selected')) {
     event.target.classList.remove('selected');
-  // to show all the artivles again
+  // to show all the articles again
     for (var i = 0; i < articles.length; i++) {
       articles[i].classList.remove('filtered');
     }
@@ -136,19 +134,35 @@ function filterStories(event) {
     window.setTimeout(function() {
       pageBody.classList.remove('transition');
       pageBody.style.cssText = "";
-        window.scrollTo(0, storiesOffset);
+      window.scrollTo(0, storiesOffset);
     }, 900)
   }
 }
 
+/*=============================================>>>>>
+= Filter info (desktop)=
+===============================================>>>>>*/
+var filterTile = document.querySelectorAll('section:nth-of-type(2) li');
 
-mFilterTrigger.addEventListener('click', mobileFilterToggle);
-pusher.addEventListener('click', closeFilter);
-
-for (var i = 1; i < filterTile.length; i++) {
-  filterTile[i].addEventListener('click', filterStories);
+function showInfo() {
+  var hoverOn = this.children[1];
+  hoverOn.classList.toggle('visibility');
 }
 
-for (var i = 0; i < mFilterTile.length; i++) {
-  mFilterTile[i].addEventListener('click', filterStories);
+window.onload = function() {
+  mFilterTrigger.addEventListener('click', mobileFilterToggle);
+  pusher.addEventListener('click', mobileCloseFilter);
+
+  for (var i = 1; i < filterTile.length; i++) {
+    filterTile[i].addEventListener('click', filterStories);
+  }
+
+  for (var i = 0; i < mFilterTile.length; i++) {
+    mFilterTile[i].addEventListener('click', filterStories);
+  }
+
+  for (var i = 1; i < filterTile.length; i++) {
+    filterTile[i].addEventListener('mouseenter', showInfo);
+    filterTile[i].addEventListener('mouseout', showInfo);
+  }
 }

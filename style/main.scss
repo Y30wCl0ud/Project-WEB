@@ -151,11 +151,13 @@ button, [type="submit"] {
 	border: none;
 	border-radius: 1rem;
 	font-family: nexa_bold;
+	font-size: 1em;
 	color: #fff;
+	outline: none;
+
 }
 
 .visibility {
-	display: none;
 	visibility: hidden;
 }
 
@@ -254,6 +256,8 @@ header form {
 	z-index: 1;
 	opacity: 1;
 	box-shadow: 0 0.3125rem 0.625rem 0 rgba(0, 0, 0, .15);
+	transition: all .5s;
+
 	fieldset div {
 		display: flex;
 		flex-flow: column nowrap;
@@ -265,7 +269,11 @@ header form {
 		background: $h_red;
 	}
 
-	transition: all .5s;
+	input:invalid {
+		border-color: $h_red;
+	}
+
+
 
 	&.visibility {
 		opacity: 0;
@@ -333,7 +341,7 @@ header form {
 	}
 
 	a:nth-of-type(3) {
-		background: url('../img/ono_large.jpg');
+		background: url('../img/onomatopee/ono_medium.png');
 		background-size: cover;
 
 	}
@@ -443,6 +451,7 @@ header form {
 				top: 0;
 				left: 0;
 				content: "";
+				transform: translateX(0);
 			}
 			&::before {
 				border-top: solid 1rem $bg_divide;
@@ -460,7 +469,7 @@ header form {
 			}
 		// like and bookmark
 			span {
-				pointer-events: stroke;
+				pointer-events: initial;
 				height: 3rem;
 				width: 3rem;
 				transition: all .5s;
@@ -565,7 +574,7 @@ label {
 input {
 	width: 100%;
 	margin-bottom: 0.8rem;
-	border: 0.1rem solid #909090;
+	border: 1px solid #909090;
 	border-radius: 0.3rem;
 	padding: .4rem;
 
@@ -588,7 +597,7 @@ input {
 
 body {
 	&.transition {
-		transition: all 900ms ease;
+		transition: all 900ms;
 	}
 }
 
@@ -649,7 +658,6 @@ body {
 		&:nth-child(10) {background: $f_black;}
 		&.selected {width: 11rem;}
 	}
-
 
 	&::after {
 		content: '';
@@ -719,14 +727,29 @@ main {
 }
 
 
-
 // filter color tiles style
 section:nth-of-type(2) {
+	position: relative;
 	background: $bg_divide;
 	padding-bottom: 10vh;
-	overflow-x: hidden;
 
-	& * {
+	&::after {
+		// centering after element: https://css-tricks.com/forums/topic/horizontal-centering-of-an-absolute-element/
+		content: 'Open filter';
+		position: absolute;
+		top: 45%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		font-family: 'nexa_bold';
+		font-size: 2em;
+		text-align: center;
+		color: #fff;
+
+		pointer-events: none;
+	}
+
+	* {
 		background: initial;
 	}
 	form {
@@ -753,7 +776,7 @@ section:nth-of-type(2) {
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			height: 60vh;
+			height: 40vh;
 			width: 100%;
 			background: rgba(0, 0, 0, .2);
 		}
@@ -767,6 +790,7 @@ section:nth-of-type(2) {
 		width: calc(100%/3);
 		height: 20vh;
 		color: #fff;
+		overflow: hidden;
 
 		transition: all .3s;
 
@@ -825,7 +849,7 @@ section:nth-of-type(2) {
 			background: $f_black;
 		}
 
-		&:nth-of-type(11) {
+		&:nth-of-type(8), &:nth-of-type(9), &:nth-of-type(10), &:nth-of-type(11) {
 			display: none;
 		}
 
@@ -843,7 +867,7 @@ section:nth-of-type(2) {
 ===============================================>>>>>*/
 
 
-@media screen and(min-width: 30rem) {
+@media screen and (min-width: 30rem) {
 	h2 {
 		font-size: 2.375em;
 		color: $h_blue;
@@ -874,6 +898,9 @@ section:nth-of-type(2) {
 				}
 
 				button {
+					// de marges omdat safari moeilijk doet
+					margin-left: 0;
+					margin-top: 0;
 					margin-bottom: 0.14rem;
 					padding: 0.33rem 1rem;
 					border-radius: 0 1rem 1rem 0;
@@ -917,6 +944,10 @@ section:nth-of-type(2) {
 
 // filter
 	section:nth-of-type(2) {
+		&::after {
+			content: '';
+		}
+
 		ul::after {
 			display: none;
 		}
@@ -931,7 +962,7 @@ section:nth-of-type(2) {
 				font-size: 1em;
 			}
 
-			&:nth-of-type(10), &:nth-of-type(11) {
+			&:nth-of-type(8), &:nth-of-type(9), &:nth-of-type(10), &:nth-of-type(11) {
 				display: inherit;
 			}
 		}
@@ -998,7 +1029,7 @@ section:nth-of-type(2) {
 
 		}
 		article:nth-of-type(3) div:first-child {
-			background: url('../img/ono_large.jpg');
+			background: url('../img/onomatopee/ono_medium.png');
 			background-size: cover;
 
 		}
@@ -1028,14 +1059,15 @@ section:nth-of-type(2) {
 } //end mq min-width 30rem
 
 
-@media screen and(min-width: 45rem) {
+@media screen and (min-width: 45rem) {
 	section:nth-of-type(1) h1 {
 		font-size: 2.5em;
 	}
 }
 
-@media screen and(min-width: 70rem) {
+@media screen and (min-width: 70rem) {
 	.verhalen article {
 		flex: 1 1 22%;
 	}
+	max-width: 22%;
 }
